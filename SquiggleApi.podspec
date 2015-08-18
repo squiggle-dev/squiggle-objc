@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
     s.summary          = "Squiggle API"
     
 
-    s.platform     = :ios, '7.0'
+    s.platform     = :osx
     s.requires_arc = true
 
     s.framework    = 'SystemConfiguration'
