@@ -10,11 +10,13 @@
 Pod::Spec.new do |s|
     s.name             = "SquiggleApi"
     s.version          = "0.0.1"
+    s.license       = { :type => 'BSD' }
+    s.homepage      = 'https://github.com/squiggle-dev/squiggle-objc'
+    s.authors       = { 'Andy White' => 'andy@soundintheory.co.uk' }
+    s.source        = { :git => 'https://github.com/squiggle-dev/squiggle-objc.git', :tag => 'v0.0.1' }
 
     s.summary          = "Squiggle API"
-    s.description      = <<-DESC
-                         
-                         DESC
+    
 
     s.platform     = :ios, '7.0'
     s.requires_arc = true
@@ -25,7 +27,7 @@ Pod::Spec.new do |s|
     s.public_header_files = 'SquiggleApi/**/*.h'
 
     s.dependency 'AFNetworking', '~> 2.3'
-    s.dependency 'JSONModel', '~> 1.1'
-    s.dependency 'ISO8601', '~> 0.3'
+    s.dependency 'JSONModel', '~> 1.0.1'
+    s.dependency 'ISO8601', '~> 0.1.1'
 end
 
