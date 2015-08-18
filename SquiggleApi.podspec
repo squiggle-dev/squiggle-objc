@@ -18,7 +18,9 @@ Pod::Spec.new do |s|
     s.summary          = "Squiggle API"
     
 
-    s.platform     = :osx
+
+    s.ios.deployment_target = '6.0'
+    s.osx.deployment_target = '10.8'
     s.requires_arc = true
 
     s.framework    = 'SystemConfiguration'
@@ -26,8 +28,8 @@ Pod::Spec.new do |s|
     s.source_files = 'SquiggleApi/**/*'
     s.public_header_files = 'SquiggleApi/**/*.h'
 
-    s.dependency 'AFNetworking', '~> 2.3'
-    s.dependency 'JSONModel', '~> 1.0.1'
-    s.dependency 'ISO8601', '~> 0.1.1'
+    s.dependency 'AFNetworking', '~> 2.5.4'
+    s.dependency 'JSONModel', '~> 1.1.0'
+    s.dependency 'ISO8601', '~> 0.3.0'
 end
 
