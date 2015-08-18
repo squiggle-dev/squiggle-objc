@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
     s.name             = "SquiggleApi"
     s.version          = "0.0.1"
-    s.license       = { :type => 'BSD' }
+    s.license       = { :type => 'BSD', :file => 'LICENSE.md' }
     s.homepage      = 'https://github.com/squiggle-dev/squiggle-objc'
     s.authors       = { 'Andy White' => 'andy@soundintheory.co.uk' }
     s.source        = { :git => 'https://github.com/squiggle-dev/squiggle-objc.git', :tag => 'v0.0.1' }
