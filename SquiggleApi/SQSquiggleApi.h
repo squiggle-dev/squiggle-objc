@@ -20,6 +20,21 @@
 ///
 ///
 /// 
+/// Request JWT for Address
+///
+/// @param data 
+/// 
+///
+/// @return NSObject*
+-(NSNumber*) requestAddressTokenWithCompletionBlock :(NSObject*) data 
+    
+    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
 /// Gets addresses
 ///
 /// @param offset The start offset of the result set

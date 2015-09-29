@@ -19,6 +19,8 @@
 
 @property(nonatomic) NSString* email;
 
+@property(nonatomic) NSString* password;
+
 @property(nonatomic) NSString* firstName;
 
 @property(nonatomic) NSString* lastName;

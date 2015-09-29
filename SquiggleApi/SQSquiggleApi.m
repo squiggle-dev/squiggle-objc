@@ -61,6 +61,103 @@
 
 ///
 /// 
+/// Request JWT for Address
+///  @param data 
+///
+///  @returns NSObject*
+///
+-(NSNumber*) requestAddressTokenWithCompletionBlock: (NSObject*) data
+        
+        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `requestAddressToken`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/authentication/address"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+    
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = data;
+
+    if(bodyParam != nil && [bodyParam isKindOfClass:[NSArray class]]){
+        NSMutableArray *objs = [[NSMutableArray alloc] init];
+        for (id dict in (NSArray*)bodyParam) {
+            if([dict respondsToSelector:@selector(toDictionary)]) {
+                [objs addObject:[(SQObject*)dict toDictionary]];
+            }
+            else{
+                [objs addObject:dict];
+            }
+        }
+        bodyParam = objs;
+    }
+    else if([bodyParam respondsToSelector:@selector(toDictionary)]) {
+        bodyParam = [(SQObject*)bodyParam toDictionary];
+    }
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"NSObject*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((NSObject*)data, error);
+              }
+          ];
+}
+
+///
+/// 
 /// Gets addresses
 ///  @param offset The start offset of the result set
 ///
@@ -76,7 +173,7 @@
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -118,7 +215,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -165,7 +262,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -199,7 +296,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -262,7 +359,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -344,7 +441,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -379,7 +476,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -434,7 +531,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -469,7 +566,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -530,7 +627,7 @@
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -572,7 +669,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -619,7 +716,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -653,7 +750,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -716,7 +813,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -751,7 +848,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -798,7 +895,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -833,7 +930,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -888,7 +985,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -923,7 +1020,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -984,7 +1081,7 @@
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1026,7 +1123,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1073,7 +1170,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1107,7 +1204,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1170,7 +1267,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1205,7 +1302,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1252,7 +1349,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1287,7 +1384,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1342,7 +1439,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1377,7 +1474,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1438,7 +1535,7 @@
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1480,7 +1577,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1527,7 +1624,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1561,7 +1658,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1624,7 +1721,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1659,7 +1756,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1706,7 +1803,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1741,7 +1838,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1796,7 +1893,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1831,7 +1928,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1892,7 +1989,7 @@
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1934,7 +2031,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -1981,7 +2078,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2015,7 +2112,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -2078,7 +2175,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2113,7 +2210,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -2160,7 +2257,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2195,7 +2292,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
@@ -2250,7 +2347,7 @@
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2285,7 +2382,7 @@
     NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
 
     // Authentication setting
-    NSArray *authSettings = @[@"jwt"];
+    NSArray *authSettings = @[];
 
     id bodyParam = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];

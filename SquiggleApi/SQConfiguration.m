@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"http://localhost:8081/v1";
+        self.host = @"http://localhost:8081/";
         self.username = @"";
         self.password = @"";
         self.tempFolderPath = nil;
