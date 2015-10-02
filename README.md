@@ -20,3 +20,9 @@ It's recommended to create an instance of ApiClient per thread in a multithreade
 
 - Push latest changes to Github and tag the commit with the version number
 - Run ```pod trunk push SquiggleApi.podspec```
+
+## Author
+
+
+
+
