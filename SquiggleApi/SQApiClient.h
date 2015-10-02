@@ -13,7 +13,10 @@
  */
 
 #import "SQAddress.h"
+#import "SQAddressResp.h"
 #import "SQGlobalTemplate.h"
+#import "SQLinks.h"
+#import "SQSignature.h"
 #import "SQSnippet.h"
 #import "SQTemplate.h"
 #import "SQUser.h"
