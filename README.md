@@ -16,8 +16,7 @@ pod "SquiggleApi", :path => "/path/to/lib"
 
 It's recommended to create an instance of ApiClient per thread in a multithreaded environment to avoid any potential issue.
 
-## Author
+## Publishing to CocoaPods
 
-
-
-
+- Push latest changes to Github and tag the commit with the version number
+- Run ```pod trunk push SquiggleApi.podspec```
