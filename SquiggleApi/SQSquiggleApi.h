@@ -17,6 +17,7 @@
 -(void) addHeader:(NSString*)value forKey:(NSString*)key;
 -(unsigned long) requestQueueSize;
 +(SQSquiggleApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
++(SQSquiggleApi*) sharedAPI;
 ///
 ///
 /// 

@@ -31,6 +31,7 @@
         self.password = @"";
         self.tempFolderPath = nil;
         self.debug = NO;
+        self.verifySSL = YES;
         self.loggingFile = nil;
         self.mutableApiKey = [NSMutableDictionary dictionary];
         self.mutableApiKeyPrefix = [NSMutableDictionary dictionary];
@@ -111,7 +112,7 @@
                        @"type": @"api_key",
                        @"in": @"header",
                        @"key": @"Authorization",
-                       @"value": [self getApiKeyWithPrefix:@"Authorization"]
+                       @"value": [self getApiKeyWithPrefix:@"jwt"]
                    },
                };
 }

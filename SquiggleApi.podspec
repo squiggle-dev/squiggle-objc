@@ -9,21 +9,23 @@
 
 Pod::Spec.new do |s|
     s.name             = "SquiggleApi"
-    s.version          = "0.0.3"
-    s.license       = { :type => 'BSD', :file => 'LICENSE.md' }
-    s.homepage      = 'https://github.com/squiggle-dev/squiggle-objc'
-    s.authors       = { 'Andy White' => 'andy@soundintheory.co.uk' }
-    s.source        = { :git => 'https://github.com/squiggle-dev/squiggle-objc.git', :tag => 'v0.0.3' }
+    s.version          = "0.0.4"
 
     s.summary          = "Squiggle API"
-    
-
+    s.description      = <<-DESC
+                         
+                         DESC
 
     s.ios.deployment_target = '6.0'
     s.osx.deployment_target = '10.8'
     s.requires_arc = true
 
     s.framework    = 'SystemConfiguration'
+    
+    s.homepage     = "https://github.com/squiggle-dev/squiggle-objc"
+    s.license      = { :type => 'BSD', :file => 'LICENSE.md' }
+    s.source       = { :git => "https://github.com/squiggle-dev/squiggle-objc.git", :tag => "v0.0.4" }
+    s.author       = { "Andy White" => "andy@soundintheory.co.uk" }
 
     s.source_files = 'SquiggleApi/**/*'
     s.public_header_files = 'SquiggleApi/**/*.h'

@@ -31,12 +31,19 @@
  */
 extern NSString *const SQResponseObjectErrorKey;
 
+/**
+ * Log debug message macro
+ */
+#define SQDebugLog(format, ...) [SQApiClient debugLog:[NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__] message: format, ##__VA_ARGS__];
 
 @interface SQApiClient : AFHTTPRequestOperationManager
 
 @property(nonatomic, assign) NSURLRequestCachePolicy cachePolicy;
 @property(nonatomic, assign) NSTimeInterval timeoutInterval;
 @property(nonatomic, readonly) NSOperationQueue* queue;
+
+/// In order to ensure the HTTPResponseHeaders are correct, it is recommended to initialize one SQApiClient instance per thread.
+@property(nonatomic, readonly) NSDictionary* HTTPResponseHeaders;
 
 /**
  * Clears Cache
@@ -175,6 +182,7 @@ extern NSString *const SQResponseObjectErrorKey;
  *
  * @param path Request url.
  * @param method Request method.
+ * @param pathParams Request path parameters.
  * @param queryParams Request query parameters.
  * @param body Request body.
  * @param headerParams Request header parameters.
@@ -187,6 +195,7 @@ extern NSString *const SQResponseObjectErrorKey;
  */
 -(NSNumber*)  requestWithCompletionBlock:(NSString*) path
                                   method:(NSString*) method
+                              pathParams:(NSDictionary *) pathParams
                              queryParams:(NSDictionary*) queryParams
                               formParams:(NSDictionary *) formParams
                                    files:(NSDictionary *) files
@@ -197,5 +206,29 @@ extern NSString *const SQResponseObjectErrorKey;
                      responseContentType:(NSString*) responseContentType
                             responseType:(NSString *) responseType
                          completionBlock:(void (^)(id, NSError *))completionBlock;
+
+/**
+ * Sanitize object for request
+ *
+ * @param object The query/path/header/form/body param to be sanitized.
+ */
+- (id) sanitizeForSerialization:(id) object;
+
+/**
+ * Custom security policy
+ *
+ * @return AFSecurityPolicy
+ */
+- (AFSecurityPolicy *) customSecurityPolicy;
+
+/**
+ * Convert parameter to NSString
+ */
+- (NSString *) parameterToString: (id) param;
+
+/**
+ * Log debug message
+ */
++(void)debugLog:(NSString *)method message:(NSString *)format, ...;
 
 @end
