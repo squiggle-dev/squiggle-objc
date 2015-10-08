@@ -104,7 +104,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -193,7 +193,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -276,7 +276,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -362,7 +362,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -448,7 +448,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -542,7 +542,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -631,7 +631,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -714,7 +714,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -800,7 +800,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -886,7 +886,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -980,7 +980,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1069,7 +1069,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1152,7 +1152,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1238,7 +1238,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1324,7 +1324,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1418,7 +1418,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1507,7 +1507,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1590,7 +1590,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1676,7 +1676,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1762,7 +1762,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1856,7 +1856,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1945,7 +1945,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2028,7 +2028,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2114,7 +2114,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2200,7 +2200,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2294,7 +2294,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
