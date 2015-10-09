@@ -7,6 +7,7 @@
  * Do not edit the class manually.
  */
 
+#import "SQSignature.h"
 
 
 @protocol SQAddress
@@ -40,6 +41,8 @@
 @property(nonatomic) NSString* instagram;
 
 @property(nonatomic) NSString* googleplus;
+
+@property(nonatomic) NSArray<SQSignature>* signatures;
 
 @property(nonatomic) NSNumber* user;
 

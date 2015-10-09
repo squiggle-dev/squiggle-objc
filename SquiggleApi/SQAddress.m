@@ -8,7 +8,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"email": @"email", @"password": @"password", @"first_name": @"firstName", @"last_name": @"lastName", @"job_title": @"jobTitle", @"tel_mobile": @"telMobile", @"tel_direct": @"telDirect", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"user": @"user" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"email": @"email", @"password": @"password", @"first_name": @"firstName", @"last_name": @"lastName", @"job_title": @"jobTitle", @"tel_mobile": @"telMobile", @"tel_direct": @"telDirect", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"signatures": @"signatures", @"user": @"user" }];
 }
 
 /**
@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"firstName", @"lastName", @"jobTitle", @"telMobile", @"telDirect", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"user"];
+  NSArray *optionalProperties = @[@"_id", @"firstName", @"lastName", @"jobTitle", @"telMobile", @"telDirect", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"signatures", @"user"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
