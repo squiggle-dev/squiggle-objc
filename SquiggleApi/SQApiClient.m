@@ -393,8 +393,8 @@ static void (^reachabilityChangeBlock)(int);
 
    // model
     Class ModelClass = NSClassFromString(class);
-    if ([ModelClass instancesRespondToSelector:@selector(initWithDictionary:error:)]) {
-        return [[ModelClass alloc] initWithDictionary:data error:nil];
+    if ([ModelClass instancesRespondToSelector:@selector(initWithData:error:)]) {
+        return [[ModelClass alloc] initWithData:data error:nil];
     }
 
     return nil;
