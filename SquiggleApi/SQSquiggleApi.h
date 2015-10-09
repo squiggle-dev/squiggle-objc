@@ -1,4 +1,14 @@
 #import <Foundation/Foundation.h>
+#import "SQAddressResponseMultiple.h"
+#import "SQAddressResponseSingle.h"
+#import "SQGlobalTemplateResponseMultiple.h"
+#import "SQGlobalTemplateResponseSingle.h"
+#import "SQSnippetResponseMultiple.h"
+#import "SQSnippetResponseSingle.h"
+#import "SQTemplateResponseMultiple.h"
+#import "SQTemplateResponseSingle.h"
+#import "SQUserResponseMultiple.h"
+#import "SQUserResponseSingle.h"
 #import "SQObject.h"
 #import "SQApiClient.h"
 
@@ -42,11 +52,11 @@
 /// @param limit Max records to return
 /// 
 ///
-/// @return NSObject*
+/// @return SQAddressResponseMultiple*
 -(NSNumber*) findAddressesWithCompletionBlock :(NSNumber*) offset 
      limit:(NSNumber*) limit 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQAddressResponseMultiple* output, NSError* error))completionBlock;
     
 
 
@@ -58,10 +68,10 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQAddressResponseSingle*
 -(NSNumber*) addAddressWithCompletionBlock :(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -73,10 +83,10 @@
 /// @param _id ID of address to get
 /// 
 ///
-/// @return NSObject*
+/// @return SQAddressResponseSingle*
 -(NSNumber*) getAddressWithCompletionBlock :(NSNumber*) _id 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -104,11 +114,11 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQAddressResponseSingle*
 -(NSNumber*) editAddressWithCompletionBlock :(NSNumber*) _id 
      data:(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -121,11 +131,11 @@
 /// @param limit Max records to return
 /// 
 ///
-/// @return NSObject*
+/// @return SQGlobalTemplateResponseMultiple*
 -(NSNumber*) findGlobalTemplatesWithCompletionBlock :(NSNumber*) offset 
      limit:(NSNumber*) limit 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQGlobalTemplateResponseMultiple* output, NSError* error))completionBlock;
     
 
 
@@ -137,10 +147,10 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQGlobalTemplateResponseSingle*
 -(NSNumber*) addGlobalTemplateWithCompletionBlock :(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -152,10 +162,10 @@
 /// @param _id ID of global template to get
 /// 
 ///
-/// @return NSObject*
+/// @return SQGlobalTemplateResponseSingle*
 -(NSNumber*) getGlobalTemplateWithCompletionBlock :(NSNumber*) _id 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -183,11 +193,11 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQGlobalTemplateResponseSingle*
 -(NSNumber*) editGlobalTemplateWithCompletionBlock :(NSNumber*) _id 
      data:(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -200,11 +210,11 @@
 /// @param limit Max records to return
 /// 
 ///
-/// @return NSObject*
+/// @return SQSnippetResponseMultiple*
 -(NSNumber*) findSnippetsWithCompletionBlock :(NSNumber*) offset 
      limit:(NSNumber*) limit 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQSnippetResponseMultiple* output, NSError* error))completionBlock;
     
 
 
@@ -216,10 +226,10 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQSnippetResponseSingle*
 -(NSNumber*) addSnippetWithCompletionBlock :(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -231,10 +241,10 @@
 /// @param _id ID of snippet to get
 /// 
 ///
-/// @return NSObject*
+/// @return SQSnippetResponseSingle*
 -(NSNumber*) getSnippetWithCompletionBlock :(NSNumber*) _id 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -262,11 +272,11 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQSnippetResponseSingle*
 -(NSNumber*) editSnippetWithCompletionBlock :(NSNumber*) _id 
      data:(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -279,11 +289,11 @@
 /// @param limit Max records to return
 /// 
 ///
-/// @return NSObject*
+/// @return SQTemplateResponseMultiple*
 -(NSNumber*) findTemplatesWithCompletionBlock :(NSNumber*) offset 
      limit:(NSNumber*) limit 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQTemplateResponseMultiple* output, NSError* error))completionBlock;
     
 
 
@@ -295,10 +305,10 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQTemplateResponseSingle*
 -(NSNumber*) addTemplateWithCompletionBlock :(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -310,10 +320,10 @@
 /// @param _id ID of template to get
 /// 
 ///
-/// @return NSObject*
+/// @return SQTemplateResponseSingle*
 -(NSNumber*) getTemplateWithCompletionBlock :(NSNumber*) _id 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -341,11 +351,11 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQTemplateResponseSingle*
 -(NSNumber*) editTemplateWithCompletionBlock :(NSNumber*) _id 
      data:(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -358,11 +368,11 @@
 /// @param limit Max records to return
 /// 
 ///
-/// @return NSObject*
+/// @return SQUserResponseMultiple*
 -(NSNumber*) findUsersWithCompletionBlock :(NSNumber*) offset 
      limit:(NSNumber*) limit 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQUserResponseMultiple* output, NSError* error))completionBlock;
     
 
 
@@ -374,10 +384,10 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQUserResponseSingle*
 -(NSNumber*) addUserWithCompletionBlock :(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -389,10 +399,10 @@
 /// @param _id ID of user to get
 /// 
 ///
-/// @return NSObject*
+/// @return SQUserResponseSingle*
 -(NSNumber*) getUserWithCompletionBlock :(NSNumber*) _id 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock;
     
 
 
@@ -420,11 +430,11 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQUserResponseSingle*
 -(NSNumber*) editUserWithCompletionBlock :(NSNumber*) _id 
      data:(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock;
     
 
 

@@ -7,20 +7,16 @@
  * Do not edit the class manually.
  */
 
+#import "SQTemplate.h"
+#import "SQResponse.h"
 
 
-@protocol SQLinks
+@protocol SQTemplateResponseMultiple
 @end
 
-@interface SQLinks : SQObject
+@interface SQTemplateResponseMultiple : SQResponse
 
 
-@property(nonatomic) NSString* self;
-
-@property(nonatomic) NSString* related;
-
-@property(nonatomic) NSString* next;
-
-@property(nonatomic) NSString* last;
+@property(nonatomic) NSArray<SQTemplate>* data;
 
 @end

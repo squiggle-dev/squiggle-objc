@@ -13,13 +13,26 @@
  */
 
 #import "SQAddress.h"
-#import "SQAddressResp.h"
+#import "SQAddressResponseSingle.h"
+#import "SQAddressResponseMultiple.h"
 #import "SQGlobalTemplate.h"
-#import "SQLinks.h"
+#import "SQGlobalTemplateResponseSingle.h"
+#import "SQGlobalTemplateResponseMultiple.h"
+#import "SQResponse.h"
+#import "SQResponseLinks.h"
 #import "SQSignature.h"
+#import "SQSignatureResponseSingle.h"
+#import "SQSignatureResponseMultiple.h"
 #import "SQSnippet.h"
+#import "SQSnippetResponseSingle.h"
+#import "SQSnippetResponseMultiple.h"
 #import "SQTemplate.h"
+#import "SQTemplateResponseSingle.h"
+#import "SQTemplateResponseMultiple.h"
+#import "SQUnexpectedErrorResponse.h"
 #import "SQUser.h"
+#import "SQUserResponseSingle.h"
+#import "SQUserResponseMultiple.h"
 
 
 @class SQConfiguration;

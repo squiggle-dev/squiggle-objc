@@ -1,6 +1,6 @@
-#import "SQLinks.h"
+#import "SQGlobalTemplateResponseSingle.h"
 
-@implementation SQLinks
+@implementation SQGlobalTemplateResponseSingle
 
 /**
  * Maps json key to property name.
@@ -8,7 +8,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"self": @"self", @"related": @"related", @"next": @"next", @"last": @"last" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data" }];
 }
 
 /**
@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"self", @"related", @"next", @"last"];
+  NSArray *optionalProperties = @[@"data"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

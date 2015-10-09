@@ -1,6 +1,6 @@
-#import "SQAddressResp.h"
+#import "SQSnippetResponseSingle.h"
 
-@implementation SQAddressResp
+@implementation SQSnippetResponseSingle
 
 /**
  * Maps json key to property name.
@@ -8,7 +8,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"address": @"address", @"signatures": @"signatures" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data" }];
 }
 
 /**
@@ -18,7 +18,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"address", @"signatures"];
+  NSArray *optionalProperties = @[@"data"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

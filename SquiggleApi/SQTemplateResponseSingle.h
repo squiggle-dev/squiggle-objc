@@ -7,18 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "SQSignature.h"
-#import "SQAddress.h"
+#import "SQTemplate.h"
+#import "SQResponse.h"
 
 
-@protocol SQAddressResp
+@protocol SQTemplateResponseSingle
 @end
 
-@interface SQAddressResp : SQObject
+@interface SQTemplateResponseSingle : SQResponse
 
 
-@property(nonatomic) SQAddress* address;
-
-@property(nonatomic) SQSignature* signatures;
+@property(nonatomic) SQTemplate* data;
 
 @end

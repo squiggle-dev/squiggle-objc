@@ -1,5 +1,15 @@
 #import "SQSquiggleApi.h"
 #import "SQQueryParamCollection.h"
+#import "SQAddressResponseMultiple.h"
+#import "SQAddressResponseSingle.h"
+#import "SQGlobalTemplateResponseMultiple.h"
+#import "SQGlobalTemplateResponseSingle.h"
+#import "SQSnippetResponseMultiple.h"
+#import "SQSnippetResponseSingle.h"
+#import "SQTemplateResponseMultiple.h"
+#import "SQTemplateResponseSingle.h"
+#import "SQUserResponseMultiple.h"
+#import "SQUserResponseSingle.h"
 
 
 @interface SQSquiggleApi ()
@@ -158,12 +168,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param limit Max records to return
 ///
-///  @returns NSObject*
+///  @returns SQAddressResponseMultiple*
 ///
 -(NSNumber*) findAddressesWithCompletionBlock: (NSNumber*) offset
          limit: (NSNumber*) limit
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQAddressResponseMultiple* output, NSError* error))completionBlock { 
         
 
     
@@ -232,10 +242,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQAddressResponseMultiple*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQAddressResponseMultiple*)data, error);
               }
           ];
 }
@@ -245,11 +255,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Creates a new address
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQAddressResponseSingle*
 ///
 -(NSNumber*) addAddressWithCompletionBlock: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -315,10 +325,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQAddressResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQAddressResponseSingle*)data, error);
               }
           ];
 }
@@ -328,11 +338,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Gets an address with the specified ID
 ///  @param _id ID of address to get
 ///
-///  @returns NSObject*
+///  @returns SQAddressResponseSingle*
 ///
 -(NSNumber*) getAddressWithCompletionBlock: (NSNumber*) _id
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -401,10 +411,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQAddressResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQAddressResponseSingle*)data, error);
               }
           ];
 }
@@ -502,12 +512,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQAddressResponseSingle*
 ///
 -(NSNumber*) editAddressWithCompletionBlock: (NSNumber*) _id
          data: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -581,10 +591,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQAddressResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQAddressResponseSingle*)data, error);
               }
           ];
 }
@@ -596,12 +606,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param limit Max records to return
 ///
-///  @returns NSObject*
+///  @returns SQGlobalTemplateResponseMultiple*
 ///
 -(NSNumber*) findGlobalTemplatesWithCompletionBlock: (NSNumber*) offset
          limit: (NSNumber*) limit
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQGlobalTemplateResponseMultiple* output, NSError* error))completionBlock { 
         
 
     
@@ -670,10 +680,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQGlobalTemplateResponseMultiple*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQGlobalTemplateResponseMultiple*)data, error);
               }
           ];
 }
@@ -683,11 +693,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Creates a new global template
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQGlobalTemplateResponseSingle*
 ///
 -(NSNumber*) addGlobalTemplateWithCompletionBlock: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -753,10 +763,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQGlobalTemplateResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQGlobalTemplateResponseSingle*)data, error);
               }
           ];
 }
@@ -766,11 +776,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Gets a global template with the specified ID
 ///  @param _id ID of global template to get
 ///
-///  @returns NSObject*
+///  @returns SQGlobalTemplateResponseSingle*
 ///
 -(NSNumber*) getGlobalTemplateWithCompletionBlock: (NSNumber*) _id
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -839,10 +849,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQGlobalTemplateResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQGlobalTemplateResponseSingle*)data, error);
               }
           ];
 }
@@ -940,12 +950,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQGlobalTemplateResponseSingle*
 ///
 -(NSNumber*) editGlobalTemplateWithCompletionBlock: (NSNumber*) _id
          data: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1019,10 +1029,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQGlobalTemplateResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQGlobalTemplateResponseSingle*)data, error);
               }
           ];
 }
@@ -1034,12 +1044,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param limit Max records to return
 ///
-///  @returns NSObject*
+///  @returns SQSnippetResponseMultiple*
 ///
 -(NSNumber*) findSnippetsWithCompletionBlock: (NSNumber*) offset
          limit: (NSNumber*) limit
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQSnippetResponseMultiple* output, NSError* error))completionBlock { 
         
 
     
@@ -1108,10 +1118,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQSnippetResponseMultiple*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQSnippetResponseMultiple*)data, error);
               }
           ];
 }
@@ -1121,11 +1131,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Creates a new snippet
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQSnippetResponseSingle*
 ///
 -(NSNumber*) addSnippetWithCompletionBlock: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1191,10 +1201,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQSnippetResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQSnippetResponseSingle*)data, error);
               }
           ];
 }
@@ -1204,11 +1214,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Gets a snippet with the specified ID
 ///  @param _id ID of snippet to get
 ///
-///  @returns NSObject*
+///  @returns SQSnippetResponseSingle*
 ///
 -(NSNumber*) getSnippetWithCompletionBlock: (NSNumber*) _id
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1277,10 +1287,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQSnippetResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQSnippetResponseSingle*)data, error);
               }
           ];
 }
@@ -1378,12 +1388,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQSnippetResponseSingle*
 ///
 -(NSNumber*) editSnippetWithCompletionBlock: (NSNumber*) _id
          data: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1457,10 +1467,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQSnippetResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQSnippetResponseSingle*)data, error);
               }
           ];
 }
@@ -1472,12 +1482,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param limit Max records to return
 ///
-///  @returns NSObject*
+///  @returns SQTemplateResponseMultiple*
 ///
 -(NSNumber*) findTemplatesWithCompletionBlock: (NSNumber*) offset
          limit: (NSNumber*) limit
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQTemplateResponseMultiple* output, NSError* error))completionBlock { 
         
 
     
@@ -1546,10 +1556,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQTemplateResponseMultiple*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQTemplateResponseMultiple*)data, error);
               }
           ];
 }
@@ -1559,11 +1569,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Creates a new template
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQTemplateResponseSingle*
 ///
 -(NSNumber*) addTemplateWithCompletionBlock: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1629,10 +1639,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQTemplateResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQTemplateResponseSingle*)data, error);
               }
           ];
 }
@@ -1642,11 +1652,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Gets a template with the specified ID
 ///  @param _id ID of template to get
 ///
-///  @returns NSObject*
+///  @returns SQTemplateResponseSingle*
 ///
 -(NSNumber*) getTemplateWithCompletionBlock: (NSNumber*) _id
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1715,10 +1725,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQTemplateResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQTemplateResponseSingle*)data, error);
               }
           ];
 }
@@ -1816,12 +1826,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQTemplateResponseSingle*
 ///
 -(NSNumber*) editTemplateWithCompletionBlock: (NSNumber*) _id
          data: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -1895,10 +1905,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQTemplateResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQTemplateResponseSingle*)data, error);
               }
           ];
 }
@@ -1910,12 +1920,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param limit Max records to return
 ///
-///  @returns NSObject*
+///  @returns SQUserResponseMultiple*
 ///
 -(NSNumber*) findUsersWithCompletionBlock: (NSNumber*) offset
          limit: (NSNumber*) limit
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQUserResponseMultiple* output, NSError* error))completionBlock { 
         
 
     
@@ -1984,10 +1994,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQUserResponseMultiple*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQUserResponseMultiple*)data, error);
               }
           ];
 }
@@ -1997,11 +2007,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Creates a new user
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQUserResponseSingle*
 ///
 -(NSNumber*) addUserWithCompletionBlock: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -2067,10 +2077,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQUserResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQUserResponseSingle*)data, error);
               }
           ];
 }
@@ -2080,11 +2090,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Gets a user with the specified ID
 ///  @param _id ID of user to get
 ///
-///  @returns NSObject*
+///  @returns SQUserResponseSingle*
 ///
 -(NSNumber*) getUserWithCompletionBlock: (NSNumber*) _id
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -2153,10 +2163,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQUserResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQUserResponseSingle*)data, error);
               }
           ];
 }
@@ -2254,12 +2264,12 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQUserResponseSingle*
 ///
 -(NSNumber*) editUserWithCompletionBlock: (NSNumber*) _id
          data: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock { 
         
 
     
@@ -2333,10 +2343,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQUserResponseSingle*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQUserResponseSingle*)data, error);
               }
           ];
 }
