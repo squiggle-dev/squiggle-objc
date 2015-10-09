@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "SQJSONWebTokenResponse.h"
 #import "SQAddressResponseMultiple.h"
 #import "SQAddressResponseSingle.h"
 #import "SQGlobalTemplateResponseMultiple.h"
@@ -36,10 +37,10 @@
 /// @param data 
 /// 
 ///
-/// @return NSObject*
+/// @return SQJSONWebTokenResponse*
 -(NSNumber*) requestAddressTokenWithCompletionBlock :(NSObject*) data 
     
-    completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock;
+    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
     
 
 

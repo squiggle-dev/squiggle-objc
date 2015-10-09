@@ -18,6 +18,8 @@
 #import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
 #import "SQGlobalTemplateResponseMultiple.h"
+#import "SQJSONWebToken.h"
+#import "SQJSONWebTokenResponse.h"
 #import "SQResponse.h"
 #import "SQResponseLinks.h"
 #import "SQSignature.h"

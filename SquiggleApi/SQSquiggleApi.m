@@ -1,5 +1,6 @@
 #import "SQSquiggleApi.h"
 #import "SQQueryParamCollection.h"
+#import "SQJSONWebTokenResponse.h"
 #import "SQAddressResponseMultiple.h"
 #import "SQAddressResponseSingle.h"
 #import "SQGlobalTemplateResponseMultiple.h"
@@ -83,11 +84,11 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Request JWT for Address
 ///  @param data 
 ///
-///  @returns NSObject*
+///  @returns SQJSONWebTokenResponse*
 ///
 -(NSNumber*) requestAddressTokenWithCompletionBlock: (NSObject*) data
         
-        completionHandler: (void (^)(NSObject* output, NSError* error))completionBlock { 
+        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
         
 
     
@@ -153,10 +154,10 @@ static SQSquiggleApi* singletonAPI = nil;
                                          authSettings: authSettings
                                    requestContentType: requestContentType
                                   responseContentType: responseContentType
-                                         responseType: @"NSObject*"
+                                         responseType: @"SQJSONWebTokenResponse*"
                                       completionBlock: ^(id data, NSError *error) {
                   
-                  completionBlock((NSObject*)data, error);
+                  completionBlock((SQJSONWebTokenResponse*)data, error);
               }
           ];
 }
