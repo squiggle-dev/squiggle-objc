@@ -26,7 +26,7 @@
     self = [super init];
     if (self) {
         self.apiClient = nil;
-        self.host = @"http://localhost:8081/";
+        self.host = @"http://squiggle-api.sitlabs.co.uk/";
         self.username = @"";
         self.password = @"";
         self.tempFolderPath = nil;
