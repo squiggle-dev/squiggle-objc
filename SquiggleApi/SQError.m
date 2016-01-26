@@ -2,6 +2,9 @@
 
 @implementation SQError
 
+@dynamic code;
+@dynamic detail;
+
 - (instancetype)init {
   self = [super init];
 

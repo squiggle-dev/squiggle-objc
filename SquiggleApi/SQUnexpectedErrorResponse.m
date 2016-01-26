@@ -2,6 +2,8 @@
 
 @implementation SQUnexpectedErrorResponse
 
+@dynamic errors;
+
 - (instancetype)init {
   self = [super init];
 

@@ -2,6 +2,15 @@
 
 @implementation SQGlobalTemplate
 
+@dynamic _id;
+@dynamic name;
+@dynamic _description;
+@dynamic thumbnail;
+@dynamic contentHtml;
+@dynamic contentPlaintext;
+@dynamic contentRichtext;
+@dynamic settings;
+
 - (instancetype)init {
   self = [super init];
 

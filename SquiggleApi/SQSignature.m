@@ -2,6 +2,10 @@
 
 @implementation SQSignature
 
+@dynamic plain;
+@dynamic rich;
+@dynamic html;
+
 - (instancetype)init {
   self = [super init];
 

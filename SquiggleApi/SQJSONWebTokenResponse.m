@@ -2,6 +2,9 @@
 
 @implementation SQJSONWebTokenResponse
 
+@dynamic data;
+@dynamic links;
+
 - (instancetype)init {
   self = [super init];
 

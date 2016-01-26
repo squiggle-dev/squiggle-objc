@@ -2,6 +2,11 @@
 
 @implementation SQResponseLinks
 
+@dynamic self;
+@dynamic related;
+@dynamic next;
+@dynamic last;
+
 - (instancetype)init {
   self = [super init];
 

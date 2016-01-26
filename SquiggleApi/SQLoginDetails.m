@@ -2,6 +2,9 @@
 
 @implementation SQLoginDetails
 
+@dynamic username;
+@dynamic password;
+
 - (instancetype)init {
   self = [super init];
 

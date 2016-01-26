@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
     s.summary          = "Squiggle API"
     s.description      = <<-DESC
-                         
+                         Objective C client for the Squiggle API
                          DESC
 
     s.ios.deployment_target = '6.0'
