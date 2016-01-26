@@ -15,6 +15,12 @@
 @interface SQSignature : SQObject
 
 
+@property(nonatomic) NSNumber* _id;
+
+@property(nonatomic) NSNumber* address;
+
+@property(nonatomic) NSNumber* template;
+
 @property(nonatomic) NSString* plain;
 
 @property(nonatomic) NSString* rich;
