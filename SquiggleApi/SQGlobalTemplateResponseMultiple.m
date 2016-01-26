@@ -19,7 +19,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data", @"links": @"links" }];
 }
 
 /**
@@ -29,7 +29,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"data"];
+  NSArray *optionalProperties = @[@"data", @"links"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

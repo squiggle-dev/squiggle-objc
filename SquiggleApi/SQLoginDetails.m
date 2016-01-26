@@ -1,6 +1,6 @@
-#import "SQAddressResponseMultiple.h"
+#import "SQLoginDetails.h"
 
-@implementation SQAddressResponseMultiple
+@implementation SQLoginDetails
 
 - (instancetype)init {
   self = [super init];
@@ -19,7 +19,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data", @"links": @"links" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"username": @"username", @"password": @"password" }];
 }
 
 /**
@@ -29,7 +29,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"data", @"links"];
+  NSArray *optionalProperties = @[@"username", @"password"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

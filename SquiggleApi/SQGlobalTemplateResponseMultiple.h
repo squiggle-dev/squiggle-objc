@@ -7,8 +7,9 @@
  * Do not edit the class manually.
  */
 
-#import "SQResponse.h"
 #import "SQGlobalTemplate.h"
+#import "SQResponse.h"
+#import "SQResponseLinks.h"
 
 
 @protocol SQGlobalTemplateResponseMultiple
@@ -18,5 +19,7 @@
 
 
 @property(nonatomic) NSArray<SQGlobalTemplate>* data;
+
+@property(nonatomic) SQResponseLinks* links;
 
 @end

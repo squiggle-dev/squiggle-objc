@@ -1,16 +1,23 @@
 #import "SQSquiggleApi.h"
 #import "SQQueryParamCollection.h"
+#import "SQLoginDetails.h"
 #import "SQJSONWebTokenResponse.h"
+#import "SQUnexpectedErrorResponse.h"
 #import "SQAddressResponseMultiple.h"
+#import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
 #import "SQGlobalTemplateResponseMultiple.h"
+#import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
 #import "SQSnippetResponseMultiple.h"
+#import "SQSnippet.h"
 #import "SQSnippetResponseSingle.h"
 #import "SQTemplateResponseMultiple.h"
 #import "SQTemplateResponseSingle.h"
+#import "SQTemplate.h"
 #import "SQUserResponseMultiple.h"
 #import "SQUserResponseSingle.h"
+#import "SQUser.h"
 
 
 @interface SQSquiggleApi ()
@@ -86,7 +93,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @returns SQJSONWebTokenResponse*
 ///
--(NSNumber*) requestAddressTokenWithCompletionBlock: (NSObject*) data
+-(NSNumber*) requestAddressTokenWithCompletionBlock: (SQLoginDetails*) data
         
         completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
         
@@ -130,7 +137,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[];
@@ -219,7 +226,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -258,7 +265,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @returns SQAddressResponseSingle*
 ///
--(NSNumber*) addAddressWithCompletionBlock: (NSObject*) data
+-(NSNumber*) addAddressWithCompletionBlock: (SQAddress*) data
         
         completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock { 
         
@@ -302,7 +309,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -388,7 +395,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -474,7 +481,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -516,7 +523,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///  @returns SQAddressResponseSingle*
 ///
 -(NSNumber*) editAddressWithCompletionBlock: (NSNumber*) _id
-         data: (NSObject*) data
+         data: (SQAddress*) data
         
         completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock { 
         
@@ -568,7 +575,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -657,7 +664,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -696,7 +703,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @returns SQGlobalTemplateResponseSingle*
 ///
--(NSNumber*) addGlobalTemplateWithCompletionBlock: (NSObject*) data
+-(NSNumber*) addGlobalTemplateWithCompletionBlock: (SQGlobalTemplate*) data
         
         completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock { 
         
@@ -740,7 +747,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -826,7 +833,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -912,7 +919,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -954,7 +961,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///  @returns SQGlobalTemplateResponseSingle*
 ///
 -(NSNumber*) editGlobalTemplateWithCompletionBlock: (NSNumber*) _id
-         data: (NSObject*) data
+         data: (SQGlobalTemplate*) data
         
         completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock { 
         
@@ -1006,7 +1013,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1095,7 +1102,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1134,7 +1141,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @returns SQSnippetResponseSingle*
 ///
--(NSNumber*) addSnippetWithCompletionBlock: (NSObject*) data
+-(NSNumber*) addSnippetWithCompletionBlock: (SQSnippet*) data
         
         completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock { 
         
@@ -1178,7 +1185,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1264,7 +1271,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1350,7 +1357,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1392,7 +1399,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///  @returns SQSnippetResponseSingle*
 ///
 -(NSNumber*) editSnippetWithCompletionBlock: (NSNumber*) _id
-         data: (NSObject*) data
+         data: (SQSnippet*) data
         
         completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock { 
         
@@ -1444,7 +1451,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1533,7 +1540,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1572,7 +1579,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @returns SQTemplateResponseSingle*
 ///
--(NSNumber*) addTemplateWithCompletionBlock: (NSObject*) data
+-(NSNumber*) addTemplateWithCompletionBlock: (SQTemplate*) data
         
         completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock { 
         
@@ -1616,7 +1623,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1702,7 +1709,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1788,7 +1795,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1830,7 +1837,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///  @returns SQTemplateResponseSingle*
 ///
 -(NSNumber*) editTemplateWithCompletionBlock: (NSNumber*) _id
-         data: (NSObject*) data
+         data: (SQTemplate*) data
         
         completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock { 
         
@@ -1882,7 +1889,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1971,7 +1978,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2010,7 +2017,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///
 ///  @returns SQUserResponseSingle*
 ///
--(NSNumber*) addUserWithCompletionBlock: (NSObject*) data
+-(NSNumber*) addUserWithCompletionBlock: (SQUser*) data
         
         completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock { 
         
@@ -2054,7 +2061,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2140,7 +2147,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2226,7 +2233,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2268,7 +2275,7 @@ static SQSquiggleApi* singletonAPI = nil;
 ///  @returns SQUserResponseSingle*
 ///
 -(NSNumber*) editUserWithCompletionBlock: (NSNumber*) _id
-         data: (NSObject*) data
+         data: (SQUser*) data
         
         completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock { 
         
@@ -2320,7 +2327,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];

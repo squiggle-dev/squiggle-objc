@@ -8,6 +8,7 @@
  */
 
 #import "SQResponse.h"
+#import "SQResponseLinks.h"
 #import "SQSnippet.h"
 
 
@@ -18,5 +19,7 @@
 
 
 @property(nonatomic) NSArray<SQSnippet>* data;
+
+@property(nonatomic) SQResponseLinks* links;
 
 @end

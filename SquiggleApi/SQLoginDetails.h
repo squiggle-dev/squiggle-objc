@@ -7,15 +7,16 @@
  * Do not edit the class manually.
  */
 
-#import "SQError.h"
 
 
-@protocol SQUnexpectedErrorResponse
+@protocol SQLoginDetails
 @end
 
-@interface SQUnexpectedErrorResponse : SQObject
+@interface SQLoginDetails : SQObject
 
 
-@property(nonatomic) NSArray<SQError>* errors;
+@property(nonatomic) NSString* username;
+
+@property(nonatomic) NSString* password;
 
 @end

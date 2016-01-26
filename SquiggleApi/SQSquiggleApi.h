@@ -1,15 +1,22 @@
 #import <Foundation/Foundation.h>
+#import "SQLoginDetails.h"
 #import "SQJSONWebTokenResponse.h"
+#import "SQUnexpectedErrorResponse.h"
 #import "SQAddressResponseMultiple.h"
+#import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
 #import "SQGlobalTemplateResponseMultiple.h"
+#import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
 #import "SQSnippetResponseMultiple.h"
+#import "SQSnippet.h"
 #import "SQSnippetResponseSingle.h"
 #import "SQTemplateResponseMultiple.h"
 #import "SQTemplateResponseSingle.h"
+#import "SQTemplate.h"
 #import "SQUserResponseMultiple.h"
 #import "SQUserResponseSingle.h"
+#import "SQUser.h"
 #import "SQObject.h"
 #import "SQApiClient.h"
 
@@ -38,7 +45,7 @@
 /// 
 ///
 /// @return SQJSONWebTokenResponse*
--(NSNumber*) requestAddressTokenWithCompletionBlock :(NSObject*) data 
+-(NSNumber*) requestAddressTokenWithCompletionBlock :(SQLoginDetails*) data 
     
     completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
     
@@ -70,7 +77,7 @@
 /// 
 ///
 /// @return SQAddressResponseSingle*
--(NSNumber*) addAddressWithCompletionBlock :(NSObject*) data 
+-(NSNumber*) addAddressWithCompletionBlock :(SQAddress*) data 
     
     completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
     
@@ -117,7 +124,7 @@
 ///
 /// @return SQAddressResponseSingle*
 -(NSNumber*) editAddressWithCompletionBlock :(NSNumber*) _id 
-     data:(NSObject*) data 
+     data:(SQAddress*) data 
     
     completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
     
@@ -149,7 +156,7 @@
 /// 
 ///
 /// @return SQGlobalTemplateResponseSingle*
--(NSNumber*) addGlobalTemplateWithCompletionBlock :(NSObject*) data 
+-(NSNumber*) addGlobalTemplateWithCompletionBlock :(SQGlobalTemplate*) data 
     
     completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock;
     
@@ -196,7 +203,7 @@
 ///
 /// @return SQGlobalTemplateResponseSingle*
 -(NSNumber*) editGlobalTemplateWithCompletionBlock :(NSNumber*) _id 
-     data:(NSObject*) data 
+     data:(SQGlobalTemplate*) data 
     
     completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error))completionBlock;
     
@@ -228,7 +235,7 @@
 /// 
 ///
 /// @return SQSnippetResponseSingle*
--(NSNumber*) addSnippetWithCompletionBlock :(NSObject*) data 
+-(NSNumber*) addSnippetWithCompletionBlock :(SQSnippet*) data 
     
     completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock;
     
@@ -275,7 +282,7 @@
 ///
 /// @return SQSnippetResponseSingle*
 -(NSNumber*) editSnippetWithCompletionBlock :(NSNumber*) _id 
-     data:(NSObject*) data 
+     data:(SQSnippet*) data 
     
     completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error))completionBlock;
     
@@ -307,7 +314,7 @@
 /// 
 ///
 /// @return SQTemplateResponseSingle*
--(NSNumber*) addTemplateWithCompletionBlock :(NSObject*) data 
+-(NSNumber*) addTemplateWithCompletionBlock :(SQTemplate*) data 
     
     completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock;
     
@@ -354,7 +361,7 @@
 ///
 /// @return SQTemplateResponseSingle*
 -(NSNumber*) editTemplateWithCompletionBlock :(NSNumber*) _id 
-     data:(NSObject*) data 
+     data:(SQTemplate*) data 
     
     completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock;
     
@@ -386,7 +393,7 @@
 /// 
 ///
 /// @return SQUserResponseSingle*
--(NSNumber*) addUserWithCompletionBlock :(NSObject*) data 
+-(NSNumber*) addUserWithCompletionBlock :(SQUser*) data 
     
     completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock;
     
@@ -433,7 +440,7 @@
 ///
 /// @return SQUserResponseSingle*
 -(NSNumber*) editUserWithCompletionBlock :(NSNumber*) _id 
-     data:(NSObject*) data 
+     data:(SQUser*) data 
     
     completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error))completionBlock;
     

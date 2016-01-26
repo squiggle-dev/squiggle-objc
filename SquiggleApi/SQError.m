@@ -1,6 +1,6 @@
-#import "SQAddressResponseMultiple.h"
+#import "SQError.h"
 
-@implementation SQAddressResponseMultiple
+@implementation SQError
 
 - (instancetype)init {
   self = [super init];
@@ -19,7 +19,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data", @"links": @"links" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"code": @"code", @"detail": @"detail" }];
 }
 
 /**
@@ -29,7 +29,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"data", @"links"];
+  NSArray *optionalProperties = @[];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
