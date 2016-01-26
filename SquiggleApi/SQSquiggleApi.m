@@ -190,11 +190,11 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if(offset != nil) {
+    if (offset != nil) {
         
         queryParams[@"offset"] = offset;
     }
-    if(limit != nil) {
+    if (limit != nil) {
         
         queryParams[@"limit"] = limit;
     }
@@ -628,11 +628,11 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if(offset != nil) {
+    if (offset != nil) {
         
         queryParams[@"offset"] = offset;
     }
-    if(limit != nil) {
+    if (limit != nil) {
         
         queryParams[@"limit"] = limit;
     }
@@ -1066,11 +1066,11 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if(offset != nil) {
+    if (offset != nil) {
         
         queryParams[@"offset"] = offset;
     }
-    if(limit != nil) {
+    if (limit != nil) {
         
         queryParams[@"limit"] = limit;
     }
@@ -1504,11 +1504,11 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if(offset != nil) {
+    if (offset != nil) {
         
         queryParams[@"offset"] = offset;
     }
-    if(limit != nil) {
+    if (limit != nil) {
         
         queryParams[@"limit"] = limit;
     }
@@ -1942,11 +1942,11 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    if(offset != nil) {
+    if (offset != nil) {
         
         queryParams[@"offset"] = offset;
     }
-    if(limit != nil) {
+    if (limit != nil) {
         
         queryParams[@"limit"] = limit;
     }

@@ -112,7 +112,7 @@
                        @"type": @"api_key",
                        @"in": @"header",
                        @"key": @"Authorization",
-                       @"value": [self getApiKeyWithPrefix:@"jwt"]
+                       @"value": [self getApiKeyWithPrefix:@"Authorization"]
                    },
                };
 }
