@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import "SQLoginDetails.h"
-#import "SQJSONWebTokenResponse.h"
-#import "SQUnexpectedErrorResponse.h"
 #import "SQAddressResponseMultiple.h"
+#import "SQUnexpectedErrorResponse.h"
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
+#import "SQLoginDetails.h"
+#import "SQJSONWebTokenResponse.h"
 #import "SQFileResponseMultiple.h"
 #import "SQFileResponseSingle.h"
 #import "SQFileObject.h"
@@ -39,21 +39,6 @@
 -(unsigned long) requestQueueSize;
 +(SQSquiggleApi*) apiWithHeader:(NSString*)headerValue key:(NSString*)key;
 +(SQSquiggleApi*) sharedAPI;
-///
-///
-/// 
-/// Request JWT for Address
-///
-/// @param data 
-/// 
-///
-/// @return SQJSONWebTokenResponse*
--(NSNumber*) requestAddressTokenWithCompletionBlock :(SQLoginDetails*) data 
-    
-    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
-    
-
-
 ///
 ///
 /// 
@@ -130,6 +115,21 @@
      data:(SQAddress*) data 
     
     completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Request JWT for Address
+///
+/// @param data 
+/// 
+///
+/// @return SQJSONWebTokenResponse*
+-(NSNumber*) requestAddressTokenWithCompletionBlock :(SQLoginDetails*) data 
+    
+    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
     
 
 

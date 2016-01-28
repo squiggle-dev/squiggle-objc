@@ -1,11 +1,11 @@
 #import "SQSquiggleApi.h"
 #import "SQQueryParamCollection.h"
-#import "SQLoginDetails.h"
-#import "SQJSONWebTokenResponse.h"
-#import "SQUnexpectedErrorResponse.h"
 #import "SQAddressResponseMultiple.h"
+#import "SQUnexpectedErrorResponse.h"
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
+#import "SQLoginDetails.h"
+#import "SQJSONWebTokenResponse.h"
 #import "SQFileResponseMultiple.h"
 #import "SQFileResponseSingle.h"
 #import "SQFileObject.h"
@@ -91,89 +91,6 @@ static SQSquiggleApi* singletonAPI = nil;
 
 ///
 /// 
-/// Request JWT for Address
-///  @param data 
-///
-///  @returns SQJSONWebTokenResponse*
-///
--(NSNumber*) requestAddressTokenWithCompletionBlock: (SQLoginDetails*) data
-        
-        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
-        
-
-    
-    // verify the required parameter 'data' is set
-    if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `requestAddressToken`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/authentication/address"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = data;
-    
-
-    
-    return [self.apiClient requestWithCompletionBlock: resourcePath
-                                               method: @"POST"
-                                           pathParams: pathParams
-                                          queryParams: queryParams
-                                           formParams: formParams
-                                                files: files
-                                                 body: bodyParam
-                                         headerParams: headerParams
-                                         authSettings: authSettings
-                                   requestContentType: requestContentType
-                                  responseContentType: responseContentType
-                                         responseType: @"SQJSONWebTokenResponse*"
-                                      completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((SQJSONWebTokenResponse*)data, error);
-              }
-          ];
-}
-
-///
-/// 
 /// Gets addresses
 ///  @param offset The start offset of the result set
 ///
@@ -189,7 +106,7 @@ static SQSquiggleApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -280,7 +197,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -363,7 +280,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -449,7 +366,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -543,7 +460,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/addresses/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -612,6 +529,89 @@ static SQSquiggleApi* singletonAPI = nil;
 
 ///
 /// 
+/// Request JWT for Address
+///  @param data 
+///
+///  @returns SQJSONWebTokenResponse*
+///
+-(NSNumber*) requestAddressTokenWithCompletionBlock: (SQLoginDetails*) data
+        
+        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `requestAddressToken`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/authentication/address"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = data;
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQJSONWebTokenResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQJSONWebTokenResponse*)data, error);
+              }
+          ];
+}
+
+///
+/// 
 /// Gets files
 ///  @param offset The start offset of the result set
 ///
@@ -627,7 +627,7 @@ static SQSquiggleApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/files"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -718,7 +718,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/files"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -805,7 +805,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/files/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -891,7 +891,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/files/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -985,7 +985,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/files/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1069,7 +1069,7 @@ static SQSquiggleApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1160,7 +1160,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1243,7 +1243,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1329,7 +1329,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1423,7 +1423,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/global-templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1507,7 +1507,7 @@ static SQSquiggleApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1598,7 +1598,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1681,7 +1681,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1767,7 +1767,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1861,7 +1861,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/snippets/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -1945,7 +1945,7 @@ static SQSquiggleApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2036,7 +2036,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2119,7 +2119,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2205,7 +2205,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2299,7 +2299,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/templates/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2383,7 +2383,7 @@ static SQSquiggleApi* singletonAPI = nil;
 
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2474,7 +2474,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2557,7 +2557,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2643,7 +2643,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
@@ -2737,7 +2737,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
     
 
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/users/{id}"];
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users/{id}"];
 
     // remove format in URL if needed
     if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
