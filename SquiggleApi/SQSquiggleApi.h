@@ -5,6 +5,9 @@
 #import "SQAddressResponseMultiple.h"
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
+#import "SQFileResponseMultiple.h"
+#import "SQFileResponseSingle.h"
+#import "SQFileObject.h"
 #import "SQGlobalTemplateResponseMultiple.h"
 #import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
@@ -127,6 +130,85 @@
      data:(SQAddress*) data 
     
     completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Gets files
+///
+/// @param offset The start offset of the result set
+/// @param limit Max records to return
+/// 
+///
+/// @return SQFileResponseMultiple*
+-(NSNumber*) findFilesWithCompletionBlock :(NSNumber*) offset 
+     limit:(NSNumber*) limit 
+    
+    completionHandler: (void (^)(SQFileResponseMultiple* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Upload a new file
+///
+/// @param file 
+/// 
+///
+/// @return SQFileResponseSingle*
+-(NSNumber*) addFileWithCompletionBlock :(NSURL*) file 
+    
+    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Gets a file with the specified ID
+///
+/// @param _id ID of file to get
+/// 
+///
+/// @return SQFileResponseSingle*
+-(NSNumber*) getFileWithCompletionBlock :(NSNumber*) _id 
+    
+    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Deletes a file with the specified ID
+///
+/// @param _id ID of file to delete
+/// 
+///
+/// @return 
+-(NSNumber*) deleteFileWithCompletionBlock :(NSNumber*) _id 
+    
+    
+    completionHandler: (void (^)(NSError* error))completionBlock;
+
+
+///
+///
+/// 
+/// Updates an existing file with the specified ID
+///
+/// @param _id ID of file to update
+/// @param data 
+/// 
+///
+/// @return SQFileResponseSingle*
+-(NSNumber*) editFileWithCompletionBlock :(NSNumber*) _id 
+     data:(SQFileObject*) data 
+    
+    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock;
     
 
 

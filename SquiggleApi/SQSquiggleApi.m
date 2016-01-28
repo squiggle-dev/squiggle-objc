@@ -6,6 +6,9 @@
 #import "SQAddressResponseMultiple.h"
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
+#import "SQFileResponseMultiple.h"
+#import "SQFileResponseSingle.h"
+#import "SQFileObject.h"
 #import "SQGlobalTemplateResponseMultiple.h"
 #import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
@@ -603,6 +606,448 @@ static SQSquiggleApi* singletonAPI = nil;
                                       completionBlock: ^(id data, NSError *error) {
                   
                   completionBlock((SQAddressResponseSingle*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Gets files
+///  @param offset The start offset of the result set
+///
+///  @param limit Max records to return
+///
+///  @returns SQFileResponseMultiple*
+///
+-(NSNumber*) findFilesWithCompletionBlock: (NSNumber*) offset
+         limit: (NSNumber*) limit
+        
+        completionHandler: (void (^)(SQFileResponseMultiple* output, NSError* error))completionBlock { 
+        
+
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (offset != nil) {
+        
+        queryParams[@"offset"] = offset;
+    }
+    if (limit != nil) {
+        
+        queryParams[@"limit"] = limit;
+    }
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQFileResponseMultiple*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQFileResponseMultiple*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Upload a new file
+///  @param file 
+///
+///  @returns SQFileResponseSingle*
+///
+-(NSNumber*) addFileWithCompletionBlock: (NSURL*) file
+        
+        completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'file' is set
+    if (file == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `file` when calling `addFile`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"multipart/form-data"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    files[@"file"] = file;
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQFileResponseSingle*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQFileResponseSingle*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Gets a file with the specified ID
+///  @param _id ID of file to get
+///
+///  @returns SQFileResponseSingle*
+///
+-(NSNumber*) getFileWithCompletionBlock: (NSNumber*) _id
+        
+        completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `getFile`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"GET"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQFileResponseSingle*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQFileResponseSingle*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Deletes a file with the specified ID
+///  @param _id ID of file to delete
+///
+///  @returns void
+///
+-(NSNumber*) deleteFileWithCompletionBlock: (NSNumber*) _id
+        
+        
+        completionHandler: (void (^)(NSError* error))completionBlock { 
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `deleteFile`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"DELETE"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: nil
+                                      completionBlock: ^(id data, NSError *error) {
+                  completionBlock(error);
+                  
+              }
+          ];
+}
+
+///
+/// 
+/// Updates an existing file with the specified ID
+///  @param _id ID of file to update
+///
+///  @param data 
+///
+///  @returns SQFileResponseSingle*
+///
+-(NSNumber*) editFileWithCompletionBlock: (NSNumber*) _id
+         data: (SQFileObject*) data
+        
+        completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `editFile`"];
+    }
+    
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `editFile`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/v1/files/{id}"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = data;
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"PATCH"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQFileResponseSingle*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQFileResponseSingle*)data, error);
               }
           ];
 }
