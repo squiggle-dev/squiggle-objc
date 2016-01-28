@@ -131,7 +131,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -146,7 +146,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -214,7 +214,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -229,7 +229,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -300,7 +300,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -315,7 +315,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -386,7 +386,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -401,7 +401,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -480,7 +480,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -495,7 +495,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -563,7 +563,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -578,7 +578,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[];
@@ -652,7 +652,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -667,7 +667,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -735,7 +735,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -825,7 +825,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -840,7 +840,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -911,7 +911,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -926,7 +926,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1005,7 +1005,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1020,7 +1020,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1094,7 +1094,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1109,7 +1109,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1177,7 +1177,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1192,7 +1192,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1263,7 +1263,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1278,7 +1278,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1349,7 +1349,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1364,7 +1364,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1443,7 +1443,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1458,7 +1458,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1532,7 +1532,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1547,7 +1547,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1615,7 +1615,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1630,7 +1630,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1701,7 +1701,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1716,7 +1716,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1787,7 +1787,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1802,7 +1802,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1881,7 +1881,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1896,7 +1896,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1970,7 +1970,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -1985,7 +1985,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2053,7 +2053,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2068,7 +2068,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2139,7 +2139,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2154,7 +2154,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2225,7 +2225,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2240,7 +2240,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2319,7 +2319,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2334,7 +2334,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2408,7 +2408,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2423,7 +2423,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2491,7 +2491,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2506,7 +2506,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2577,7 +2577,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2592,7 +2592,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2663,7 +2663,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2678,7 +2678,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -2757,7 +2757,7 @@ static SQSquiggleApi* singletonAPI = nil;
     
 
     // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/vnd.api+json"]];
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
     if ([headerParams[@"Accept"] length] == 0) {
         [headerParams removeObjectForKey:@"Accept"];
     }
@@ -2772,7 +2772,7 @@ static SQSquiggleApi* singletonAPI = nil;
     }
 
     // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/vnd.api+json"]];
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
