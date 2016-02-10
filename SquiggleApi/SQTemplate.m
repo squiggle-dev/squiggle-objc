@@ -11,7 +11,7 @@
 @dynamic contentRichtext;
 @dynamic settings;
 @dynamic user;
-@dynamic template;
+@dynamic globalTemplate;
 
 - (instancetype)init {
   self = [super init];
@@ -30,7 +30,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"description": @"_description", @"thumbnail": @"thumbnail", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"content_richtext": @"contentRichtext", @"settings": @"settings", @"user": @"user", @"template": @"template" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"description": @"_description", @"thumbnail": @"thumbnail", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"content_richtext": @"contentRichtext", @"settings": @"settings", @"user": @"user", @"global_template": @"globalTemplate" }];
 }
 
 /**
@@ -40,7 +40,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"name", @"_description", @"thumbnail", @"contentHtml", @"contentPlaintext", @"contentRichtext", @"settings", @"user", @"template"];
+  NSArray *optionalProperties = @[@"_id", @"name", @"_description", @"thumbnail", @"contentHtml", @"contentPlaintext", @"contentRichtext", @"settings", @"user", @"globalTemplate"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

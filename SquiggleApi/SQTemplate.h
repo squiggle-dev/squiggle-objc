@@ -33,6 +33,6 @@
 
 @property(nonatomic) NSNumber* user;
 
-@property(nonatomic) NSNumber* template;
+@property(nonatomic) NSNumber* globalTemplate;
 
 @end

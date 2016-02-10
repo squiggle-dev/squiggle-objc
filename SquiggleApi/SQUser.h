@@ -39,6 +39,10 @@
 
 @property(nonatomic) NSString* addressCountry;
 
+@property(nonatomic) NSString* website;
+
+@property(nonatomic) NSString* tel;
+
 @property(nonatomic) NSString* linkedin;
 
 @property(nonatomic) NSString* facebook;
