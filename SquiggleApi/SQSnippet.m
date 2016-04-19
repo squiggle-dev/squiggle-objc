@@ -3,11 +3,12 @@
 @implementation SQSnippet
 
 @dynamic _id;
+@dynamic user;
 @dynamic contentHtml;
 @dynamic contentPlaintext;
-@dynamic contentRichtext;
-@dynamic thumbnail;
-@dynamic user;
+@dynamic image;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 - (instancetype)init {
   self = [super init];
@@ -26,7 +27,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"content_richtext": @"contentRichtext", @"thumbnail": @"thumbnail", @"user": @"user" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"user": @"user", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"image": @"image", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
 }
 
 /**
@@ -36,7 +37,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"contentHtml", @"contentPlaintext", @"contentRichtext", @"thumbnail", @"user"];
+  NSArray *optionalProperties = @[@"_id", @"user", @"contentHtml", @"contentPlaintext", @"image", @"createdAt", @"updatedAt"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

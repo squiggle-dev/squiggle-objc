@@ -17,6 +17,8 @@
 @dynamic googleplus;
 @dynamic signatures;
 @dynamic user;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 - (instancetype)init {
   self = [super init];
@@ -35,7 +37,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"email": @"email", @"password": @"password", @"first_name": @"firstName", @"last_name": @"lastName", @"job_title": @"jobTitle", @"tel_mobile": @"telMobile", @"tel_direct": @"telDirect", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"signatures": @"signatures", @"user": @"user" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"email": @"email", @"password": @"password", @"first_name": @"firstName", @"last_name": @"lastName", @"job_title": @"jobTitle", @"tel_mobile": @"telMobile", @"tel_direct": @"telDirect", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"signatures": @"signatures", @"user": @"user", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
 }
 
 /**
@@ -45,7 +47,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"email", @"password", @"firstName", @"lastName", @"jobTitle", @"telMobile", @"telDirect", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"signatures", @"user"];
+  NSArray *optionalProperties = @[@"_id", @"email", @"password", @"firstName", @"lastName", @"jobTitle", @"telMobile", @"telDirect", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"signatures", @"user", @"createdAt", @"updatedAt"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

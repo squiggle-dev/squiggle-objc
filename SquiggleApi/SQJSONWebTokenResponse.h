@@ -8,18 +8,14 @@
  */
 
 #import "SQJSONWebToken.h"
-#import "SQResponse.h"
-#import "SQResponseLinks.h"
 
 
 @protocol SQJSONWebTokenResponse
 @end
 
-@interface SQJSONWebTokenResponse : SQResponse
+@interface SQJSONWebTokenResponse : SQObject
 
 
 @property(nonatomic) SQJSONWebToken* data;
-
-@property(nonatomic) SQResponseLinks* links;
 
 @end

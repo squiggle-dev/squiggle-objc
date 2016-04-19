@@ -3,8 +3,6 @@
 #import "SQUnexpectedErrorResponse.h"
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
-#import "SQLoginDetails.h"
-#import "SQJSONWebTokenResponse.h"
 #import "SQFileResponseMultiple.h"
 #import "SQFileResponseSingle.h"
 #import "SQFileObject.h"
@@ -17,6 +15,8 @@
 #import "SQTemplateResponseMultiple.h"
 #import "SQTemplateResponseSingle.h"
 #import "SQTemplate.h"
+#import "SQLoginDetails.h"
+#import "SQJSONWebTokenResponse.h"
 #import "SQUserResponseMultiple.h"
 #import "SQUserResponseSingle.h"
 #import "SQUser.h"
@@ -115,21 +115,6 @@
      data:(SQAddress*) data 
     
     completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error))completionBlock;
-    
-
-
-///
-///
-/// 
-/// Request JWT for Address
-///
-/// @param data 
-/// 
-///
-/// @return SQJSONWebTokenResponse*
--(NSNumber*) requestAddressTokenWithCompletionBlock :(SQLoginDetails*) data 
-    
-    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
     
 
 
@@ -446,6 +431,36 @@
      data:(SQTemplate*) data 
     
     completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Request JWT for Address
+///
+/// @param data 
+/// 
+///
+/// @return SQJSONWebTokenResponse*
+-(NSNumber*) getAddressTokenWithCompletionBlock :(SQLoginDetails*) data 
+    
+    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
+    
+
+
+///
+///
+/// 
+/// Request JWT for User
+///
+/// @param data 
+/// 
+///
+/// @return SQJSONWebTokenResponse*
+-(NSNumber*) getUserTokenWithCompletionBlock :(SQLoginDetails*) data 
+    
+    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock;
     
 
 

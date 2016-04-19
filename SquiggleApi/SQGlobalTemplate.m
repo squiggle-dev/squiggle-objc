@@ -8,8 +8,9 @@
 @dynamic thumbnail;
 @dynamic contentHtml;
 @dynamic contentPlaintext;
-@dynamic contentRichtext;
 @dynamic settings;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 - (instancetype)init {
   self = [super init];
@@ -28,7 +29,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"description": @"_description", @"thumbnail": @"thumbnail", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"content_richtext": @"contentRichtext", @"settings": @"settings" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"description": @"_description", @"thumbnail": @"thumbnail", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"settings": @"settings", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
 }
 
 /**
@@ -38,7 +39,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"name", @"_description", @"thumbnail", @"contentHtml", @"contentPlaintext", @"contentRichtext", @"settings"];
+  NSArray *optionalProperties = @[@"_id", @"name", @"_description", @"thumbnail", @"contentHtml", @"contentPlaintext", @"settings", @"createdAt", @"updatedAt"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

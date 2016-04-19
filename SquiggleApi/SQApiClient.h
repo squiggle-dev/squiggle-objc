@@ -28,8 +28,6 @@
 #import "SQResponse.h"
 #import "SQResponseLinks.h"
 #import "SQSignature.h"
-#import "SQSignatureResponseSingle.h"
-#import "SQSignatureResponseMultiple.h"
 #import "SQSnippet.h"
 #import "SQSnippetResponseSingle.h"
 #import "SQSnippetResponseMultiple.h"

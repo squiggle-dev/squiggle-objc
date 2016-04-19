@@ -17,14 +17,16 @@
 
 @property(nonatomic) NSNumber* _id;
 
+@property(nonatomic) NSNumber* user;
+
 @property(nonatomic) NSString* contentHtml;
 
 @property(nonatomic) NSString* contentPlaintext;
 
-@property(nonatomic) NSString* contentRichtext;
+@property(nonatomic) NSNumber* image;
 
-@property(nonatomic) NSString* thumbnail;
+@property(nonatomic) NSDate* createdAt;
 
-@property(nonatomic) NSNumber* user;
+@property(nonatomic) NSDate* updatedAt;
 
 @end

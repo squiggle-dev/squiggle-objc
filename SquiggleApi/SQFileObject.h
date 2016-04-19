@@ -23,4 +23,8 @@
 
 @property(nonatomic) NSNumber* size;
 
+@property(nonatomic) NSDate* createdAt;
+
+@property(nonatomic) NSDate* updatedAt;
+
 @end

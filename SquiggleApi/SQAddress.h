@@ -46,4 +46,8 @@
 
 @property(nonatomic) NSNumber* user;
 
+@property(nonatomic) NSDate* createdAt;
+
+@property(nonatomic) NSDate* updatedAt;
+
 @end

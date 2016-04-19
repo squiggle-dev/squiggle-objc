@@ -17,22 +17,24 @@
 
 @property(nonatomic) NSNumber* _id;
 
+@property(nonatomic) NSNumber* user;
+
+@property(nonatomic) NSNumber* globalTemplate;
+
 @property(nonatomic) NSString* name;
 
 @property(nonatomic) NSString* _description;
-
-@property(nonatomic) NSString* thumbnail;
 
 @property(nonatomic) NSString* contentHtml;
 
 @property(nonatomic) NSString* contentPlaintext;
 
-@property(nonatomic) NSString* contentRichtext;
+@property(nonatomic) NSNumber* thumbnail;
 
 @property(nonatomic) NSString* settings;
 
-@property(nonatomic) NSNumber* user;
+@property(nonatomic) NSDate* createdAt;
 
-@property(nonatomic) NSNumber* globalTemplate;
+@property(nonatomic) NSDate* updatedAt;
 
 @end

@@ -21,14 +21,16 @@
 
 @property(nonatomic) NSString* _description;
 
-@property(nonatomic) NSString* thumbnail;
+@property(nonatomic) NSNumber* thumbnail;
 
 @property(nonatomic) NSString* contentHtml;
 
 @property(nonatomic) NSString* contentPlaintext;
 
-@property(nonatomic) NSString* contentRichtext;
-
 @property(nonatomic) NSString* settings;
+
+@property(nonatomic) NSDate* createdAt;
+
+@property(nonatomic) NSDate* updatedAt;
 
 @end

@@ -4,8 +4,6 @@
 #import "SQUnexpectedErrorResponse.h"
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
-#import "SQLoginDetails.h"
-#import "SQJSONWebTokenResponse.h"
 #import "SQFileResponseMultiple.h"
 #import "SQFileResponseSingle.h"
 #import "SQFileObject.h"
@@ -18,6 +16,8 @@
 #import "SQTemplateResponseMultiple.h"
 #import "SQTemplateResponseSingle.h"
 #import "SQTemplate.h"
+#import "SQLoginDetails.h"
+#import "SQJSONWebTokenResponse.h"
 #import "SQUserResponseMultiple.h"
 #import "SQUserResponseSingle.h"
 #import "SQUser.h"
@@ -523,89 +523,6 @@ static SQSquiggleApi* singletonAPI = nil;
                                       completionBlock: ^(id data, NSError *error) {
                   
                   completionBlock((SQAddressResponseSingle*)data, error);
-              }
-          ];
-}
-
-///
-/// 
-/// Request JWT for Address
-///  @param data 
-///
-///  @returns SQJSONWebTokenResponse*
-///
--(NSNumber*) requestAddressTokenWithCompletionBlock: (SQLoginDetails*) data
-        
-        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
-        
-
-    
-    // verify the required parameter 'data' is set
-    if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `requestAddressToken`"];
-    }
-    
-
-    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/authentication/address"];
-
-    // remove format in URL if needed
-    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
-        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
-    }
-
-    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
-    
-
-    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
-    
-    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
-
-    
-
-    // HTTP header `Accept`
-    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
-    if ([headerParams[@"Accept"] length] == 0) {
-        [headerParams removeObjectForKey:@"Accept"];
-    }
-
-    // response content type
-    NSString *responseContentType;
-    if ([headerParams objectForKey:@"Accept"]) {
-        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
-    }
-    else {
-        responseContentType = @"";
-    }
-
-    // request content type
-    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
-
-    // Authentication setting
-    NSArray *authSettings = @[];
-
-    id bodyParam = nil;
-    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
-    
-    bodyParam = data;
-    
-
-    
-    return [self.apiClient requestWithCompletionBlock: resourcePath
-                                               method: @"POST"
-                                           pathParams: pathParams
-                                          queryParams: queryParams
-                                           formParams: formParams
-                                                files: files
-                                                 body: bodyParam
-                                         headerParams: headerParams
-                                         authSettings: authSettings
-                                   requestContentType: requestContentType
-                                  responseContentType: responseContentType
-                                         responseType: @"SQJSONWebTokenResponse*"
-                                      completionBlock: ^(id data, NSError *error) {
-                  
-                  completionBlock((SQJSONWebTokenResponse*)data, error);
               }
           ];
 }
@@ -2362,6 +2279,172 @@ static SQSquiggleApi* singletonAPI = nil;
                                       completionBlock: ^(id data, NSError *error) {
                   
                   completionBlock((SQTemplateResponseSingle*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Request JWT for Address
+///  @param data 
+///
+///  @returns SQJSONWebTokenResponse*
+///
+-(NSNumber*) getAddressTokenWithCompletionBlock: (SQLoginDetails*) data
+        
+        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `getAddressToken`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/token/address"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = data;
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQJSONWebTokenResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQJSONWebTokenResponse*)data, error);
+              }
+          ];
+}
+
+///
+/// 
+/// Request JWT for User
+///  @param data 
+///
+///  @returns SQJSONWebTokenResponse*
+///
+-(NSNumber*) getUserTokenWithCompletionBlock: (SQLoginDetails*) data
+        
+        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error))completionBlock { 
+        
+
+    
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `getUserToken`"];
+    }
+    
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/token/user"];
+
+    // remove format in URL if needed
+    if ([resourcePath rangeOfString:@".{format}"].location != NSNotFound) {
+        [resourcePath replaceCharactersInRange: [resourcePath rangeOfString:@".{format}"] withString:@".json"];
+    }
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.defaultHeaders];
+
+    
+
+    // HTTP header `Accept`
+    headerParams[@"Accept"] = [SQApiClient selectHeaderAccept:@[@"application/json"]];
+    if ([headerParams[@"Accept"] length] == 0) {
+        [headerParams removeObjectForKey:@"Accept"];
+    }
+
+    // response content type
+    NSString *responseContentType;
+    if ([headerParams objectForKey:@"Accept"]) {
+        responseContentType = [headerParams[@"Accept"] componentsSeparatedByString:@", "][0];
+    }
+    else {
+        responseContentType = @"";
+    }
+
+    // request content type
+    NSString *requestContentType = [SQApiClient selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
+    
+    bodyParam = data;
+    
+
+    
+    return [self.apiClient requestWithCompletionBlock: resourcePath
+                                               method: @"POST"
+                                           pathParams: pathParams
+                                          queryParams: queryParams
+                                           formParams: formParams
+                                                files: files
+                                                 body: bodyParam
+                                         headerParams: headerParams
+                                         authSettings: authSettings
+                                   requestContentType: requestContentType
+                                  responseContentType: responseContentType
+                                         responseType: @"SQJSONWebTokenResponse*"
+                                      completionBlock: ^(id data, NSError *error) {
+                  
+                  completionBlock((SQJSONWebTokenResponse*)data, error);
               }
           ];
 }

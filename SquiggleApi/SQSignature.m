@@ -3,10 +3,8 @@
 @implementation SQSignature
 
 @dynamic _id;
-@dynamic address;
 @dynamic template;
 @dynamic plain;
-@dynamic rich;
 @dynamic html;
 
 - (instancetype)init {
@@ -26,7 +24,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"address": @"address", @"template": @"template", @"plain": @"plain", @"rich": @"rich", @"html": @"html" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"template": @"template", @"plain": @"plain", @"html": @"html" }];
 }
 
 /**
@@ -36,7 +34,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"address", @"template", @"plain", @"rich", @"html"];
+  NSArray *optionalProperties = @[@"_id", @"template", @"plain", @"html"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

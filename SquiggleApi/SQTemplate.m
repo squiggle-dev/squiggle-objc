@@ -3,15 +3,16 @@
 @implementation SQTemplate
 
 @dynamic _id;
-@dynamic name;
-@dynamic _description;
-@dynamic thumbnail;
-@dynamic contentHtml;
-@dynamic contentPlaintext;
-@dynamic contentRichtext;
-@dynamic settings;
 @dynamic user;
 @dynamic globalTemplate;
+@dynamic name;
+@dynamic _description;
+@dynamic contentHtml;
+@dynamic contentPlaintext;
+@dynamic thumbnail;
+@dynamic settings;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 - (instancetype)init {
   self = [super init];
@@ -30,7 +31,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"description": @"_description", @"thumbnail": @"thumbnail", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"content_richtext": @"contentRichtext", @"settings": @"settings", @"user": @"user", @"global_template": @"globalTemplate" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"user": @"user", @"global_template": @"globalTemplate", @"name": @"name", @"description": @"_description", @"content_html": @"contentHtml", @"content_plaintext": @"contentPlaintext", @"thumbnail": @"thumbnail", @"settings": @"settings", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
 }
 
 /**
@@ -40,7 +41,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"name", @"_description", @"thumbnail", @"contentHtml", @"contentPlaintext", @"contentRichtext", @"settings", @"user", @"globalTemplate"];
+  NSArray *optionalProperties = @[@"_id", @"user", @"globalTemplate", @"name", @"_description", @"contentHtml", @"contentPlaintext", @"thumbnail", @"settings", @"createdAt", @"updatedAt"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -53,6 +53,12 @@
 
 @property(nonatomic) NSString* googleplus;
 
+@property(nonatomic) NSNumber* logo;
+
 @property(nonatomic) NSNumber* snippet;
+
+@property(nonatomic) NSDate* createdAt;
+
+@property(nonatomic) NSDate* updatedAt;
 
 @end

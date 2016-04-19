@@ -6,6 +6,8 @@
 @dynamic name;
 @dynamic src;
 @dynamic size;
+@dynamic createdAt;
+@dynamic updatedAt;
 
 - (instancetype)init {
   self = [super init];
@@ -24,7 +26,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"src": @"src", @"size": @"size" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"name": @"name", @"src": @"src", @"size": @"size", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
 }
 
 /**
@@ -34,7 +36,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"name", @"src", @"size"];
+  NSArray *optionalProperties = @[@"_id", @"name", @"src", @"size", @"createdAt", @"updatedAt"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

@@ -3,7 +3,6 @@
 @implementation SQJSONWebTokenResponse
 
 @dynamic data;
-@dynamic links;
 
 - (instancetype)init {
   self = [super init];
@@ -22,7 +21,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data", @"links": @"links" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"data": @"data" }];
 }
 
 /**
@@ -32,7 +31,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"data", @"links"];
+  NSArray *optionalProperties = @[@"data"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
