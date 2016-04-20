@@ -7,7 +7,6 @@
  * Do not edit the class manually.
  */
 
-#import "SQError.h"
 
 
 @protocol SQUnexpectedErrorResponse
@@ -16,6 +15,10 @@
 @interface SQUnexpectedErrorResponse : SQObject
 
 
-@property(nonatomic) NSArray<SQError>* errors;
+@property(nonatomic) NSNumber* code;
+
+@property(nonatomic) NSString* message;
+
+@property(nonatomic) NSDictionary* /* NSString, NSString */ errors;
 
 @end

@@ -23,4 +23,6 @@
 
 @property(nonatomic) NSString* html;
 
+@property(nonatomic) NSDictionary* /* NSString, NSString */ errors;
+
 @end

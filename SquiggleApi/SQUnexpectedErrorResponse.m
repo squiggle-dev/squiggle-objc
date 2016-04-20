@@ -2,6 +2,8 @@
 
 @implementation SQUnexpectedErrorResponse
 
+@dynamic code;
+@dynamic message;
 @dynamic errors;
 
 - (instancetype)init {
@@ -21,7 +23,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"errors": @"errors" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"code": @"code", @"message": @"message", @"errors": @"errors" }];
 }
 
 /**

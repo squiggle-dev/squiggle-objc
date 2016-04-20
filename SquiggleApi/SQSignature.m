@@ -6,6 +6,7 @@
 @dynamic template;
 @dynamic plain;
 @dynamic html;
+@dynamic errors;
 
 - (instancetype)init {
   self = [super init];
@@ -24,7 +25,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"template": @"template", @"plain": @"plain", @"html": @"html" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"template": @"template", @"plain": @"plain", @"html": @"html", @"errors": @"errors" }];
 }
 
 /**
@@ -34,7 +35,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"template", @"plain", @"html"];
+  NSArray *optionalProperties = @[@"_id", @"template", @"plain", @"html", @"errors"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;

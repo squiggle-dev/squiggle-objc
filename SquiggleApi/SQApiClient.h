@@ -15,7 +15,6 @@
 #import "SQAddress.h"
 #import "SQAddressResponseSingle.h"
 #import "SQAddressResponseMultiple.h"
-#import "SQError.h"
 #import "SQFileObject.h"
 #import "SQFileResponseSingle.h"
 #import "SQFileResponseMultiple.h"
