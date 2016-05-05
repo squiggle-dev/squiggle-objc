@@ -15,6 +15,8 @@
 @interface SQJSONWebToken : SQObject
 
 
+@property(nonatomic) NSNumber* _id;
+
 @property(nonatomic) NSString* token;
 
 @end

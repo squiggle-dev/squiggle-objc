@@ -2,6 +2,7 @@
 
 @implementation SQJSONWebToken
 
+@dynamic _id;
 @dynamic token;
 
 - (instancetype)init {
@@ -21,7 +22,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"token": @"token" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"token": @"token" }];
 }
 
 /**
@@ -31,7 +32,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"token"];
+  NSArray *optionalProperties = @[@"_id", @"token"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
