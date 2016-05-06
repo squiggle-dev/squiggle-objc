@@ -2,8 +2,6 @@
 
 @implementation SQResponse
 
-@dynamic links;
-
 - (instancetype)init {
   self = [super init];
 

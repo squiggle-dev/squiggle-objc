@@ -2,9 +2,6 @@
 
 @implementation SQJSONWebToken
 
-@dynamic _id;
-@dynamic token;
-
 - (instancetype)init {
   self = [super init];
 

@@ -2,13 +2,6 @@
 
 @implementation SQFileObject
 
-@dynamic _id;
-@dynamic name;
-@dynamic src;
-@dynamic size;
-@dynamic createdAt;
-@dynamic updatedAt;
-
 - (instancetype)init {
   self = [super init];
 

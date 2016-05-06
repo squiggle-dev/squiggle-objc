@@ -2,14 +2,6 @@
 
 @implementation SQSnippet
 
-@dynamic _id;
-@dynamic user;
-@dynamic contentHtml;
-@dynamic contentPlaintext;
-@dynamic image;
-@dynamic createdAt;
-@dynamic updatedAt;
-
 - (instancetype)init {
   self = [super init];
 

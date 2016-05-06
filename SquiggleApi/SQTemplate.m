@@ -2,18 +2,6 @@
 
 @implementation SQTemplate
 
-@dynamic _id;
-@dynamic user;
-@dynamic globalTemplate;
-@dynamic name;
-@dynamic _description;
-@dynamic contentHtml;
-@dynamic contentPlaintext;
-@dynamic thumbnail;
-@dynamic settings;
-@dynamic createdAt;
-@dynamic updatedAt;
-
 - (instancetype)init {
   self = [super init];
 

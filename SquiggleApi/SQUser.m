@@ -2,30 +2,6 @@
 
 @implementation SQUser
 
-@dynamic _id;
-@dynamic email;
-@dynamic companyName;
-@dynamic firstName;
-@dynamic lastName;
-@dynamic domain;
-@dynamic address1;
-@dynamic address2;
-@dynamic address3;
-@dynamic addressCity;
-@dynamic addressPostcode;
-@dynamic addressCountry;
-@dynamic website;
-@dynamic tel;
-@dynamic linkedin;
-@dynamic facebook;
-@dynamic twitter;
-@dynamic instagram;
-@dynamic googleplus;
-@dynamic logo;
-@dynamic snippet;
-@dynamic createdAt;
-@dynamic updatedAt;
-
 - (instancetype)init {
   self = [super init];
 

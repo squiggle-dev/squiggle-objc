@@ -2,24 +2,6 @@
 
 @implementation SQAddress
 
-@dynamic _id;
-@dynamic email;
-@dynamic password;
-@dynamic firstName;
-@dynamic lastName;
-@dynamic jobTitle;
-@dynamic telMobile;
-@dynamic telDirect;
-@dynamic linkedin;
-@dynamic facebook;
-@dynamic twitter;
-@dynamic instagram;
-@dynamic googleplus;
-@dynamic signatures;
-@dynamic user;
-@dynamic createdAt;
-@dynamic updatedAt;
-
 - (instancetype)init {
   self = [super init];
 

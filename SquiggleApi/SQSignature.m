@@ -2,12 +2,6 @@
 
 @implementation SQSignature
 
-@dynamic _id;
-@dynamic template;
-@dynamic plain;
-@dynamic html;
-@dynamic errors;
-
 - (instancetype)init {
   self = [super init];
 

@@ -2,9 +2,6 @@
 
 @implementation SQTemplateResponseMultiple
 
-@dynamic data;
-@dynamic links;
-
 - (instancetype)init {
   self = [super init];
 
