@@ -17,6 +17,8 @@
 
 @property(nonatomic) NSNumber* _id;
 
+@property(nonatomic) NSString* label;
+
 @property(nonatomic) NSNumber* template;
 
 @property(nonatomic) NSString* plain;
