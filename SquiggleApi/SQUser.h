@@ -57,6 +57,10 @@
 
 @property(nonatomic) NSNumber* snippet;
 
+@property(nonatomic) NSString* secretKey;
+
+@property(nonatomic) NSString* accessToken;
+
 @property(nonatomic) NSDate* createdAt;
 
 @property(nonatomic) NSDate* updatedAt;

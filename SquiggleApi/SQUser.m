@@ -19,7 +19,7 @@
  */
 + (JSONKeyMapper *)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"email": @"email", @"company_name": @"companyName", @"first_name": @"firstName", @"last_name": @"lastName", @"domain": @"domain", @"address1": @"address1", @"address2": @"address2", @"address3": @"address3", @"address_city": @"addressCity", @"address_postcode": @"addressPostcode", @"address_country": @"addressCountry", @"website": @"website", @"tel": @"tel", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"logo": @"logo", @"snippet": @"snippet", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{ @"id": @"_id", @"email": @"email", @"company_name": @"companyName", @"first_name": @"firstName", @"last_name": @"lastName", @"domain": @"domain", @"address1": @"address1", @"address2": @"address2", @"address3": @"address3", @"address_city": @"addressCity", @"address_postcode": @"addressPostcode", @"address_country": @"addressCountry", @"website": @"website", @"tel": @"tel", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"logo": @"logo", @"snippet": @"snippet", @"secret_key": @"secretKey", @"access_token": @"accessToken", @"created_at": @"createdAt", @"updated_at": @"updatedAt" }];
 }
 
 /**
@@ -29,7 +29,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName
 {
-  NSArray *optionalProperties = @[@"_id", @"email", @"companyName", @"firstName", @"lastName", @"domain", @"address1", @"address2", @"address3", @"addressCity", @"addressPostcode", @"addressCountry", @"website", @"tel", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"logo", @"snippet", @"createdAt", @"updatedAt"];
+  NSArray *optionalProperties = @[@"_id", @"email", @"companyName", @"firstName", @"lastName", @"domain", @"address1", @"address2", @"address3", @"addressCity", @"addressPostcode", @"addressCountry", @"website", @"tel", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"logo", @"snippet", @"secretKey", @"accessToken", @"createdAt", @"updatedAt"];
 
   if ([optionalProperties containsObject:propertyName]) {
     return YES;
