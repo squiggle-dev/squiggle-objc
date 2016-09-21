@@ -6,7 +6,6 @@
 #import "SQAddressResponseSingle.h"
 #import "SQFileResponseMultiple.h"
 #import "SQFileResponseSingle.h"
-#import "SQFileObject.h"
 #import "SQGlobalTemplateResponseMultiple.h"
 #import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
@@ -621,9 +620,12 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Upload a new file
 ///  @param file 
 ///
+///  @param name 
+///
 ///  @returns SQFileResponseSingle*
 ///
 -(NSNumber*) addFileWithCompletionBlock: (NSURL*) file
+         name: (NSString*) name
         
         completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock { 
         
@@ -679,6 +681,12 @@ static SQSquiggleApi* singletonAPI = nil;
     
     
     files[@"file"] = file;
+    
+    
+    
+    if (name) {
+        formParams[@"name"] = name;
+    }
     
     
     
@@ -880,12 +888,15 @@ static SQSquiggleApi* singletonAPI = nil;
 /// Updates an existing file with the specified ID
 ///  @param _id ID of file to update
 ///
-///  @param data 
+///  @param file 
+///
+///  @param name 
 ///
 ///  @returns SQFileResponseSingle*
 ///
 -(NSNumber*) editFileWithCompletionBlock: (NSNumber*) _id
-         data: (SQFileObject*) data
+         file: (NSURL*) file
+         name: (NSString*) name
         
         completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock { 
         
@@ -894,11 +905,6 @@ static SQSquiggleApi* singletonAPI = nil;
     // verify the required parameter '_id' is set
     if (_id == nil) {
         [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `_id` when calling `editFile`"];
-    }
-    
-    // verify the required parameter 'data' is set
-    if (data == nil) {
-        [NSException raise:@"Invalid parameter" format:@"Missing the required parameter `data` when calling `editFile`"];
     }
     
 
@@ -946,7 +952,17 @@ static SQSquiggleApi* singletonAPI = nil;
     NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *files = [[NSMutableDictionary alloc] init];
     
-    bodyParam = data;
+    
+    
+    files[@"file"] = file;
+    
+    
+    
+    if (name) {
+        formParams[@"name"] = name;
+    }
+    
+    
     
 
     

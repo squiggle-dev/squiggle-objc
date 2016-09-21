@@ -5,7 +5,6 @@
 #import "SQAddressResponseSingle.h"
 #import "SQFileResponseMultiple.h"
 #import "SQFileResponseSingle.h"
-#import "SQFileObject.h"
 #import "SQGlobalTemplateResponseMultiple.h"
 #import "SQGlobalTemplate.h"
 #import "SQGlobalTemplateResponseSingle.h"
@@ -141,10 +140,12 @@
 /// Upload a new file
 ///
 /// @param file 
+/// @param name 
 /// 
 ///
 /// @return SQFileResponseSingle*
 -(NSNumber*) addFileWithCompletionBlock :(NSURL*) file 
+     name:(NSString*) name 
     
     completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock;
     
@@ -186,12 +187,14 @@
 /// Updates an existing file with the specified ID
 ///
 /// @param _id ID of file to update
-/// @param data 
+/// @param file 
+/// @param name 
 /// 
 ///
 /// @return SQFileResponseSingle*
 -(NSNumber*) editFileWithCompletionBlock :(NSNumber*) _id 
-     data:(SQFileObject*) data 
+     file:(NSURL*) file 
+     name:(NSString*) name 
     
     completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error))completionBlock;
     
