@@ -67,7 +67,7 @@ Import the following:
 #import <SquiggleApi/SQUserResponseMultiple.h>
 #import <SquiggleApi/SQUserResponseSingle.h>
 // load API classes for accessing endpoints
-#import <SquiggleApi/SQSquiggleApi.h>
+#import <SquiggleApi/SQDefaultApi.h>
 
 ```
 
@@ -91,7 +91,7 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 
 SQAddress* *data = [[SQAddress alloc] init]; // 
 
-SQSquiggleApi *apiInstance = [[SQSquiggleApi alloc] init];
+SQDefaultApi *apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addAddressWithData:data
               completionHandler: ^(SQAddressResponseSingle* output, NSError* error) {
@@ -111,38 +111,38 @@ All URIs are relative to *http://api.squigglesignatures.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SQSquiggleApi* | [**addAddress**](docs/SQSquiggleApi.md#addaddress) | **POST** /addresses | 
-*SQSquiggleApi* | [**addFile**](docs/SQSquiggleApi.md#addfile) | **POST** /files | 
-*SQSquiggleApi* | [**addGlobalTemplate**](docs/SQSquiggleApi.md#addglobaltemplate) | **POST** /global-templates | 
-*SQSquiggleApi* | [**addSnippet**](docs/SQSquiggleApi.md#addsnippet) | **POST** /snippets | 
-*SQSquiggleApi* | [**addTemplate**](docs/SQSquiggleApi.md#addtemplate) | **POST** /templates | 
-*SQSquiggleApi* | [**addUser**](docs/SQSquiggleApi.md#adduser) | **POST** /users | 
-*SQSquiggleApi* | [**deleteAddress**](docs/SQSquiggleApi.md#deleteaddress) | **DELETE** /addresses/{id} | 
-*SQSquiggleApi* | [**deleteFile**](docs/SQSquiggleApi.md#deletefile) | **DELETE** /files/{id} | 
-*SQSquiggleApi* | [**deleteGlobalTemplate**](docs/SQSquiggleApi.md#deleteglobaltemplate) | **DELETE** /global-templates/{id} | 
-*SQSquiggleApi* | [**deleteSnippet**](docs/SQSquiggleApi.md#deletesnippet) | **DELETE** /snippets/{id} | 
-*SQSquiggleApi* | [**deleteTemplate**](docs/SQSquiggleApi.md#deletetemplate) | **DELETE** /templates/{id} | 
-*SQSquiggleApi* | [**deleteUser**](docs/SQSquiggleApi.md#deleteuser) | **DELETE** /users/{id} | 
-*SQSquiggleApi* | [**editAddress**](docs/SQSquiggleApi.md#editaddress) | **PATCH** /addresses/{id} | 
-*SQSquiggleApi* | [**editFile**](docs/SQSquiggleApi.md#editfile) | **PATCH** /files/{id} | 
-*SQSquiggleApi* | [**editGlobalTemplate**](docs/SQSquiggleApi.md#editglobaltemplate) | **PATCH** /global-templates/{id} | 
-*SQSquiggleApi* | [**editSnippet**](docs/SQSquiggleApi.md#editsnippet) | **PATCH** /snippets/{id} | 
-*SQSquiggleApi* | [**editTemplate**](docs/SQSquiggleApi.md#edittemplate) | **PATCH** /templates/{id} | 
-*SQSquiggleApi* | [**editUser**](docs/SQSquiggleApi.md#edituser) | **PATCH** /users/{id} | 
-*SQSquiggleApi* | [**findAddresses**](docs/SQSquiggleApi.md#findaddresses) | **GET** /addresses | 
-*SQSquiggleApi* | [**findFiles**](docs/SQSquiggleApi.md#findfiles) | **GET** /files | 
-*SQSquiggleApi* | [**findGlobalTemplates**](docs/SQSquiggleApi.md#findglobaltemplates) | **GET** /global-templates | 
-*SQSquiggleApi* | [**findSnippets**](docs/SQSquiggleApi.md#findsnippets) | **GET** /snippets | 
-*SQSquiggleApi* | [**findTemplates**](docs/SQSquiggleApi.md#findtemplates) | **GET** /templates | 
-*SQSquiggleApi* | [**findUsers**](docs/SQSquiggleApi.md#findusers) | **GET** /users | 
-*SQSquiggleApi* | [**getAddress**](docs/SQSquiggleApi.md#getaddress) | **GET** /addresses/{id} | 
-*SQSquiggleApi* | [**getAddressToken**](docs/SQSquiggleApi.md#getaddresstoken) | **POST** /token/address | 
-*SQSquiggleApi* | [**getFile**](docs/SQSquiggleApi.md#getfile) | **GET** /files/{id} | 
-*SQSquiggleApi* | [**getGlobalTemplate**](docs/SQSquiggleApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
-*SQSquiggleApi* | [**getSnippet**](docs/SQSquiggleApi.md#getsnippet) | **GET** /snippets/{id} | 
-*SQSquiggleApi* | [**getTemplate**](docs/SQSquiggleApi.md#gettemplate) | **GET** /templates/{id} | 
-*SQSquiggleApi* | [**getUser**](docs/SQSquiggleApi.md#getuser) | **GET** /users/{id} | 
-*SQSquiggleApi* | [**getUserToken**](docs/SQSquiggleApi.md#getusertoken) | **POST** /token/user | 
+*SQDefaultApi* | [**addAddress**](docs/SQDefaultApi.md#addaddress) | **POST** /addresses | 
+*SQDefaultApi* | [**addFile**](docs/SQDefaultApi.md#addfile) | **POST** /files | 
+*SQDefaultApi* | [**addGlobalTemplate**](docs/SQDefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
+*SQDefaultApi* | [**addSnippet**](docs/SQDefaultApi.md#addsnippet) | **POST** /snippets | 
+*SQDefaultApi* | [**addTemplate**](docs/SQDefaultApi.md#addtemplate) | **POST** /templates | 
+*SQDefaultApi* | [**addUser**](docs/SQDefaultApi.md#adduser) | **POST** /users | 
+*SQDefaultApi* | [**deleteAddress**](docs/SQDefaultApi.md#deleteaddress) | **DELETE** /addresses/{id} | 
+*SQDefaultApi* | [**deleteFile**](docs/SQDefaultApi.md#deletefile) | **DELETE** /files/{id} | 
+*SQDefaultApi* | [**deleteGlobalTemplate**](docs/SQDefaultApi.md#deleteglobaltemplate) | **DELETE** /global-templates/{id} | 
+*SQDefaultApi* | [**deleteSnippet**](docs/SQDefaultApi.md#deletesnippet) | **DELETE** /snippets/{id} | 
+*SQDefaultApi* | [**deleteTemplate**](docs/SQDefaultApi.md#deletetemplate) | **DELETE** /templates/{id} | 
+*SQDefaultApi* | [**deleteUser**](docs/SQDefaultApi.md#deleteuser) | **DELETE** /users/{id} | 
+*SQDefaultApi* | [**editAddress**](docs/SQDefaultApi.md#editaddress) | **PATCH** /addresses/{id} | 
+*SQDefaultApi* | [**editFile**](docs/SQDefaultApi.md#editfile) | **PATCH** /files/{id} | 
+*SQDefaultApi* | [**editGlobalTemplate**](docs/SQDefaultApi.md#editglobaltemplate) | **PATCH** /global-templates/{id} | 
+*SQDefaultApi* | [**editSnippet**](docs/SQDefaultApi.md#editsnippet) | **PATCH** /snippets/{id} | 
+*SQDefaultApi* | [**editTemplate**](docs/SQDefaultApi.md#edittemplate) | **PATCH** /templates/{id} | 
+*SQDefaultApi* | [**editUser**](docs/SQDefaultApi.md#edituser) | **PATCH** /users/{id} | 
+*SQDefaultApi* | [**findAddresses**](docs/SQDefaultApi.md#findaddresses) | **GET** /addresses | 
+*SQDefaultApi* | [**findFiles**](docs/SQDefaultApi.md#findfiles) | **GET** /files | 
+*SQDefaultApi* | [**findGlobalTemplates**](docs/SQDefaultApi.md#findglobaltemplates) | **GET** /global-templates | 
+*SQDefaultApi* | [**findSnippets**](docs/SQDefaultApi.md#findsnippets) | **GET** /snippets | 
+*SQDefaultApi* | [**findTemplates**](docs/SQDefaultApi.md#findtemplates) | **GET** /templates | 
+*SQDefaultApi* | [**findUsers**](docs/SQDefaultApi.md#findusers) | **GET** /users | 
+*SQDefaultApi* | [**getAddress**](docs/SQDefaultApi.md#getaddress) | **GET** /addresses/{id} | 
+*SQDefaultApi* | [**getAddressToken**](docs/SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
+*SQDefaultApi* | [**getFile**](docs/SQDefaultApi.md#getfile) | **GET** /files/{id} | 
+*SQDefaultApi* | [**getGlobalTemplate**](docs/SQDefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+*SQDefaultApi* | [**getSnippet**](docs/SQDefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
+*SQDefaultApi* | [**getTemplate**](docs/SQDefaultApi.md#gettemplate) | **GET** /templates/{id} | 
+*SQDefaultApi* | [**getUser**](docs/SQDefaultApi.md#getuser) | **GET** /users/{id} | 
+*SQDefaultApi* | [**getUserToken**](docs/SQDefaultApi.md#getusertoken) | **POST** /token/user | 
 
 
 ## Documentation For Models

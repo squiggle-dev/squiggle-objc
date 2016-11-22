@@ -1,4 +1,4 @@
-#import "SQSquiggleApi.h"
+#import "SQDefaultApi.h"
 #import "SQQueryParamCollection.h"
 #import "SQAddress.h"
 #import "SQAddressResponseMultiple.h"
@@ -22,16 +22,16 @@
 #import "SQUserResponseSingle.h"
 
 
-@interface SQSquiggleApi ()
+@interface SQDefaultApi ()
 
 @property (nonatomic, strong) NSMutableDictionary *defaultHeaders;
 
 @end
 
-@implementation SQSquiggleApi
+@implementation SQDefaultApi
 
-NSString* kSQSquiggleApiErrorDomain = @"SQSquiggleApiErrorDomain";
-NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
+NSString* kSQDefaultApiErrorDomain = @"SQDefaultApiErrorDomain";
+NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 
 @synthesize apiClient = _apiClient;
 
@@ -62,7 +62,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
 #pragma mark -
 
 + (instancetype)sharedAPI {
-    static SQSquiggleApi *sharedAPI;
+    static SQDefaultApi *sharedAPI;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         sharedAPI = [[self alloc] init];
@@ -102,7 +102,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -175,7 +175,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(file);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"file"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -248,7 +248,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -318,7 +318,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -388,7 +388,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -458,7 +458,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -528,7 +528,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(error);
         }
         return nil;
@@ -600,7 +600,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(error);
         }
         return nil;
@@ -672,7 +672,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(error);
         }
         return nil;
@@ -744,7 +744,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(error);
         }
         return nil;
@@ -816,7 +816,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(error);
         }
         return nil;
@@ -888,7 +888,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(error);
         }
         return nil;
@@ -963,7 +963,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -974,7 +974,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1053,7 +1053,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1132,7 +1132,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1143,7 +1143,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1219,7 +1219,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1230,7 +1230,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1306,7 +1306,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1317,7 +1317,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1393,7 +1393,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1404,7 +1404,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1879,7 +1879,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -1951,7 +1951,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -2021,7 +2021,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -2093,7 +2093,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -2165,7 +2165,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -2237,7 +2237,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -2309,7 +2309,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(_id);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;
@@ -2381,7 +2381,7 @@ NSInteger kSQSquiggleApiMissingParamErrorCode = 234513;
         NSParameterAssert(data);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
-            NSError* error = [NSError errorWithDomain:kSQSquiggleApiErrorDomain code:kSQSquiggleApiMissingParamErrorCode userInfo:userInfo];
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
             handler(nil, error);
         }
         return nil;

@@ -35,10 +35,10 @@
 
 
 
-@interface SQSquiggleApi: NSObject <SQApi>
+@interface SQDefaultApi: NSObject <SQApi>
 
-extern NSString* kSQSquiggleApiErrorDomain;
-extern NSInteger kSQSquiggleApiMissingParamErrorCode;
+extern NSString* kSQDefaultApiErrorDomain;
+extern NSInteger kSQDefaultApiMissingParamErrorCode;
 
 +(instancetype) sharedAPI;
 
