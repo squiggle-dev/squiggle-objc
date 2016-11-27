@@ -367,6 +367,9 @@ static NSString * SQ__fileNameForResponse(NSURLResponse *response) {
     }
     else {
         [self operationWithCompletionBlock:request requestId:requestId completionBlock:^(id data, NSError *error) {
+            if ([data isKindOfClass:[NSDictionary class]]) {
+                data = [(NSDictionary*)data valueForKey:@"data"];
+            }
             NSError * serializationError;
             id response = [self.responseDeserializer deserialize:data class:responseType error:&serializationError];
             if(!response && !error){
