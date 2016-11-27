@@ -41,7 +41,7 @@ Method | HTTP request | Description
 # **addAddress**
 ```objc
 -(NSNumber*) addAddressWithData: (SQAddress*) data
-        completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
 ```
 
 
@@ -63,7 +63,7 @@ SQAddress* data = [[SQAddress alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addAddressWithData:data
-          completionHandler: ^(SQAddressResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQAddress* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQAddressResponseSingle***](SQAddressResponseSingle.md)
+[**SQAddress***](SQAddress.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) addFileWithFile: (NSURL*) file
     name: (NSString*) name
-        completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler;
 ```
 
 
@@ -122,7 +122,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addFileWithFile:file
               name:name
-          completionHandler: ^(SQFileResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQFileObject* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQFileResponseSingle***](SQFileResponseSingle.md)
+[**SQFileObject***](SQFileObject.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 # **addGlobalTemplate**
 ```objc
 -(NSNumber*) addGlobalTemplateWithData: (SQGlobalTemplate*) data
-        completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
 ```
 
 
@@ -179,7 +179,7 @@ SQGlobalTemplate* data = [[SQGlobalTemplate alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addGlobalTemplateWithData:data
-          completionHandler: ^(SQGlobalTemplateResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQGlobalTemplate* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQGlobalTemplateResponseSingle***](SQGlobalTemplateResponseSingle.md)
+[**SQGlobalTemplate***](SQGlobalTemplate.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 # **addSnippet**
 ```objc
 -(NSNumber*) addSnippetWithData: (SQSnippet*) data
-        completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler;
 ```
 
 
@@ -235,7 +235,7 @@ SQSnippet* data = [[SQSnippet alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addSnippetWithData:data
-          completionHandler: ^(SQSnippetResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQSnippet* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQSnippetResponseSingle***](SQSnippetResponseSingle.md)
+[**SQSnippet***](SQSnippet.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 # **addTemplate**
 ```objc
 -(NSNumber*) addTemplateWithData: (SQTemplate*) data
-        completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler;
 ```
 
 
@@ -291,7 +291,7 @@ SQTemplate* data = [[SQTemplate alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addTemplateWithData:data
-          completionHandler: ^(SQTemplateResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQTemplate* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQTemplateResponseSingle***](SQTemplateResponseSingle.md)
+[**SQTemplate***](SQTemplate.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 # **addUser**
 ```objc
 -(NSNumber*) addUserWithData: (SQUser*) data
-        completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQUser* output, NSError* error)) handler;
 ```
 
 
@@ -347,7 +347,7 @@ SQUser* data = [[SQUser alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addUserWithData:data
-          completionHandler: ^(SQUserResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQUser* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQUserResponseSingle***](SQUserResponseSingle.md)
+[**SQUser***](SQUser.md)
 
 ### Authorization
 
@@ -700,7 +700,7 @@ void (empty response body)
 ```objc
 -(NSNumber*) editAddressWithId: (NSNumber*) _id
     data: (SQAddress*) data
-        completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
 ```
 
 
@@ -724,7 +724,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance editAddressWithId:_id
               data:data
-          completionHandler: ^(SQAddressResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQAddress* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -743,7 +743,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQAddressResponseSingle***](SQAddressResponseSingle.md)
+[**SQAddress***](SQAddress.md)
 
 ### Authorization
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 -(NSNumber*) editFileWithId: (NSNumber*) _id
     file: (NSURL*) file
     name: (NSString*) name
-        completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler;
 ```
 
 
@@ -787,7 +787,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 [apiInstance editFileWithId:_id
               file:file
               name:name
-          completionHandler: ^(SQFileResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQFileObject* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQFileResponseSingle***](SQFileResponseSingle.md)
+[**SQFileObject***](SQFileObject.md)
 
 ### Authorization
 
@@ -815,7 +815,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -824,7 +824,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) editGlobalTemplateWithId: (NSNumber*) _id
     data: (SQGlobalTemplate*) data
-        completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
 ```
 
 
@@ -848,7 +848,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance editGlobalTemplateWithId:_id
               data:data
-          completionHandler: ^(SQGlobalTemplateResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQGlobalTemplate* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -867,7 +867,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQGlobalTemplateResponseSingle***](SQGlobalTemplateResponseSingle.md)
+[**SQGlobalTemplate***](SQGlobalTemplate.md)
 
 ### Authorization
 
@@ -884,7 +884,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) editSnippetWithId: (NSNumber*) _id
     data: (SQSnippet*) data
-        completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler;
 ```
 
 
@@ -908,7 +908,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance editSnippetWithId:_id
               data:data
-          completionHandler: ^(SQSnippetResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQSnippet* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -927,7 +927,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQSnippetResponseSingle***](SQSnippetResponseSingle.md)
+[**SQSnippet***](SQSnippet.md)
 
 ### Authorization
 
@@ -944,7 +944,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) editTemplateWithId: (NSNumber*) _id
     data: (SQTemplate*) data
-        completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler;
 ```
 
 
@@ -968,7 +968,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance editTemplateWithId:_id
               data:data
-          completionHandler: ^(SQTemplateResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQTemplate* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -987,7 +987,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQTemplateResponseSingle***](SQTemplateResponseSingle.md)
+[**SQTemplate***](SQTemplate.md)
 
 ### Authorization
 
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) editUserWithId: (NSNumber*) _id
     data: (SQUser*) data
-        completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQUser* output, NSError* error)) handler;
 ```
 
 
@@ -1028,7 +1028,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance editUserWithId:_id
               data:data
-          completionHandler: ^(SQUserResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQUser* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1047,7 +1047,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQUserResponseSingle***](SQUserResponseSingle.md)
+[**SQUser***](SQUser.md)
 
 ### Authorization
 
@@ -1064,7 +1064,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) findAddressesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-        completionHandler: (void (^)(SQAddressResponseMultiple* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<SQAddress>* output, NSError* error)) handler;
 ```
 
 
@@ -1088,7 +1088,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance findAddressesWithOffset:offset
               limit:limit
-          completionHandler: ^(SQAddressResponseMultiple* output, NSError* error) {
+          completionHandler: ^(NSArray<SQAddress>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1107,7 +1107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQAddressResponseMultiple***](SQAddressResponseMultiple.md)
+[**NSArray<SQAddress>***](SQAddress.md)
 
 ### Authorization
 
@@ -1124,7 +1124,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) findFilesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-        completionHandler: (void (^)(SQFileResponseMultiple* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<SQFileObject>* output, NSError* error)) handler;
 ```
 
 
@@ -1148,7 +1148,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance findFilesWithOffset:offset
               limit:limit
-          completionHandler: ^(SQFileResponseMultiple* output, NSError* error) {
+          completionHandler: ^(NSArray<SQFileObject>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1167,7 +1167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQFileResponseMultiple***](SQFileResponseMultiple.md)
+[**NSArray<SQFileObject>***](SQFileObject.md)
 
 ### Authorization
 
@@ -1184,7 +1184,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) findGlobalTemplatesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-        completionHandler: (void (^)(SQGlobalTemplateResponseMultiple* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<SQGlobalTemplate>* output, NSError* error)) handler;
 ```
 
 
@@ -1208,7 +1208,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance findGlobalTemplatesWithOffset:offset
               limit:limit
-          completionHandler: ^(SQGlobalTemplateResponseMultiple* output, NSError* error) {
+          completionHandler: ^(NSArray<SQGlobalTemplate>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1227,7 +1227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQGlobalTemplateResponseMultiple***](SQGlobalTemplateResponseMultiple.md)
+[**NSArray<SQGlobalTemplate>***](SQGlobalTemplate.md)
 
 ### Authorization
 
@@ -1244,7 +1244,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) findSnippetsWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-        completionHandler: (void (^)(SQSnippetResponseMultiple* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<SQSnippet>* output, NSError* error)) handler;
 ```
 
 
@@ -1268,7 +1268,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance findSnippetsWithOffset:offset
               limit:limit
-          completionHandler: ^(SQSnippetResponseMultiple* output, NSError* error) {
+          completionHandler: ^(NSArray<SQSnippet>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1287,7 +1287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQSnippetResponseMultiple***](SQSnippetResponseMultiple.md)
+[**NSArray<SQSnippet>***](SQSnippet.md)
 
 ### Authorization
 
@@ -1304,7 +1304,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) findTemplatesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-        completionHandler: (void (^)(SQTemplateResponseMultiple* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<SQTemplate>* output, NSError* error)) handler;
 ```
 
 
@@ -1328,7 +1328,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance findTemplatesWithOffset:offset
               limit:limit
-          completionHandler: ^(SQTemplateResponseMultiple* output, NSError* error) {
+          completionHandler: ^(NSArray<SQTemplate>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1347,7 +1347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQTemplateResponseMultiple***](SQTemplateResponseMultiple.md)
+[**NSArray<SQTemplate>***](SQTemplate.md)
 
 ### Authorization
 
@@ -1364,7 +1364,7 @@ Name | Type | Description  | Notes
 ```objc
 -(NSNumber*) findUsersWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-        completionHandler: (void (^)(SQUserResponseMultiple* output, NSError* error)) handler;
+        completionHandler: (void (^)(NSArray<SQUser>* output, NSError* error)) handler;
 ```
 
 
@@ -1388,7 +1388,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance findUsersWithOffset:offset
               limit:limit
-          completionHandler: ^(SQUserResponseMultiple* output, NSError* error) {
+          completionHandler: ^(NSArray<SQUser>* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1407,7 +1407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQUserResponseMultiple***](SQUserResponseMultiple.md)
+[**NSArray<SQUser>***](SQUser.md)
 
 ### Authorization
 
@@ -1423,7 +1423,7 @@ Name | Type | Description  | Notes
 # **getAddress**
 ```objc
 -(NSNumber*) getAddressWithId: (NSNumber*) _id
-        completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
 ```
 
 
@@ -1445,7 +1445,7 @@ NSNumber* _id = @789; // ID of address to get
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getAddressWithId:_id
-          completionHandler: ^(SQAddressResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQAddress* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1463,7 +1463,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQAddressResponseSingle***](SQAddressResponseSingle.md)
+[**SQAddress***](SQAddress.md)
 
 ### Authorization
 
@@ -1528,7 +1528,7 @@ No authorization required
 # **getFile**
 ```objc
 -(NSNumber*) getFileWithId: (NSNumber*) _id
-        completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler;
 ```
 
 
@@ -1550,7 +1550,7 @@ NSNumber* _id = @789; // ID of file to get
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getFileWithId:_id
-          completionHandler: ^(SQFileResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQFileObject* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1568,7 +1568,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQFileResponseSingle***](SQFileResponseSingle.md)
+[**SQFileObject***](SQFileObject.md)
 
 ### Authorization
 
@@ -1584,7 +1584,7 @@ Name | Type | Description  | Notes
 # **getGlobalTemplate**
 ```objc
 -(NSNumber*) getGlobalTemplateWithId: (NSNumber*) _id
-        completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
 ```
 
 
@@ -1606,7 +1606,7 @@ NSNumber* _id = @789; // ID of global template to get
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getGlobalTemplateWithId:_id
-          completionHandler: ^(SQGlobalTemplateResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQGlobalTemplate* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1624,7 +1624,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQGlobalTemplateResponseSingle***](SQGlobalTemplateResponseSingle.md)
+[**SQGlobalTemplate***](SQGlobalTemplate.md)
 
 ### Authorization
 
@@ -1640,7 +1640,7 @@ Name | Type | Description  | Notes
 # **getSnippet**
 ```objc
 -(NSNumber*) getSnippetWithId: (NSNumber*) _id
-        completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler;
 ```
 
 
@@ -1662,7 +1662,7 @@ NSNumber* _id = @789; // ID of snippet to get
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getSnippetWithId:_id
-          completionHandler: ^(SQSnippetResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQSnippet* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1680,7 +1680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQSnippetResponseSingle***](SQSnippetResponseSingle.md)
+[**SQSnippet***](SQSnippet.md)
 
 ### Authorization
 
@@ -1696,7 +1696,7 @@ Name | Type | Description  | Notes
 # **getTemplate**
 ```objc
 -(NSNumber*) getTemplateWithId: (NSNumber*) _id
-        completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler;
 ```
 
 
@@ -1718,7 +1718,7 @@ NSNumber* _id = @789; // ID of template to get
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getTemplateWithId:_id
-          completionHandler: ^(SQTemplateResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQTemplate* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1736,7 +1736,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQTemplateResponseSingle***](SQTemplateResponseSingle.md)
+[**SQTemplate***](SQTemplate.md)
 
 ### Authorization
 
@@ -1752,7 +1752,7 @@ Name | Type | Description  | Notes
 # **getUser**
 ```objc
 -(NSNumber*) getUserWithId: (NSNumber*) _id
-        completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQUser* output, NSError* error)) handler;
 ```
 
 
@@ -1774,7 +1774,7 @@ NSNumber* _id = @789; // ID of user to get
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getUserWithId:_id
-          completionHandler: ^(SQUserResponseSingle* output, NSError* error) {
+          completionHandler: ^(SQUser* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1792,7 +1792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQUserResponseSingle***](SQUserResponseSingle.md)
+[**SQUser***](SQUser.md)
 
 ### Authorization
 

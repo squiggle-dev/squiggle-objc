@@ -1,24 +1,13 @@
 #import <Foundation/Foundation.h>
 #import "SQAddress.h"
-#import "SQAddressResponseMultiple.h"
-#import "SQAddressResponseSingle.h"
-#import "SQFileResponseMultiple.h"
-#import "SQFileResponseSingle.h"
+#import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
-#import "SQGlobalTemplateResponseMultiple.h"
-#import "SQGlobalTemplateResponseSingle.h"
 #import "SQJSONWebTokenResponse.h"
 #import "SQLoginDetails.h"
 #import "SQSnippet.h"
-#import "SQSnippetResponseMultiple.h"
-#import "SQSnippetResponseSingle.h"
 #import "SQTemplate.h"
-#import "SQTemplateResponseMultiple.h"
-#import "SQTemplateResponseSingle.h"
 #import "SQUnexpectedErrorResponse.h"
 #import "SQUser.h"
-#import "SQUserResponseMultiple.h"
-#import "SQUserResponseSingle.h"
 #import "SQApi.h"
 
 /**
@@ -50,9 +39,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:201 message:"Address created successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQAddressResponseSingle*
+/// @return SQAddress*
 -(NSNumber*) addAddressWithData: (SQAddress*) data
-    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
 
 
 /// 
@@ -64,10 +53,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:201 message:"File uploaded successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQFileResponseSingle*
+/// @return SQFileObject*
 -(NSNumber*) addFileWithFile: (NSURL*) file
     name: (NSString*) name
-    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler;
 
 
 /// 
@@ -78,9 +67,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:201 message:"Global template created successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQGlobalTemplateResponseSingle*
+/// @return SQGlobalTemplate*
 -(NSNumber*) addGlobalTemplateWithData: (SQGlobalTemplate*) data
-    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
 
 
 /// 
@@ -91,9 +80,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:201 message:"Snippet created successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQSnippetResponseSingle*
+/// @return SQSnippet*
 -(NSNumber*) addSnippetWithData: (SQSnippet*) data
-    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler;
 
 
 /// 
@@ -104,9 +93,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:201 message:"Template created successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQTemplateResponseSingle*
+/// @return SQTemplate*
 -(NSNumber*) addTemplateWithData: (SQTemplate*) data
-    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler;
 
 
 /// 
@@ -117,9 +106,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:201 message:"User created successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQUserResponseSingle*
+/// @return SQUser*
 -(NSNumber*) addUserWithData: (SQUser*) data
-    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQUser* output, NSError* error)) handler;
 
 
 /// 
@@ -209,10 +198,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Address updated successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQAddressResponseSingle*
+/// @return SQAddress*
 -(NSNumber*) editAddressWithId: (NSNumber*) _id
     data: (SQAddress*) data
-    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
 
 
 /// 
@@ -225,11 +214,11 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"File updated successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQFileResponseSingle*
+/// @return SQFileObject*
 -(NSNumber*) editFileWithId: (NSNumber*) _id
     file: (NSURL*) file
     name: (NSString*) name
-    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler;
 
 
 /// 
@@ -241,10 +230,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Global template updated successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQGlobalTemplateResponseSingle*
+/// @return SQGlobalTemplate*
 -(NSNumber*) editGlobalTemplateWithId: (NSNumber*) _id
     data: (SQGlobalTemplate*) data
-    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
 
 
 /// 
@@ -256,10 +245,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Snippet updated successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQSnippetResponseSingle*
+/// @return SQSnippet*
 -(NSNumber*) editSnippetWithId: (NSNumber*) _id
     data: (SQSnippet*) data
-    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler;
 
 
 /// 
@@ -271,10 +260,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Template updated successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQTemplateResponseSingle*
+/// @return SQTemplate*
 -(NSNumber*) editTemplateWithId: (NSNumber*) _id
     data: (SQTemplate*) data
-    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler;
 
 
 /// 
@@ -286,10 +275,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"User updated successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQUserResponseSingle*
+/// @return SQUser*
 -(NSNumber*) editUserWithId: (NSNumber*) _id
     data: (SQUser*) data
-    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQUser* output, NSError* error)) handler;
 
 
 /// 
@@ -301,10 +290,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQAddressResponseMultiple*
+/// @return NSArray<SQAddress>*
 -(NSNumber*) findAddressesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQAddressResponseMultiple* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SQAddress>* output, NSError* error)) handler;
 
 
 /// 
@@ -316,10 +305,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQFileResponseMultiple*
+/// @return NSArray<SQFileObject>*
 -(NSNumber*) findFilesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQFileResponseMultiple* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SQFileObject>* output, NSError* error)) handler;
 
 
 /// 
@@ -331,10 +320,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQGlobalTemplateResponseMultiple*
+/// @return NSArray<SQGlobalTemplate>*
 -(NSNumber*) findGlobalTemplatesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQGlobalTemplateResponseMultiple* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SQGlobalTemplate>* output, NSError* error)) handler;
 
 
 /// 
@@ -346,10 +335,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQSnippetResponseMultiple*
+/// @return NSArray<SQSnippet>*
 -(NSNumber*) findSnippetsWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQSnippetResponseMultiple* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SQSnippet>* output, NSError* error)) handler;
 
 
 /// 
@@ -361,10 +350,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQTemplateResponseMultiple*
+/// @return NSArray<SQTemplate>*
 -(NSNumber*) findTemplatesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQTemplateResponseMultiple* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SQTemplate>* output, NSError* error)) handler;
 
 
 /// 
@@ -376,10 +365,10 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQUserResponseMultiple*
+/// @return NSArray<SQUser>*
 -(NSNumber*) findUsersWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQUserResponseMultiple* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSArray<SQUser>* output, NSError* error)) handler;
 
 
 /// 
@@ -390,9 +379,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQAddressResponseSingle*
+/// @return SQAddress*
 -(NSNumber*) getAddressWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
 
 
 /// 
@@ -416,9 +405,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQFileResponseSingle*
+/// @return SQFileObject*
 -(NSNumber*) getFileWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler;
 
 
 /// 
@@ -429,9 +418,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQGlobalTemplateResponseSingle*
+/// @return SQGlobalTemplate*
 -(NSNumber*) getGlobalTemplateWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
 
 
 /// 
@@ -442,9 +431,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQSnippetResponseSingle*
+/// @return SQSnippet*
 -(NSNumber*) getSnippetWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler;
 
 
 /// 
@@ -455,9 +444,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQTemplateResponseSingle*
+/// @return SQTemplate*
 -(NSNumber*) getTemplateWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler;
 
 
 /// 
@@ -468,9 +457,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQUserResponseSingle*
+/// @return SQUser*
 -(NSNumber*) getUserWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQUser* output, NSError* error)) handler;
 
 
 /// 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **user** | **NSNumber*** |  | [optional] 
 **contentHtml** | **NSString*** |  | [optional] 
 **contentPlaintext** | **NSString*** |  | [optional] 
-**image** | **NSNumber*** |  | [optional] 
+**image** | [**SQFileObject***](SQFileObject.md) |  | [optional] 
 **createdAt** | **NSDate*** |  | [optional] 
 **updatedAt** | **NSDate*** |  | [optional] 
 

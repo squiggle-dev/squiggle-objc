@@ -14,6 +14,8 @@
 */
 
 
+#import "SQFileObject.h"
+#import "SQGlobalTemplate.h"
 
 
 @protocol SQTemplate
@@ -26,7 +28,7 @@
 
 @property(nonatomic) NSNumber* user;
 
-@property(nonatomic) NSNumber* globalTemplate;
+@property(nonatomic) SQGlobalTemplate* globalTemplate;
 
 @property(nonatomic) NSString* name;
 
@@ -36,7 +38,7 @@
 
 @property(nonatomic) NSString* contentPlaintext;
 
-@property(nonatomic) NSNumber* thumbnail;
+@property(nonatomic) SQFileObject* thumbnail;
 
 @property(nonatomic) NSString* settings;
 

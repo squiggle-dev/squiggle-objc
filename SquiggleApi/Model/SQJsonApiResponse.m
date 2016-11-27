@@ -1,6 +1,6 @@
-#import "SQTemplateResponseMultiple.h"
+#import "SQJsonApiResponse.h"
 
-@implementation SQTemplateResponseMultiple
+@implementation SQJsonApiResponse
 
 - (instancetype)init {
   self = [super init];
@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"links": @"links", @"data": @"data" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"links": @"links" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"links", @"data"];
+  NSArray *optionalProperties = @[@"links"];
   return [optionalProperties containsObject:propertyName];
 }
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **_id** | **NSNumber*** |  | [optional] 
 **name** | **NSString*** |  | [optional] 
 **_description** | **NSString*** |  | [optional] 
-**thumbnail** | **NSNumber*** |  | [optional] 
+**thumbnail** | [**SQFileObject***](SQFileObject.md) |  | [optional] 
 **contentHtml** | **NSString*** |  | [optional] 
 **contentPlaintext** | **NSString*** |  | [optional] 
 **settings** | **NSString*** |  | [optional] 

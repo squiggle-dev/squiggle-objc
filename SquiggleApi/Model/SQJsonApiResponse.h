@@ -14,19 +14,15 @@
 */
 
 
-#import "SQApiResponse.h"
 #import "SQResponseLinks.h"
-#import "SQSnippet.h"
 
 
-@protocol SQSnippetResponseSingle
+@protocol SQJsonApiResponse
 @end
 
-@interface SQSnippetResponseSingle : SQObject
+@interface SQJsonApiResponse : SQObject
 
 
 @property(nonatomic) SQResponseLinks* links;
-
-@property(nonatomic) SQSnippet* data;
 
 @end

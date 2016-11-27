@@ -1,25 +1,14 @@
 #import "SQDefaultApi.h"
 #import "SQQueryParamCollection.h"
 #import "SQAddress.h"
-#import "SQAddressResponseMultiple.h"
-#import "SQAddressResponseSingle.h"
-#import "SQFileResponseMultiple.h"
-#import "SQFileResponseSingle.h"
+#import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
-#import "SQGlobalTemplateResponseMultiple.h"
-#import "SQGlobalTemplateResponseSingle.h"
 #import "SQJSONWebTokenResponse.h"
 #import "SQLoginDetails.h"
 #import "SQSnippet.h"
-#import "SQSnippetResponseMultiple.h"
-#import "SQSnippetResponseSingle.h"
 #import "SQTemplate.h"
-#import "SQTemplateResponseMultiple.h"
-#import "SQTemplateResponseSingle.h"
 #import "SQUnexpectedErrorResponse.h"
 #import "SQUser.h"
-#import "SQUserResponseMultiple.h"
-#import "SQUserResponseSingle.h"
 
 
 @interface SQDefaultApi ()
@@ -93,10 +82,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Creates a new address
 ///  @param data  
 ///
-///  @returns SQAddressResponseSingle*
+///  @returns SQAddress*
 ///
 -(NSNumber*) addAddressWithData: (SQAddress*) data
-    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQAddress* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -149,10 +138,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQAddressResponseSingle*"
+                              responseType: @"SQAddress*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQAddressResponseSingle*)data, error);
+                                    handler((SQAddress*)data, error);
                                 }
                            }
           ];
@@ -165,11 +154,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param name  (optional)
 ///
-///  @returns SQFileResponseSingle*
+///  @returns SQFileObject*
 ///
 -(NSNumber*) addFileWithFile: (NSURL*) file
     name: (NSString*) name
-    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler {
     // verify the required parameter 'file' is set
     if (file == nil) {
         NSParameterAssert(file);
@@ -225,10 +214,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQFileResponseSingle*"
+                              responseType: @"SQFileObject*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQFileResponseSingle*)data, error);
+                                    handler((SQFileObject*)data, error);
                                 }
                            }
           ];
@@ -239,10 +228,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Creates a new global template
 ///  @param data  
 ///
-///  @returns SQGlobalTemplateResponseSingle*
+///  @returns SQGlobalTemplate*
 ///
 -(NSNumber*) addGlobalTemplateWithData: (SQGlobalTemplate*) data
-    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -295,10 +284,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQGlobalTemplateResponseSingle*"
+                              responseType: @"SQGlobalTemplate*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQGlobalTemplateResponseSingle*)data, error);
+                                    handler((SQGlobalTemplate*)data, error);
                                 }
                            }
           ];
@@ -309,10 +298,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Creates a new snippet
 ///  @param data  
 ///
-///  @returns SQSnippetResponseSingle*
+///  @returns SQSnippet*
 ///
 -(NSNumber*) addSnippetWithData: (SQSnippet*) data
-    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -365,10 +354,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQSnippetResponseSingle*"
+                              responseType: @"SQSnippet*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQSnippetResponseSingle*)data, error);
+                                    handler((SQSnippet*)data, error);
                                 }
                            }
           ];
@@ -379,10 +368,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Creates a new template
 ///  @param data  
 ///
-///  @returns SQTemplateResponseSingle*
+///  @returns SQTemplate*
 ///
 -(NSNumber*) addTemplateWithData: (SQTemplate*) data
-    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -435,10 +424,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQTemplateResponseSingle*"
+                              responseType: @"SQTemplate*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQTemplateResponseSingle*)data, error);
+                                    handler((SQTemplate*)data, error);
                                 }
                            }
           ];
@@ -449,10 +438,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Creates a new user
 ///  @param data  
 ///
-///  @returns SQUserResponseSingle*
+///  @returns SQUser*
 ///
 -(NSNumber*) addUserWithData: (SQUser*) data
-    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQUser* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -505,10 +494,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQUserResponseSingle*"
+                              responseType: @"SQUser*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQUserResponseSingle*)data, error);
+                                    handler((SQUser*)data, error);
                                 }
                            }
           ];
@@ -953,11 +942,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param data  
 ///
-///  @returns SQAddressResponseSingle*
+///  @returns SQAddress*
 ///
 -(NSNumber*) editAddressWithId: (NSNumber*) _id
     data: (SQAddress*) data
-    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQAddress* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1024,10 +1013,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQAddressResponseSingle*"
+                              responseType: @"SQAddress*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQAddressResponseSingle*)data, error);
+                                    handler((SQAddress*)data, error);
                                 }
                            }
           ];
@@ -1042,12 +1031,12 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param name  (optional)
 ///
-///  @returns SQFileResponseSingle*
+///  @returns SQFileObject*
 ///
 -(NSNumber*) editFileWithId: (NSNumber*) _id
     file: (NSURL*) file
     name: (NSString*) name
-    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1082,7 +1071,7 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
 
     // request content type
-    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"multipart/form-data"]];
 
     // Authentication setting
     NSArray *authSettings = @[@"jwt"];
@@ -1106,10 +1095,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQFileResponseSingle*"
+                              responseType: @"SQFileObject*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQFileResponseSingle*)data, error);
+                                    handler((SQFileObject*)data, error);
                                 }
                            }
           ];
@@ -1122,11 +1111,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param data  
 ///
-///  @returns SQGlobalTemplateResponseSingle*
+///  @returns SQGlobalTemplate*
 ///
 -(NSNumber*) editGlobalTemplateWithId: (NSNumber*) _id
     data: (SQGlobalTemplate*) data
-    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1193,10 +1182,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQGlobalTemplateResponseSingle*"
+                              responseType: @"SQGlobalTemplate*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQGlobalTemplateResponseSingle*)data, error);
+                                    handler((SQGlobalTemplate*)data, error);
                                 }
                            }
           ];
@@ -1209,11 +1198,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param data  
 ///
-///  @returns SQSnippetResponseSingle*
+///  @returns SQSnippet*
 ///
 -(NSNumber*) editSnippetWithId: (NSNumber*) _id
     data: (SQSnippet*) data
-    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1280,10 +1269,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQSnippetResponseSingle*"
+                              responseType: @"SQSnippet*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQSnippetResponseSingle*)data, error);
+                                    handler((SQSnippet*)data, error);
                                 }
                            }
           ];
@@ -1296,11 +1285,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param data  
 ///
-///  @returns SQTemplateResponseSingle*
+///  @returns SQTemplate*
 ///
 -(NSNumber*) editTemplateWithId: (NSNumber*) _id
     data: (SQTemplate*) data
-    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1367,10 +1356,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQTemplateResponseSingle*"
+                              responseType: @"SQTemplate*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQTemplateResponseSingle*)data, error);
+                                    handler((SQTemplate*)data, error);
                                 }
                            }
           ];
@@ -1383,11 +1372,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param data  
 ///
-///  @returns SQUserResponseSingle*
+///  @returns SQUser*
 ///
 -(NSNumber*) editUserWithId: (NSNumber*) _id
     data: (SQUser*) data
-    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQUser* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1454,10 +1443,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQUserResponseSingle*"
+                              responseType: @"SQUser*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQUserResponseSingle*)data, error);
+                                    handler((SQUser*)data, error);
                                 }
                            }
           ];
@@ -1470,11 +1459,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param limit Max records to return (optional)
 ///
-///  @returns SQAddressResponseMultiple*
+///  @returns NSArray<SQAddress>*
 ///
 -(NSNumber*) findAddressesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQAddressResponseMultiple* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SQAddress>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses"];
 
     // remove format in URL if needed
@@ -1521,10 +1510,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQAddressResponseMultiple*"
+                              responseType: @"NSArray<SQAddress>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQAddressResponseMultiple*)data, error);
+                                    handler((NSArray<SQAddress>*)data, error);
                                 }
                            }
           ];
@@ -1537,11 +1526,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param limit Max records to return (optional)
 ///
-///  @returns SQFileResponseMultiple*
+///  @returns NSArray<SQFileObject>*
 ///
 -(NSNumber*) findFilesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQFileResponseMultiple* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SQFileObject>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/files"];
 
     // remove format in URL if needed
@@ -1588,10 +1577,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQFileResponseMultiple*"
+                              responseType: @"NSArray<SQFileObject>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQFileResponseMultiple*)data, error);
+                                    handler((NSArray<SQFileObject>*)data, error);
                                 }
                            }
           ];
@@ -1604,11 +1593,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param limit Max records to return (optional)
 ///
-///  @returns SQGlobalTemplateResponseMultiple*
+///  @returns NSArray<SQGlobalTemplate>*
 ///
 -(NSNumber*) findGlobalTemplatesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQGlobalTemplateResponseMultiple* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SQGlobalTemplate>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/global-templates"];
 
     // remove format in URL if needed
@@ -1655,10 +1644,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQGlobalTemplateResponseMultiple*"
+                              responseType: @"NSArray<SQGlobalTemplate>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQGlobalTemplateResponseMultiple*)data, error);
+                                    handler((NSArray<SQGlobalTemplate>*)data, error);
                                 }
                            }
           ];
@@ -1671,11 +1660,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param limit Max records to return (optional)
 ///
-///  @returns SQSnippetResponseMultiple*
+///  @returns NSArray<SQSnippet>*
 ///
 -(NSNumber*) findSnippetsWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQSnippetResponseMultiple* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SQSnippet>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/snippets"];
 
     // remove format in URL if needed
@@ -1722,10 +1711,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQSnippetResponseMultiple*"
+                              responseType: @"NSArray<SQSnippet>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQSnippetResponseMultiple*)data, error);
+                                    handler((NSArray<SQSnippet>*)data, error);
                                 }
                            }
           ];
@@ -1738,11 +1727,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param limit Max records to return (optional)
 ///
-///  @returns SQTemplateResponseMultiple*
+///  @returns NSArray<SQTemplate>*
 ///
 -(NSNumber*) findTemplatesWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQTemplateResponseMultiple* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SQTemplate>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/templates"];
 
     // remove format in URL if needed
@@ -1789,10 +1778,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQTemplateResponseMultiple*"
+                              responseType: @"NSArray<SQTemplate>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQTemplateResponseMultiple*)data, error);
+                                    handler((NSArray<SQTemplate>*)data, error);
                                 }
                            }
           ];
@@ -1805,11 +1794,11 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @param limit Max records to return (optional)
 ///
-///  @returns SQUserResponseMultiple*
+///  @returns NSArray<SQUser>*
 ///
 -(NSNumber*) findUsersWithOffset: (NSNumber*) offset
     limit: (NSNumber*) limit
-    completionHandler: (void (^)(SQUserResponseMultiple* output, NSError* error)) handler {
+    completionHandler: (void (^)(NSArray<SQUser>* output, NSError* error)) handler {
     NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/users"];
 
     // remove format in URL if needed
@@ -1856,10 +1845,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQUserResponseMultiple*"
+                              responseType: @"NSArray<SQUser>*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQUserResponseMultiple*)data, error);
+                                    handler((NSArray<SQUser>*)data, error);
                                 }
                            }
           ];
@@ -1870,10 +1859,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Gets an address with the specified ID
 ///  @param _id ID of address to get 
 ///
-///  @returns SQAddressResponseSingle*
+///  @returns SQAddress*
 ///
 -(NSNumber*) getAddressWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQAddressResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQAddress* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -1928,10 +1917,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQAddressResponseSingle*"
+                              responseType: @"SQAddress*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQAddressResponseSingle*)data, error);
+                                    handler((SQAddress*)data, error);
                                 }
                            }
           ];
@@ -2012,10 +2001,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Gets a file with the specified ID
 ///  @param _id ID of file to get 
 ///
-///  @returns SQFileResponseSingle*
+///  @returns SQFileObject*
 ///
 -(NSNumber*) getFileWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQFileResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQFileObject* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -2070,10 +2059,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQFileResponseSingle*"
+                              responseType: @"SQFileObject*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQFileResponseSingle*)data, error);
+                                    handler((SQFileObject*)data, error);
                                 }
                            }
           ];
@@ -2084,10 +2073,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Gets a global template with the specified ID
 ///  @param _id ID of global template to get 
 ///
-///  @returns SQGlobalTemplateResponseSingle*
+///  @returns SQGlobalTemplate*
 ///
 -(NSNumber*) getGlobalTemplateWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQGlobalTemplateResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -2142,10 +2131,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQGlobalTemplateResponseSingle*"
+                              responseType: @"SQGlobalTemplate*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQGlobalTemplateResponseSingle*)data, error);
+                                    handler((SQGlobalTemplate*)data, error);
                                 }
                            }
           ];
@@ -2156,10 +2145,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Gets a snippet with the specified ID
 ///  @param _id ID of snippet to get 
 ///
-///  @returns SQSnippetResponseSingle*
+///  @returns SQSnippet*
 ///
 -(NSNumber*) getSnippetWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQSnippetResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQSnippet* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -2214,10 +2203,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQSnippetResponseSingle*"
+                              responseType: @"SQSnippet*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQSnippetResponseSingle*)data, error);
+                                    handler((SQSnippet*)data, error);
                                 }
                            }
           ];
@@ -2228,10 +2217,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Gets a template with the specified ID
 ///  @param _id ID of template to get 
 ///
-///  @returns SQTemplateResponseSingle*
+///  @returns SQTemplate*
 ///
 -(NSNumber*) getTemplateWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQTemplateResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQTemplate* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -2286,10 +2275,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQTemplateResponseSingle*"
+                              responseType: @"SQTemplate*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQTemplateResponseSingle*)data, error);
+                                    handler((SQTemplate*)data, error);
                                 }
                            }
           ];
@@ -2300,10 +2289,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Gets a user with the specified ID
 ///  @param _id ID of user to get 
 ///
-///  @returns SQUserResponseSingle*
+///  @returns SQUser*
 ///
 -(NSNumber*) getUserWithId: (NSNumber*) _id
-    completionHandler: (void (^)(SQUserResponseSingle* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQUser* output, NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
         NSParameterAssert(_id);
@@ -2358,10 +2347,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQUserResponseSingle*"
+                              responseType: @"SQUser*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQUserResponseSingle*)data, error);
+                                    handler((SQUser*)data, error);
                                 }
                            }
           ];

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_id** | **NSNumber*** |  | [optional] 
 **label** | **NSString*** |  | [optional] 
-**template** | **NSNumber*** |  | [optional] 
+**template** | [**SQTemplate***](SQTemplate.md) |  | [optional] 
 **plain** | **NSString*** |  | [optional] 
 **html** | **NSString*** |  | [optional] 
 **errors** | **NSDictionary&lt;NSString*, NSString*&gt;*** |  | [optional] 

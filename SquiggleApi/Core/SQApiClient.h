@@ -23,30 +23,18 @@
 
 
 #import "SQAddress.h"
-#import "SQAddressResponseMultiple.h"
-#import "SQAddressResponseSingle.h"
-#import "SQApiResponse.h"
 #import "SQFileObject.h"
-#import "SQFileResponseMultiple.h"
-#import "SQFileResponseSingle.h"
 #import "SQGlobalTemplate.h"
-#import "SQGlobalTemplateResponseMultiple.h"
-#import "SQGlobalTemplateResponseSingle.h"
 #import "SQJSONWebToken.h"
 #import "SQJSONWebTokenResponse.h"
+#import "SQJsonApiResponse.h"
 #import "SQLoginDetails.h"
 #import "SQResponseLinks.h"
 #import "SQSignature.h"
 #import "SQSnippet.h"
-#import "SQSnippetResponseMultiple.h"
-#import "SQSnippetResponseSingle.h"
 #import "SQTemplate.h"
-#import "SQTemplateResponseMultiple.h"
-#import "SQTemplateResponseSingle.h"
 #import "SQUnexpectedErrorResponse.h"
 #import "SQUser.h"
-#import "SQUserResponseMultiple.h"
-#import "SQUserResponseSingle.h"
 
 
 

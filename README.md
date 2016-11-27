@@ -42,30 +42,18 @@ Import the following:
 #import <SquiggleApi/SQConfiguration.h>
 // load models
 #import <SquiggleApi/SQAddress.h>
-#import <SquiggleApi/SQAddressResponseMultiple.h>
-#import <SquiggleApi/SQAddressResponseSingle.h>
-#import <SquiggleApi/SQApiResponse.h>
 #import <SquiggleApi/SQFileObject.h>
-#import <SquiggleApi/SQFileResponseMultiple.h>
-#import <SquiggleApi/SQFileResponseSingle.h>
 #import <SquiggleApi/SQGlobalTemplate.h>
-#import <SquiggleApi/SQGlobalTemplateResponseMultiple.h>
-#import <SquiggleApi/SQGlobalTemplateResponseSingle.h>
 #import <SquiggleApi/SQJSONWebToken.h>
 #import <SquiggleApi/SQJSONWebTokenResponse.h>
+#import <SquiggleApi/SQJsonApiResponse.h>
 #import <SquiggleApi/SQLoginDetails.h>
 #import <SquiggleApi/SQResponseLinks.h>
 #import <SquiggleApi/SQSignature.h>
 #import <SquiggleApi/SQSnippet.h>
-#import <SquiggleApi/SQSnippetResponseMultiple.h>
-#import <SquiggleApi/SQSnippetResponseSingle.h>
 #import <SquiggleApi/SQTemplate.h>
-#import <SquiggleApi/SQTemplateResponseMultiple.h>
-#import <SquiggleApi/SQTemplateResponseSingle.h>
 #import <SquiggleApi/SQUnexpectedErrorResponse.h>
 #import <SquiggleApi/SQUser.h>
-#import <SquiggleApi/SQUserResponseMultiple.h>
-#import <SquiggleApi/SQUserResponseSingle.h>
 // load API classes for accessing endpoints
 #import <SquiggleApi/SQDefaultApi.h>
 
@@ -94,7 +82,7 @@ SQAddress* *data = [[SQAddress alloc] init]; //
 SQDefaultApi *apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance addAddressWithData:data
-              completionHandler: ^(SQAddressResponseSingle* output, NSError* error) {
+              completionHandler: ^(SQAddress* output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -148,30 +136,18 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [SQAddress](docs/SQAddress.md)
- - [SQAddressResponseMultiple](docs/SQAddressResponseMultiple.md)
- - [SQAddressResponseSingle](docs/SQAddressResponseSingle.md)
- - [SQApiResponse](docs/SQApiResponse.md)
  - [SQFileObject](docs/SQFileObject.md)
- - [SQFileResponseMultiple](docs/SQFileResponseMultiple.md)
- - [SQFileResponseSingle](docs/SQFileResponseSingle.md)
  - [SQGlobalTemplate](docs/SQGlobalTemplate.md)
- - [SQGlobalTemplateResponseMultiple](docs/SQGlobalTemplateResponseMultiple.md)
- - [SQGlobalTemplateResponseSingle](docs/SQGlobalTemplateResponseSingle.md)
  - [SQJSONWebToken](docs/SQJSONWebToken.md)
  - [SQJSONWebTokenResponse](docs/SQJSONWebTokenResponse.md)
+ - [SQJsonApiResponse](docs/SQJsonApiResponse.md)
  - [SQLoginDetails](docs/SQLoginDetails.md)
  - [SQResponseLinks](docs/SQResponseLinks.md)
  - [SQSignature](docs/SQSignature.md)
  - [SQSnippet](docs/SQSnippet.md)
- - [SQSnippetResponseMultiple](docs/SQSnippetResponseMultiple.md)
- - [SQSnippetResponseSingle](docs/SQSnippetResponseSingle.md)
  - [SQTemplate](docs/SQTemplate.md)
- - [SQTemplateResponseMultiple](docs/SQTemplateResponseMultiple.md)
- - [SQTemplateResponseSingle](docs/SQTemplateResponseSingle.md)
  - [SQUnexpectedErrorResponse](docs/SQUnexpectedErrorResponse.md)
  - [SQUser](docs/SQUser.md)
- - [SQUserResponseMultiple](docs/SQUserResponseMultiple.md)
- - [SQUserResponseSingle](docs/SQUserResponseSingle.md)
 
 
 ## Documentation For Authorization

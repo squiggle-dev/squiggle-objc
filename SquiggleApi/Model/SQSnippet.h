@@ -14,6 +14,7 @@
 */
 
 
+#import "SQFileObject.h"
 
 
 @protocol SQSnippet
@@ -30,7 +31,7 @@
 
 @property(nonatomic) NSString* contentPlaintext;
 
-@property(nonatomic) NSNumber* image;
+@property(nonatomic) SQFileObject* image;
 
 @property(nonatomic) NSDate* createdAt;
 

@@ -14,6 +14,8 @@
 */
 
 
+#import "SQFileObject.h"
+#import "SQSnippet.h"
 
 
 @protocol SQUser
@@ -60,9 +62,9 @@
 
 @property(nonatomic) NSString* googleplus;
 
-@property(nonatomic) NSNumber* logo;
+@property(nonatomic) SQFileObject* logo;
 
-@property(nonatomic) NSNumber* snippet;
+@property(nonatomic) SQSnippet* snippet;
 
 @property(nonatomic) NSString* secretKey;
 
