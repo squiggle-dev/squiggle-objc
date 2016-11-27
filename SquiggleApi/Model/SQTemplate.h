@@ -26,8 +26,6 @@
 
 @property(nonatomic) NSNumber* _id;
 
-@property(nonatomic) NSNumber* user;
-
 @property(nonatomic) SQGlobalTemplate* globalTemplate;
 
 @property(nonatomic) NSString* name;

@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"user": @"user", @"globalTemplate": @"global_template", @"name": @"name", @"_description": @"description", @"contentHtml": @"content_html", @"contentPlaintext": @"content_plaintext", @"thumbnail": @"thumbnail", @"settings": @"settings", @"createdAt": @"created_at", @"updatedAt": @"updated_at" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"globalTemplate": @"global_template", @"name": @"name", @"_description": @"description", @"contentHtml": @"content_html", @"contentPlaintext": @"content_plaintext", @"thumbnail": @"thumbnail", @"settings": @"settings", @"createdAt": @"created_at", @"updatedAt": @"updated_at" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_id", @"user", @"globalTemplate", @"name", @"_description", @"contentHtml", @"contentPlaintext", @"thumbnail", @"settings", @"createdAt", @"updatedAt"];
+  NSArray *optionalProperties = @[@"_id", @"globalTemplate", @"name", @"_description", @"contentHtml", @"contentPlaintext", @"thumbnail", @"settings", @"createdAt", @"updatedAt"];
   return [optionalProperties containsObject:propertyName];
 }
 

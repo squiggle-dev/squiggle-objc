@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_id** | **NSNumber*** |  | [optional] 
-**user** | **NSNumber*** |  | [optional] 
 **globalTemplate** | [**SQGlobalTemplate***](SQGlobalTemplate.md) |  | [optional] 
 **name** | **NSString*** |  | [optional] 
 **_description** | **NSString*** |  | [optional] 

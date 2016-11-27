@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_id** | **NSNumber*** |  | [optional] 
-**user** | **NSNumber*** |  | [optional] 
 **contentHtml** | **NSString*** |  | [optional] 
 **contentPlaintext** | **NSString*** |  | [optional] 
 **image** | [**SQFileObject***](SQFileObject.md) |  | [optional] 

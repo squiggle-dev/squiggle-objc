@@ -25,8 +25,6 @@
 
 @property(nonatomic) NSNumber* _id;
 
-@property(nonatomic) NSNumber* user;
-
 @property(nonatomic) NSString* contentHtml;
 
 @property(nonatomic) NSString* contentPlaintext;
