@@ -45,7 +45,6 @@ Import the following:
 #import <SquiggleApi/SQFileObject.h>
 #import <SquiggleApi/SQGlobalTemplate.h>
 #import <SquiggleApi/SQJSONWebToken.h>
-#import <SquiggleApi/SQJSONWebTokenResponse.h>
 #import <SquiggleApi/SQJsonApiResponse.h>
 #import <SquiggleApi/SQLoginDetails.h>
 #import <SquiggleApi/SQResponseLinks.h>
@@ -139,7 +138,6 @@ Class | Method | HTTP request | Description
  - [SQFileObject](docs/SQFileObject.md)
  - [SQGlobalTemplate](docs/SQGlobalTemplate.md)
  - [SQJSONWebToken](docs/SQJSONWebToken.md)
- - [SQJSONWebTokenResponse](docs/SQJSONWebTokenResponse.md)
  - [SQJsonApiResponse](docs/SQJsonApiResponse.md)
  - [SQLoginDetails](docs/SQLoginDetails.md)
  - [SQResponseLinks](docs/SQResponseLinks.md)

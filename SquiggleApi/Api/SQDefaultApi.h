@@ -2,7 +2,7 @@
 #import "SQAddress.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
-#import "SQJSONWebTokenResponse.h"
+#import "SQJSONWebToken.h"
 #import "SQLoginDetails.h"
 #import "SQSnippet.h"
 #import "SQTemplate.h"
@@ -392,9 +392,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Token Created Successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQJSONWebTokenResponse*
+/// @return SQJSONWebToken*
 -(NSNumber*) getAddressTokenWithData: (SQLoginDetails*) data
-    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler;
 
 
 /// 
@@ -470,9 +470,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Token Created Successfully",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return SQJSONWebTokenResponse*
+/// @return SQJSONWebToken*
 -(NSNumber*) getUserTokenWithData: (SQLoginDetails*) data
-    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error)) handler;
+    completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler;
 
 
 

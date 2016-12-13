@@ -3,7 +3,7 @@
 #import "SQAddress.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
-#import "SQJSONWebTokenResponse.h"
+#import "SQJSONWebToken.h"
 #import "SQLoginDetails.h"
 #import "SQSnippet.h"
 #import "SQTemplate.h"
@@ -1931,10 +1931,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Request JWT for Address
 ///  @param data  
 ///
-///  @returns SQJSONWebTokenResponse*
+///  @returns SQJSONWebToken*
 ///
 -(NSNumber*) getAddressTokenWithData: (SQLoginDetails*) data
-    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -1987,10 +1987,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQJSONWebTokenResponse*"
+                              responseType: @"SQJSONWebToken*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQJSONWebTokenResponse*)data, error);
+                                    handler((SQJSONWebToken*)data, error);
                                 }
                            }
           ];
@@ -2361,10 +2361,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Request JWT for User
 ///  @param data  
 ///
-///  @returns SQJSONWebTokenResponse*
+///  @returns SQJSONWebToken*
 ///
 -(NSNumber*) getUserTokenWithData: (SQLoginDetails*) data
-    completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error)) handler {
+    completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler {
     // verify the required parameter 'data' is set
     if (data == nil) {
         NSParameterAssert(data);
@@ -2417,10 +2417,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: @"SQJSONWebTokenResponse*"
+                              responseType: @"SQJSONWebToken*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler((SQJSONWebTokenResponse*)data, error);
+                                    handler((SQJSONWebToken*)data, error);
                                 }
                            }
           ];

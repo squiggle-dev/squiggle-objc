@@ -26,7 +26,6 @@
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
-#import "SQJSONWebTokenResponse.h"
 #import "SQJsonApiResponse.h"
 #import "SQLoginDetails.h"
 #import "SQResponseLinks.h"

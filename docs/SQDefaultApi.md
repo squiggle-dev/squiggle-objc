@@ -1479,7 +1479,7 @@ Name | Type | Description  | Notes
 # **getAddressToken**
 ```objc
 -(NSNumber*) getAddressTokenWithData: (SQLoginDetails*) data
-        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler;
 ```
 
 
@@ -1494,7 +1494,7 @@ SQLoginDetails* data = [[SQLoginDetails alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getAddressTokenWithData:data
-          completionHandler: ^(SQJSONWebTokenResponse* output, NSError* error) {
+          completionHandler: ^(SQJSONWebToken* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1512,7 +1512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQJSONWebTokenResponse***](SQJSONWebTokenResponse.md)
+[**SQJSONWebToken***](SQJSONWebToken.md)
 
 ### Authorization
 
@@ -1808,7 +1808,7 @@ Name | Type | Description  | Notes
 # **getUserToken**
 ```objc
 -(NSNumber*) getUserTokenWithData: (SQLoginDetails*) data
-        completionHandler: (void (^)(SQJSONWebTokenResponse* output, NSError* error)) handler;
+        completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler;
 ```
 
 
@@ -1823,7 +1823,7 @@ SQLoginDetails* data = [[SQLoginDetails alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance getUserTokenWithData:data
-          completionHandler: ^(SQJSONWebTokenResponse* output, NSError* error) {
+          completionHandler: ^(SQJSONWebToken* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
@@ -1841,7 +1841,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SQJSONWebTokenResponse***](SQJSONWebTokenResponse.md)
+[**SQJSONWebToken***](SQJSONWebToken.md)
 
 ### Authorization
 
