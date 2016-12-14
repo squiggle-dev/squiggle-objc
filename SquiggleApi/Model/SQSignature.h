@@ -14,7 +14,6 @@
 */
 
 
-#import "SQTemplate.h"
 
 
 @protocol SQSignature
@@ -27,11 +26,13 @@
 
 @property(nonatomic) NSString* label;
 
-@property(nonatomic) SQTemplate* template;
-
 @property(nonatomic) NSString* plain;
 
 @property(nonatomic) NSString* html;
+
+@property(nonatomic) NSNumber* address;
+
+@property(nonatomic) NSNumber* template;
 
 @property(nonatomic) NSDictionary<NSString*, NSString*>* errors;
 
