@@ -66,6 +66,8 @@
 
 @property(nonatomic) SQSnippet* snippet;
 
+@property(nonatomic) NSNumber* template;
+
 @property(nonatomic) NSNumber* snippetEnabled;
 
 @property(nonatomic) NSString* secretKey;

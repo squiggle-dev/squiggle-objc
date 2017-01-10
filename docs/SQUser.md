@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **googleplus** | **NSString*** |  | [optional] 
 **logo** | [**SQFileObject***](SQFileObject.md) |  | [optional] 
 **snippet** | [**SQSnippet***](SQSnippet.md) |  | [optional] 
+**template** | **NSNumber*** |  | [optional] 
 **snippetEnabled** | **NSNumber*** |  | [optional] 
 **secretKey** | **NSString*** |  | [optional] 
 **accessToken** | **NSString*** |  | [optional] 

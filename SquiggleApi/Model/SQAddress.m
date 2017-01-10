@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"email": @"email", @"password": @"password", @"firstName": @"first_name", @"lastName": @"last_name", @"jobTitle": @"job_title", @"telMobile": @"tel_mobile", @"telDirect": @"tel_direct", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"signatures": @"signatures", @"createdAt": @"created_at", @"updatedAt": @"updated_at" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"email": @"email", @"password": @"password", @"firstName": @"first_name", @"lastName": @"last_name", @"jobTitle": @"job_title", @"telMobile": @"tel_mobile", @"telDirect": @"tel_direct", @"linkedin": @"linkedin", @"facebook": @"facebook", @"twitter": @"twitter", @"instagram": @"instagram", @"googleplus": @"googleplus", @"template": @"template", @"signatures": @"signatures", @"createdAt": @"created_at", @"updatedAt": @"updated_at" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"_id", @"email", @"password", @"firstName", @"lastName", @"jobTitle", @"telMobile", @"telDirect", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"signatures", @"createdAt", @"updatedAt"];
+  NSArray *optionalProperties = @[@"_id", @"email", @"password", @"firstName", @"lastName", @"jobTitle", @"telMobile", @"telDirect", @"linkedin", @"facebook", @"twitter", @"instagram", @"googleplus", @"template", @"signatures", @"createdAt", @"updatedAt"];
   return [optionalProperties containsObject:propertyName];
 }
 

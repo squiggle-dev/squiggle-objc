@@ -49,6 +49,8 @@
 
 @property(nonatomic) NSString* googleplus;
 
+@property(nonatomic) NSNumber* template;
+
 @property(nonatomic) NSArray<SQSignature>* signatures;
 
 @property(nonatomic) NSDate* createdAt;

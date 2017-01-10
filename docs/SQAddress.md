@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **twitter** | **NSString*** |  | [optional] 
 **instagram** | **NSString*** |  | [optional] 
 **googleplus** | **NSString*** |  | [optional] 
+**template** | **NSNumber*** |  | [optional] 
 **signatures** | [**NSArray&lt;SQSignature&gt;***](SQSignature.md) |  | [optional] 
 **createdAt** | **NSDate*** |  | [optional] 
 **updatedAt** | **NSDate*** |  | [optional] 
