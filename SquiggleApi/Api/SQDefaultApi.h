@@ -115,12 +115,14 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// Deletes an address with the specified ID
 ///
 /// @param _id ID of address to delete
+/// @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 /// 
 ///  code:204 message:"Address deleted successfully",
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return 
 -(NSNumber*) deleteAddressWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler;
 
 
@@ -141,12 +143,14 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// Deletes a global template with the specified ID
 ///
 /// @param _id ID of global template to delete
+/// @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 /// 
 ///  code:204 message:"Global template deleted successfully",
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return 
 -(NSNumber*) deleteGlobalTemplateWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler;
 
 
@@ -154,12 +158,14 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// Deletes a snippet with the specified ID
 ///
 /// @param _id ID of snippet to delete
+/// @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 /// 
 ///  code:204 message:"Snippet deleted successfully",
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return 
 -(NSNumber*) deleteSnippetWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler;
 
 
@@ -167,12 +173,14 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// Deletes a template with the specified ID
 ///
 /// @param _id ID of template to delete
+/// @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 /// 
 ///  code:204 message:"Template deleted successfully",
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return 
 -(NSNumber*) deleteTemplateWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler;
 
 
@@ -180,12 +188,14 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// Deletes a user with the specified ID
 ///
 /// @param _id ID of user to delete
+/// @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 /// 
 ///  code:204 message:"User deleted successfully",
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return 
 -(NSNumber*) deleteUserWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler;
 
 

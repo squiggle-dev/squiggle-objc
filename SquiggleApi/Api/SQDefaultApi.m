@@ -508,9 +508,12 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Deletes an address with the specified ID
 ///  @param _id ID of address to delete 
 ///
+///  @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
+///
 ///  @returns void
 ///
 -(NSNumber*) deleteAddressWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
@@ -534,6 +537,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (force != nil) {
+        queryParams[@"force"] = force;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -652,9 +658,12 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Deletes a global template with the specified ID
 ///  @param _id ID of global template to delete 
 ///
+///  @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
+///
 ///  @returns void
 ///
 -(NSNumber*) deleteGlobalTemplateWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
@@ -678,6 +687,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (force != nil) {
+        queryParams[@"force"] = force;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -724,9 +736,12 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Deletes a snippet with the specified ID
 ///  @param _id ID of snippet to delete 
 ///
+///  @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
+///
 ///  @returns void
 ///
 -(NSNumber*) deleteSnippetWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
@@ -750,6 +765,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (force != nil) {
+        queryParams[@"force"] = force;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -796,9 +814,12 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Deletes a template with the specified ID
 ///  @param _id ID of template to delete 
 ///
+///  @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
+///
 ///  @returns void
 ///
 -(NSNumber*) deleteTemplateWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
@@ -822,6 +843,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (force != nil) {
+        queryParams[@"force"] = force;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`
@@ -868,9 +892,12 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Deletes a user with the specified ID
 ///  @param _id ID of user to delete 
 ///
+///  @param force Disables soft-delete when true, completely removing the row (use with caution!) (optional)
+///
 ///  @returns void
 ///
 -(NSNumber*) deleteUserWithId: (NSNumber*) _id
+    force: (NSNumber*) force
     completionHandler: (void (^)(NSError* error)) handler {
     // verify the required parameter '_id' is set
     if (_id == nil) {
@@ -894,6 +921,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     }
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (force != nil) {
+        queryParams[@"force"] = force;
+    }
     NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
     [headerParams addEntriesFromDictionary:self.defaultHeaders];
     // HTTP header `Accept`

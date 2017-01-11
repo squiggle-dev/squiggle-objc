@@ -381,6 +381,7 @@ Name | Type | Description  | Notes
 # **deleteAddress**
 ```objc
 -(NSNumber*) deleteAddressWithId: (NSNumber*) _id
+    force: (NSNumber*) force
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -399,10 +400,12 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 
 
 NSNumber* _id = @789; // ID of address to delete
+NSNumber* force = @true; // Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance deleteAddressWithId:_id
+              force:force
           completionHandler: ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling SQDefaultApi->deleteAddress: %@", error);
@@ -415,6 +418,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_id** | **NSNumber***| ID of address to delete | 
+ **force** | **NSNumber***| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -487,6 +491,7 @@ void (empty response body)
 # **deleteGlobalTemplate**
 ```objc
 -(NSNumber*) deleteGlobalTemplateWithId: (NSNumber*) _id
+    force: (NSNumber*) force
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -505,10 +510,12 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 
 
 NSNumber* _id = @789; // ID of global template to delete
+NSNumber* force = @true; // Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance deleteGlobalTemplateWithId:_id
+              force:force
           completionHandler: ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling SQDefaultApi->deleteGlobalTemplate: %@", error);
@@ -521,6 +528,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_id** | **NSNumber***| ID of global template to delete | 
+ **force** | **NSNumber***| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -540,6 +548,7 @@ void (empty response body)
 # **deleteSnippet**
 ```objc
 -(NSNumber*) deleteSnippetWithId: (NSNumber*) _id
+    force: (NSNumber*) force
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -558,10 +567,12 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 
 
 NSNumber* _id = @789; // ID of snippet to delete
+NSNumber* force = @true; // Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance deleteSnippetWithId:_id
+              force:force
           completionHandler: ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling SQDefaultApi->deleteSnippet: %@", error);
@@ -574,6 +585,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_id** | **NSNumber***| ID of snippet to delete | 
+ **force** | **NSNumber***| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -593,6 +605,7 @@ void (empty response body)
 # **deleteTemplate**
 ```objc
 -(NSNumber*) deleteTemplateWithId: (NSNumber*) _id
+    force: (NSNumber*) force
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -611,10 +624,12 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 
 
 NSNumber* _id = @789; // ID of template to delete
+NSNumber* force = @true; // Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance deleteTemplateWithId:_id
+              force:force
           completionHandler: ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling SQDefaultApi->deleteTemplate: %@", error);
@@ -627,6 +642,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_id** | **NSNumber***| ID of template to delete | 
+ **force** | **NSNumber***| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
@@ -646,6 +662,7 @@ void (empty response body)
 # **deleteUser**
 ```objc
 -(NSNumber*) deleteUserWithId: (NSNumber*) _id
+    force: (NSNumber*) force
         completionHandler: (void (^)(NSError* error)) handler;
 ```
 
@@ -664,10 +681,12 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 
 
 NSNumber* _id = @789; // ID of user to delete
+NSNumber* force = @true; // Disables soft-delete when true, completely removing the row (use with caution!) (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance deleteUserWithId:_id
+              force:force
           completionHandler: ^(NSError* error) {
                         if (error) {
                             NSLog(@"Error calling SQDefaultApi->deleteUser: %@", error);
@@ -680,6 +699,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_id** | **NSNumber***| ID of user to delete | 
+ **force** | **NSNumber***| Disables soft-delete when true, completely removing the row (use with caution!) | [optional] 
 
 ### Return type
 
