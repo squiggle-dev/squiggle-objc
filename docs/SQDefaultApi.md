@@ -1082,7 +1082,8 @@ Name | Type | Description  | Notes
 
 # **findAddresses**
 ```objc
--(NSNumber*) findAddressesWithOffset: (NSNumber*) offset
+-(NSNumber*) findAddressesWithSort: (NSString*) sort
+    offset: (NSNumber*) offset
     limit: (NSNumber*) limit
         completionHandler: (void (^)(NSArray<SQAddress>* output, NSError* error)) handler;
 ```
@@ -1101,12 +1102,14 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
 
 
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
 NSNumber* offset = @56; // The start offset of the result set (optional)
 NSNumber* limit = @56; // Max records to return (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance findAddressesWithOffset:offset
+[apiInstance findAddressesWithSort:sort
+              offset:offset
               limit:limit
           completionHandler: ^(NSArray<SQAddress>* output, NSError* error) {
                         if (output) {
@@ -1122,6 +1125,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
  **offset** | **NSNumber***| The start offset of the result set | [optional] 
  **limit** | **NSNumber***| Max records to return | [optional] 
 
@@ -1142,7 +1146,8 @@ Name | Type | Description  | Notes
 
 # **findFiles**
 ```objc
--(NSNumber*) findFilesWithOffset: (NSNumber*) offset
+-(NSNumber*) findFilesWithSort: (NSString*) sort
+    offset: (NSNumber*) offset
     limit: (NSNumber*) limit
         completionHandler: (void (^)(NSArray<SQFileObject>* output, NSError* error)) handler;
 ```
@@ -1161,12 +1166,14 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
 
 
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
 NSNumber* offset = @56; // The start offset of the result set (optional)
 NSNumber* limit = @56; // Max records to return (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance findFilesWithOffset:offset
+[apiInstance findFilesWithSort:sort
+              offset:offset
               limit:limit
           completionHandler: ^(NSArray<SQFileObject>* output, NSError* error) {
                         if (output) {
@@ -1182,6 +1189,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
  **offset** | **NSNumber***| The start offset of the result set | [optional] 
  **limit** | **NSNumber***| Max records to return | [optional] 
 
@@ -1202,7 +1210,8 @@ Name | Type | Description  | Notes
 
 # **findGlobalTemplates**
 ```objc
--(NSNumber*) findGlobalTemplatesWithOffset: (NSNumber*) offset
+-(NSNumber*) findGlobalTemplatesWithSort: (NSString*) sort
+    offset: (NSNumber*) offset
     limit: (NSNumber*) limit
         completionHandler: (void (^)(NSArray<SQGlobalTemplate>* output, NSError* error)) handler;
 ```
@@ -1221,12 +1230,14 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
 
 
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
 NSNumber* offset = @56; // The start offset of the result set (optional)
 NSNumber* limit = @56; // Max records to return (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance findGlobalTemplatesWithOffset:offset
+[apiInstance findGlobalTemplatesWithSort:sort
+              offset:offset
               limit:limit
           completionHandler: ^(NSArray<SQGlobalTemplate>* output, NSError* error) {
                         if (output) {
@@ -1242,6 +1253,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
  **offset** | **NSNumber***| The start offset of the result set | [optional] 
  **limit** | **NSNumber***| Max records to return | [optional] 
 
@@ -1262,7 +1274,8 @@ Name | Type | Description  | Notes
 
 # **findSnippets**
 ```objc
--(NSNumber*) findSnippetsWithOffset: (NSNumber*) offset
+-(NSNumber*) findSnippetsWithSort: (NSString*) sort
+    offset: (NSNumber*) offset
     limit: (NSNumber*) limit
         completionHandler: (void (^)(NSArray<SQSnippet>* output, NSError* error)) handler;
 ```
@@ -1281,12 +1294,14 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
 
 
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
 NSNumber* offset = @56; // The start offset of the result set (optional)
 NSNumber* limit = @56; // Max records to return (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance findSnippetsWithOffset:offset
+[apiInstance findSnippetsWithSort:sort
+              offset:offset
               limit:limit
           completionHandler: ^(NSArray<SQSnippet>* output, NSError* error) {
                         if (output) {
@@ -1302,6 +1317,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
  **offset** | **NSNumber***| The start offset of the result set | [optional] 
  **limit** | **NSNumber***| Max records to return | [optional] 
 
@@ -1322,7 +1338,8 @@ Name | Type | Description  | Notes
 
 # **findTemplates**
 ```objc
--(NSNumber*) findTemplatesWithOffset: (NSNumber*) offset
+-(NSNumber*) findTemplatesWithSort: (NSString*) sort
+    offset: (NSNumber*) offset
     limit: (NSNumber*) limit
         completionHandler: (void (^)(NSArray<SQTemplate>* output, NSError* error)) handler;
 ```
@@ -1341,12 +1358,14 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
 
 
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
 NSNumber* offset = @56; // The start offset of the result set (optional)
 NSNumber* limit = @56; // Max records to return (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance findTemplatesWithOffset:offset
+[apiInstance findTemplatesWithSort:sort
+              offset:offset
               limit:limit
           completionHandler: ^(NSArray<SQTemplate>* output, NSError* error) {
                         if (output) {
@@ -1362,6 +1381,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
  **offset** | **NSNumber***| The start offset of the result set | [optional] 
  **limit** | **NSNumber***| Max records to return | [optional] 
 
@@ -1382,7 +1402,8 @@ Name | Type | Description  | Notes
 
 # **findUsers**
 ```objc
--(NSNumber*) findUsersWithOffset: (NSNumber*) offset
+-(NSNumber*) findUsersWithSort: (NSString*) sort
+    offset: (NSNumber*) offset
     limit: (NSNumber*) limit
         completionHandler: (void (^)(NSArray<SQUser>* output, NSError* error)) handler;
 ```
@@ -1401,12 +1422,14 @@ SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
 //[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
 
 
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
 NSNumber* offset = @56; // The start offset of the result set (optional)
 NSNumber* limit = @56; // Max records to return (optional)
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance findUsersWithOffset:offset
+[apiInstance findUsersWithSort:sort
+              offset:offset
               limit:limit
           completionHandler: ^(NSArray<SQUser>* output, NSError* error) {
                         if (output) {
@@ -1422,6 +1445,7 @@ SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
  **offset** | **NSNumber***| The start offset of the result set | [optional] 
  **limit** | **NSNumber***| Max records to return | [optional] 
 
