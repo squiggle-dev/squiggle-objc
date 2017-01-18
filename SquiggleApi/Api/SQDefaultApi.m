@@ -1485,6 +1485,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 /// 
 /// Gets addresses
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
 ///  @param sort A comma-separated list of fields to sort by (optional)
 ///
 ///  @param offset The start offset of the result set (optional)
@@ -1493,7 +1495,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSArray<SQAddress>*
 ///
--(NSNumber*) findAddressesWithSort: (NSString*) sort
+-(NSNumber*) findAddressesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQAddress>* output, NSError* error)) handler {
@@ -1505,6 +1508,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
     if (sort != nil) {
         queryParams[@"sort"] = sort;
     }
@@ -1558,6 +1564,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 /// 
 /// Gets files
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
 ///  @param sort A comma-separated list of fields to sort by (optional)
 ///
 ///  @param offset The start offset of the result set (optional)
@@ -1566,7 +1574,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSArray<SQFileObject>*
 ///
--(NSNumber*) findFilesWithSort: (NSString*) sort
+-(NSNumber*) findFilesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQFileObject>* output, NSError* error)) handler {
@@ -1578,6 +1587,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
     if (sort != nil) {
         queryParams[@"sort"] = sort;
     }
@@ -1631,6 +1643,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 /// 
 /// Gets global templates
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
 ///  @param sort A comma-separated list of fields to sort by (optional)
 ///
 ///  @param offset The start offset of the result set (optional)
@@ -1639,7 +1653,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSArray<SQGlobalTemplate>*
 ///
--(NSNumber*) findGlobalTemplatesWithSort: (NSString*) sort
+-(NSNumber*) findGlobalTemplatesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQGlobalTemplate>* output, NSError* error)) handler {
@@ -1651,6 +1666,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
     if (sort != nil) {
         queryParams[@"sort"] = sort;
     }
@@ -1704,6 +1722,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 /// 
 /// Gets snippets
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
 ///  @param sort A comma-separated list of fields to sort by (optional)
 ///
 ///  @param offset The start offset of the result set (optional)
@@ -1712,7 +1732,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSArray<SQSnippet>*
 ///
--(NSNumber*) findSnippetsWithSort: (NSString*) sort
+-(NSNumber*) findSnippetsWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQSnippet>* output, NSError* error)) handler {
@@ -1724,6 +1745,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
     if (sort != nil) {
         queryParams[@"sort"] = sort;
     }
@@ -1777,6 +1801,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 /// 
 /// Gets templates
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
 ///  @param sort A comma-separated list of fields to sort by (optional)
 ///
 ///  @param offset The start offset of the result set (optional)
@@ -1785,7 +1811,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSArray<SQTemplate>*
 ///
--(NSNumber*) findTemplatesWithSort: (NSString*) sort
+-(NSNumber*) findTemplatesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQTemplate>* output, NSError* error)) handler {
@@ -1797,6 +1824,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
     if (sort != nil) {
         queryParams[@"sort"] = sort;
     }
@@ -1850,6 +1880,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 /// 
 /// Gets users
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
 ///  @param sort A comma-separated list of fields to sort by (optional)
 ///
 ///  @param offset The start offset of the result set (optional)
@@ -1858,7 +1890,8 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 ///
 ///  @returns NSArray<SQUser>*
 ///
--(NSNumber*) findUsersWithSort: (NSString*) sort
+-(NSNumber*) findUsersWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQUser>* output, NSError* error)) handler {
@@ -1870,6 +1903,9 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
     NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
 
     NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
     if (sort != nil) {
         queryParams[@"sort"] = sort;
     }

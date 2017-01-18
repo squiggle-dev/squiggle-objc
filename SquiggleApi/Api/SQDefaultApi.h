@@ -294,6 +294,7 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Gets addresses
 ///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
 /// @param sort A comma-separated list of fields to sort by (optional)
 /// @param offset The start offset of the result set (optional)
 /// @param limit Max records to return (optional)
@@ -302,7 +303,8 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return NSArray<SQAddress>*
--(NSNumber*) findAddressesWithSort: (NSString*) sort
+-(NSNumber*) findAddressesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQAddress>* output, NSError* error)) handler;
@@ -311,6 +313,7 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Gets files
 ///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
 /// @param sort A comma-separated list of fields to sort by (optional)
 /// @param offset The start offset of the result set (optional)
 /// @param limit Max records to return (optional)
@@ -319,7 +322,8 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return NSArray<SQFileObject>*
--(NSNumber*) findFilesWithSort: (NSString*) sort
+-(NSNumber*) findFilesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQFileObject>* output, NSError* error)) handler;
@@ -328,6 +332,7 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Gets global templates
 ///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
 /// @param sort A comma-separated list of fields to sort by (optional)
 /// @param offset The start offset of the result set (optional)
 /// @param limit Max records to return (optional)
@@ -336,7 +341,8 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return NSArray<SQGlobalTemplate>*
--(NSNumber*) findGlobalTemplatesWithSort: (NSString*) sort
+-(NSNumber*) findGlobalTemplatesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQGlobalTemplate>* output, NSError* error)) handler;
@@ -345,6 +351,7 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Gets snippets
 ///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
 /// @param sort A comma-separated list of fields to sort by (optional)
 /// @param offset The start offset of the result set (optional)
 /// @param limit Max records to return (optional)
@@ -353,7 +360,8 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return NSArray<SQSnippet>*
--(NSNumber*) findSnippetsWithSort: (NSString*) sort
+-(NSNumber*) findSnippetsWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQSnippet>* output, NSError* error)) handler;
@@ -362,6 +370,7 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Gets templates
 ///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
 /// @param sort A comma-separated list of fields to sort by (optional)
 /// @param offset The start offset of the result set (optional)
 /// @param limit Max records to return (optional)
@@ -370,7 +379,8 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return NSArray<SQTemplate>*
--(NSNumber*) findTemplatesWithSort: (NSString*) sort
+-(NSNumber*) findTemplatesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQTemplate>* output, NSError* error)) handler;
@@ -379,6 +389,7 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Gets users
 ///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
 /// @param sort A comma-separated list of fields to sort by (optional)
 /// @param offset The start offset of the result set (optional)
 /// @param limit Max records to return (optional)
@@ -387,7 +398,8 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return NSArray<SQUser>*
--(NSNumber*) findUsersWithSort: (NSString*) sort
+-(NSNumber*) findUsersWithFilter: (NSString*) filter
+    sort: (NSString*) sort
     offset: (NSNumber*) offset
     limit: (NSNumber*) limit
     completionHandler: (void (^)(NSArray<SQUser>* output, NSError* error)) handler;
