@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**findAddresses**](SQDefaultApi.md#findaddresses) | **GET** /addresses | 
 [**findFiles**](SQDefaultApi.md#findfiles) | **GET** /files | 
 [**findGlobalTemplates**](SQDefaultApi.md#findglobaltemplates) | **GET** /global-templates | 
+[**findSignatures**](SQDefaultApi.md#findsignatures) | **GET** /signatures | 
 [**findSnippets**](SQDefaultApi.md#findsnippets) | **GET** /snippets | 
 [**findTemplates**](SQDefaultApi.md#findtemplates) | **GET** /templates | 
 [**findUsers**](SQDefaultApi.md#findusers) | **GET** /users | 
@@ -32,6 +33,7 @@ Method | HTTP request | Description
 [**getAddressToken**](SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**getFile**](SQDefaultApi.md#getfile) | **GET** /files/{id} | 
 [**getGlobalTemplate**](SQDefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+[**getSignature**](SQDefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 [**getSnippet**](SQDefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 [**getTemplate**](SQDefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 [**getUser**](SQDefaultApi.md#getuser) | **GET** /users/{id} | 
@@ -1284,6 +1286,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **findSignatures**
+```objc
+-(NSNumber*) findSignaturesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
+    offset: (NSNumber*) offset
+    limit: (NSNumber*) limit
+        completionHandler: (void (^)(NSArray<SQSignature>* output, NSError* error)) handler;
+```
+
+
+
+Gets signatures
+
+### Example 
+```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSString* filter = @"filter_example"; // A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+NSString* sort = @"sort_example"; // A comma-separated list of fields to sort by (optional)
+NSNumber* offset = @56; // The start offset of the result set (optional)
+NSNumber* limit = @56; // Max records to return (optional)
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance findSignaturesWithFilter:filter
+              sort:sort
+              offset:offset
+              limit:limit
+          completionHandler: ^(NSArray<SQSignature>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->findSignatures: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **NSString***| A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; | [optional] 
+ **sort** | **NSString***| A comma-separated list of fields to sort by | [optional] 
+ **offset** | **NSNumber***| The start offset of the result set | [optional] 
+ **limit** | **NSNumber***| Max records to return | [optional] 
+
+### Return type
+
+[**NSArray<SQSignature>***](SQSignature.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **findSnippets**
 ```objc
 -(NSNumber*) findSnippetsWithFilter: (NSString*) filter
@@ -1693,6 +1763,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SQGlobalTemplate***](SQGlobalTemplate.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getSignature**
+```objc
+-(NSNumber*) getSignatureWithId: (NSNumber*) _id
+        completionHandler: (void (^)(SQSignature* output, NSError* error)) handler;
+```
+
+
+
+Gets a signature with the specified ID
+
+### Example 
+```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* _id = @789; // ID of signature to get
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance getSignatureWithId:_id
+          completionHandler: ^(SQSignature* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->getSignature: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **_id** | **NSNumber***| ID of signature to get | 
+
+### Return type
+
+[**SQSignature***](SQSignature.md)
 
 ### Authorization
 

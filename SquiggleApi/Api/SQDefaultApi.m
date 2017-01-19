@@ -5,6 +5,7 @@
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
 #import "SQLoginDetails.h"
+#import "SQSignature.h"
 #import "SQSnippet.h"
 #import "SQTemplate.h"
 #import "SQUnexpectedErrorResponse.h"
@@ -1721,6 +1722,85 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 
 ///
 /// 
+/// Gets signatures
+///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
+///
+///  @param sort A comma-separated list of fields to sort by (optional)
+///
+///  @param offset The start offset of the result set (optional)
+///
+///  @param limit Max records to return (optional)
+///
+///  @returns NSArray<SQSignature>*
+///
+-(NSNumber*) findSignaturesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
+    offset: (NSNumber*) offset
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(NSArray<SQSignature>* output, NSError* error)) handler {
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/signatures"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    if (filter != nil) {
+        queryParams[@"filter"] = filter;
+    }
+    if (sort != nil) {
+        queryParams[@"sort"] = sort;
+    }
+    if (offset != nil) {
+        queryParams[@"offset"] = offset;
+    }
+    if (limit != nil) {
+        queryParams[@"limit"] = limit;
+    }
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSArray<SQSignature>*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((NSArray<SQSignature>*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// 
 /// Gets snippets
 ///  @param filter A list of fields and values to filter by, in query string format eg. 'type=order&status=1' (optional)
 ///
@@ -2237,6 +2317,78 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((SQGlobalTemplate*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// 
+/// Gets a signature with the specified ID
+///  @param _id ID of signature to get 
+///
+///  @returns SQSignature*
+///
+-(NSNumber*) getSignatureWithId: (NSNumber*) _id
+    completionHandler: (void (^)(SQSignature* output, NSError* error)) handler {
+    // verify the required parameter '_id' is set
+    if (_id == nil) {
+        NSParameterAssert(_id);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"_id"] };
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/signatures/{id}"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+    if (_id != nil) {
+        pathParams[@"id"] = _id;
+    }
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"GET"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"SQSignature*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((SQSignature*)data, error);
                                 }
                            }
           ];

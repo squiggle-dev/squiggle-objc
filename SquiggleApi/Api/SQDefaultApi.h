@@ -4,6 +4,7 @@
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
 #import "SQLoginDetails.h"
+#import "SQSignature.h"
 #import "SQSnippet.h"
 #import "SQTemplate.h"
 #import "SQUnexpectedErrorResponse.h"
@@ -349,6 +350,25 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 
 
 /// 
+/// Gets signatures
+///
+/// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
+/// @param sort A comma-separated list of fields to sort by (optional)
+/// @param offset The start offset of the result set (optional)
+/// @param limit Max records to return (optional)
+/// 
+///  code:200 message:"Successful response",
+///  code:0 message:"Unexpected Error"
+///
+/// @return NSArray<SQSignature>*
+-(NSNumber*) findSignaturesWithFilter: (NSString*) filter
+    sort: (NSString*) sort
+    offset: (NSNumber*) offset
+    limit: (NSNumber*) limit
+    completionHandler: (void (^)(NSArray<SQSignature>* output, NSError* error)) handler;
+
+
+/// 
 /// Gets snippets
 ///
 /// @param filter A list of fields and values to filter by, in query string format eg. &#39;type&#x3D;order&amp;status&#x3D;1&#39; (optional)
@@ -455,6 +475,19 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// @return SQGlobalTemplate*
 -(NSNumber*) getGlobalTemplateWithId: (NSNumber*) _id
     completionHandler: (void (^)(SQGlobalTemplate* output, NSError* error)) handler;
+
+
+/// 
+/// Gets a signature with the specified ID
+///
+/// @param _id ID of signature to get
+/// 
+///  code:200 message:"Successful response",
+///  code:0 message:"Unexpected Error"
+///
+/// @return SQSignature*
+-(NSNumber*) getSignatureWithId: (NSNumber*) _id
+    completionHandler: (void (^)(SQSignature* output, NSError* error)) handler;
 
 
 /// 

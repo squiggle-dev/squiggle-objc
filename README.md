@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
 *SQDefaultApi* | [**findAddresses**](docs/SQDefaultApi.md#findaddresses) | **GET** /addresses | 
 *SQDefaultApi* | [**findFiles**](docs/SQDefaultApi.md#findfiles) | **GET** /files | 
 *SQDefaultApi* | [**findGlobalTemplates**](docs/SQDefaultApi.md#findglobaltemplates) | **GET** /global-templates | 
+*SQDefaultApi* | [**findSignatures**](docs/SQDefaultApi.md#findsignatures) | **GET** /signatures | 
 *SQDefaultApi* | [**findSnippets**](docs/SQDefaultApi.md#findsnippets) | **GET** /snippets | 
 *SQDefaultApi* | [**findTemplates**](docs/SQDefaultApi.md#findtemplates) | **GET** /templates | 
 *SQDefaultApi* | [**findUsers**](docs/SQDefaultApi.md#findusers) | **GET** /users | 
@@ -126,6 +127,7 @@ Class | Method | HTTP request | Description
 *SQDefaultApi* | [**getAddressToken**](docs/SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 *SQDefaultApi* | [**getFile**](docs/SQDefaultApi.md#getfile) | **GET** /files/{id} | 
 *SQDefaultApi* | [**getGlobalTemplate**](docs/SQDefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+*SQDefaultApi* | [**getSignature**](docs/SQDefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 *SQDefaultApi* | [**getSnippet**](docs/SQDefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 *SQDefaultApi* | [**getTemplate**](docs/SQDefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 *SQDefaultApi* | [**getUser**](docs/SQDefaultApi.md#getuser) | **GET** /users/{id} | 
