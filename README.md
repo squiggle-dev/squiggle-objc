@@ -42,6 +42,7 @@ Import the following:
 #import <SquiggleApi/SQConfiguration.h>
 // load models
 #import <SquiggleApi/SQAddress.h>
+#import <SquiggleApi/SQAuthCode.h>
 #import <SquiggleApi/SQFileObject.h>
 #import <SquiggleApi/SQGlobalTemplate.h>
 #import <SquiggleApi/SQJSONWebToken.h>
@@ -123,6 +124,7 @@ Class | Method | HTTP request | Description
 *SQDefaultApi* | [**findSnippets**](docs/SQDefaultApi.md#findsnippets) | **GET** /snippets | 
 *SQDefaultApi* | [**findTemplates**](docs/SQDefaultApi.md#findtemplates) | **GET** /templates | 
 *SQDefaultApi* | [**findUsers**](docs/SQDefaultApi.md#findusers) | **GET** /users | 
+*SQDefaultApi* | [**generateAddressAuthCode**](docs/SQDefaultApi.md#generateaddressauthcode) | **POST** /addresses/{id}/generate-auth-code | 
 *SQDefaultApi* | [**getAddress**](docs/SQDefaultApi.md#getaddress) | **GET** /addresses/{id} | 
 *SQDefaultApi* | [**getAddressToken**](docs/SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 *SQDefaultApi* | [**getFile**](docs/SQDefaultApi.md#getfile) | **GET** /files/{id} | 
@@ -137,6 +139,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [SQAddress](docs/SQAddress.md)
+ - [SQAuthCode](docs/SQAuthCode.md)
  - [SQFileObject](docs/SQFileObject.md)
  - [SQGlobalTemplate](docs/SQGlobalTemplate.md)
  - [SQJSONWebToken](docs/SQJSONWebToken.md)

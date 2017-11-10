@@ -29,6 +29,7 @@ Method | HTTP request | Description
 [**findSnippets**](SQDefaultApi.md#findsnippets) | **GET** /snippets | 
 [**findTemplates**](SQDefaultApi.md#findtemplates) | **GET** /templates | 
 [**findUsers**](SQDefaultApi.md#findusers) | **GET** /users | 
+[**generateAddressAuthCode**](SQDefaultApi.md#generateaddressauthcode) | **POST** /addresses/{id}/generate-auth-code | 
 [**getAddress**](SQDefaultApi.md#getaddress) | **GET** /addresses/{id} | 
 [**getAddressToken**](SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**getFile**](SQDefaultApi.md#getfile) | **GET** /files/{id} | 
@@ -1546,6 +1547,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NSArray<SQUser>***](SQUser.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generateAddressAuthCode**
+```objc
+-(NSNumber*) generateAddressAuthCodeWithId: (NSNumber*) _id
+        completionHandler: (void (^)(SQAuthCode* output, NSError* error)) handler;
+```
+
+
+
+Generates a one-time auth code for an address
+
+### Example 
+```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* _id = @789; // ID of address
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance generateAddressAuthCodeWithId:_id
+          completionHandler: ^(SQAuthCode* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->generateAddressAuthCode: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **_id** | **NSNumber***| ID of address | 
+
+### Return type
+
+[**SQAuthCode***](SQAuthCode.md)
 
 ### Authorization
 

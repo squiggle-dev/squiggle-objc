@@ -23,6 +23,7 @@
 
 
 #import "SQAddress.h"
+#import "SQAuthCode.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
