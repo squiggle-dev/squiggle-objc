@@ -29,7 +29,8 @@ Method | HTTP request | Description
 [**findSnippets**](SQDefaultApi.md#findsnippets) | **GET** /snippets | 
 [**findTemplates**](SQDefaultApi.md#findtemplates) | **GET** /templates | 
 [**findUsers**](SQDefaultApi.md#findusers) | **GET** /users | 
-[**generateAddressAuthCode**](SQDefaultApi.md#generateaddressauthcode) | **POST** /addresses/{id}/generate-auth-code | 
+[**generateAddressAuthCode**](SQDefaultApi.md#generateaddressauthcode) | **POST** /addresses/generate-auth-code | 
+[**generateAddressAuthCodeById**](SQDefaultApi.md#generateaddressauthcodebyid) | **POST** /addresses/generate-auth-code/{id} | 
 [**getAddress**](SQDefaultApi.md#getaddress) | **GET** /addresses/{id} | 
 [**getAddressToken**](SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**getFile**](SQDefaultApi.md#getfile) | **GET** /files/{id} | 
@@ -1561,7 +1562,53 @@ Name | Type | Description  | Notes
 
 # **generateAddressAuthCode**
 ```objc
--(NSNumber*) generateAddressAuthCodeWithId: (NSNumber*) _id
+-(NSNumber*) generateAddressAuthCodeWithData: (SQAuthCodeRequest*) data
+        completionHandler: (void (^)(NSError* error)) handler;
+```
+
+
+
+Generates a one-time auth code for an address
+
+### Example 
+```objc
+
+SQAuthCodeRequest* data = [[SQAuthCodeRequest alloc] init]; // 
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance generateAddressAuthCodeWithData:data
+          completionHandler: ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->generateAddressAuthCode: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**SQAuthCodeRequest***](SQAuthCodeRequest*.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generateAddressAuthCodeById**
+```objc
+-(NSNumber*) generateAddressAuthCodeByIdWithId: (NSNumber*) _id
         completionHandler: (void (^)(SQAuthCode* output, NSError* error)) handler;
 ```
 
@@ -1583,13 +1630,13 @@ NSNumber* _id = @789; // ID of address
 
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
-[apiInstance generateAddressAuthCodeWithId:_id
+[apiInstance generateAddressAuthCodeByIdWithId:_id
           completionHandler: ^(SQAuthCode* output, NSError* error) {
                         if (output) {
                             NSLog(@"%@", output);
                         }
                         if (error) {
-                            NSLog(@"Error calling SQDefaultApi->generateAddressAuthCode: %@", error);
+                            NSLog(@"Error calling SQDefaultApi->generateAddressAuthCodeById: %@", error);
                         }
                     }];
 ```

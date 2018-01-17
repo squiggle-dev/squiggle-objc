@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SQAddress.h"
 #import "SQAuthCode.h"
+#import "SQAuthCodeRequest.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
@@ -429,13 +430,26 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// 
 /// Generates a one-time auth code for an address
 ///
+/// @param data 
+/// 
+///  code:201 message:"Successful response",
+///  code:0 message:"Unexpected Error"
+///
+/// @return 
+-(NSNumber*) generateAddressAuthCodeWithData: (SQAuthCodeRequest*) data
+    completionHandler: (void (^)(NSError* error)) handler;
+
+
+/// 
+/// Generates a one-time auth code for an address
+///
 /// @param _id ID of address
 /// 
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
 /// @return SQAuthCode*
--(NSNumber*) generateAddressAuthCodeWithId: (NSNumber*) _id
+-(NSNumber*) generateAddressAuthCodeByIdWithId: (NSNumber*) _id
     completionHandler: (void (^)(SQAuthCode* output, NSError* error)) handler;
 
 

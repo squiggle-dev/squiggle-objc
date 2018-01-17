@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_id** | **NSNumber*** |  | [optional] 
+**status** | **NSString*** |  | [optional] 
+**webhookUrl** | **NSString*** |  | [optional] 
 **email** | **NSString*** |  | [optional] 
 **companyName** | **NSString*** |  | [optional] 
 **firstName** | **NSString*** |  | [optional] 

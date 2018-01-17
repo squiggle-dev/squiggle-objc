@@ -26,6 +26,10 @@
 
 @property(nonatomic) NSNumber* _id;
 
+@property(nonatomic) NSString* status;
+
+@property(nonatomic) NSString* webhookUrl;
+
 @property(nonatomic) NSString* email;
 
 @property(nonatomic) NSString* companyName;
