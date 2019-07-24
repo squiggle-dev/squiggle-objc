@@ -14,28 +14,19 @@
 */
 
 
+#import "SQUnexpectedErrorResponse.h"
 
 
-@protocol SQFileObject
+@protocol SQBatchErrorResponse
 @end
 
-@interface SQFileObject : SQObject
+@interface SQBatchErrorResponse : SQObject
 
 
-@property(nonatomic) NSNumber* _id;
+@property(nonatomic) NSNumber* code;
 
-@property(nonatomic) NSString* name;
+@property(nonatomic) NSString* message;
 
-@property(nonatomic) NSString* src;
-
-@property(nonatomic) NSString* mimeType;
-
-@property(nonatomic) NSNumber* size;
-
-@property(nonatomic) NSObject* metadata;
-
-@property(nonatomic) NSDate* createdAt;
-
-@property(nonatomic) NSDate* updatedAt;
+@property(nonatomic) NSDictionary<SQUnexpectedErrorResponse>* errors;
 
 @end

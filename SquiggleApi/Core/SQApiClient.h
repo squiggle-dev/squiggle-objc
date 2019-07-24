@@ -25,6 +25,7 @@
 #import "SQAddress.h"
 #import "SQAuthCode.h"
 #import "SQAuthCodeRequest.h"
+#import "SQBatchErrorResponse.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"

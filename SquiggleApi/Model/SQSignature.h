@@ -26,6 +26,8 @@
 
 @property(nonatomic) NSString* label;
 
+@property(nonatomic) NSString* preview;
+
 @property(nonatomic) NSString* plain;
 
 @property(nonatomic) NSString* html;

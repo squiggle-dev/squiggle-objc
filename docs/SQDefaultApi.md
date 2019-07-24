@@ -5,6 +5,7 @@ All URIs are relative to *http://api.squigglesignatures.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addAddress**](SQDefaultApi.md#addaddress) | **POST** /addresses | 
+[**addAddressBatch**](SQDefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
 [**addFile**](SQDefaultApi.md#addfile) | **POST** /files | 
 [**addGlobalTemplate**](SQDefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 [**addSnippet**](SQDefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -86,6 +87,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SQAddress***](SQAddress.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **addAddressBatch**
+```objc
+-(NSNumber*) addAddressBatchWithData: (NSArray<SQAddress>*) data
+        completionHandler: (void (^)(NSDictionary<SQAddress>* output, NSError* error)) handler;
+```
+
+
+
+Creates multiple new addresses
+
+### Example 
+```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSArray<SQAddress>* data = @[[[SQAddress alloc] init]]; // 
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance addAddressBatchWithData:data
+          completionHandler: ^(NSDictionary<SQAddress>* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->addAddressBatch: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**NSArray&lt;SQAddress&gt;***](SQAddress.md)|  | 
+
+### Return type
+
+[**NSDictionary<SQAddress>***](SQAddress.md)
 
 ### Authorization
 

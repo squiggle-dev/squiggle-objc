@@ -1,6 +1,6 @@
-#import "SQUnexpectedErrorResponse.h"
+#import "SQBatchErrorResponse.h"
 
-@implementation SQUnexpectedErrorResponse
+@implementation SQBatchErrorResponse
 
 - (instancetype)init {
   self = [super init];

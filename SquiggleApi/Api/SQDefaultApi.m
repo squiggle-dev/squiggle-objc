@@ -3,6 +3,7 @@
 #import "SQAddress.h"
 #import "SQAuthCode.h"
 #import "SQAuthCodeRequest.h"
+#import "SQBatchErrorResponse.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
@@ -145,6 +146,76 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
                                     handler((SQAddress*)data, error);
+                                }
+                           }
+          ];
+}
+
+///
+/// 
+/// Creates multiple new addresses
+///  @param data  
+///
+///  @returns NSDictionary<SQAddress>*
+///
+-(NSNumber*) addAddressBatchWithData: (NSArray<SQAddress>*) data
+    completionHandler: (void (^)(NSDictionary<SQAddress>* output, NSError* error)) handler {
+    // verify the required parameter 'data' is set
+    if (data == nil) {
+        NSParameterAssert(data);
+        if(handler) {
+            NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"data"] };
+            NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
+            handler(nil, error);
+        }
+        return nil;
+    }
+
+    NSMutableString* resourcePath = [NSMutableString stringWithFormat:@"/addresses/batch"];
+
+    // remove format in URL if needed
+    [resourcePath replaceOccurrencesOfString:@".{format}" withString:@".json" options:0 range:NSMakeRange(0,resourcePath.length)];
+
+    NSMutableDictionary *pathParams = [[NSMutableDictionary alloc] init];
+
+    NSMutableDictionary* queryParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* headerParams = [NSMutableDictionary dictionaryWithDictionary:self.apiClient.configuration.defaultHeaders];
+    [headerParams addEntriesFromDictionary:self.defaultHeaders];
+    // HTTP header `Accept`
+    NSString *acceptHeader = [self.apiClient.sanitizer selectHeaderAccept:@[@"application/json"]];
+    if(acceptHeader.length > 0) {
+        headerParams[@"Accept"] = acceptHeader;
+    }
+
+    // response content type
+    NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
+
+    // request content type
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+
+    // Authentication setting
+    NSArray *authSettings = @[@"jwt"];
+
+    id bodyParam = nil;
+    NSMutableDictionary *formParams = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *localVarFiles = [[NSMutableDictionary alloc] init];
+    bodyParam = data;
+
+    return [self.apiClient requestWithPath: resourcePath
+                                    method: @"POST"
+                                pathParams: pathParams
+                               queryParams: queryParams
+                                formParams: formParams
+                                     files: localVarFiles
+                                      body: bodyParam
+                              headerParams: headerParams
+                              authSettings: authSettings
+                        requestContentType: requestContentType
+                       responseContentType: responseContentType
+                              responseType: @"NSDictionary<SQAddress>*"
+                           completionBlock: ^(id data, NSError *error) {
+                                if(handler) {
+                                    handler((NSDictionary<SQAddress>*)data, error);
                                 }
                            }
           ];

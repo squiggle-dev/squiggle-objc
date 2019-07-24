@@ -2,6 +2,7 @@
 #import "SQAddress.h"
 #import "SQAuthCode.h"
 #import "SQAuthCodeRequest.h"
+#import "SQBatchErrorResponse.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
 #import "SQJSONWebToken.h"
@@ -45,6 +46,19 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// @return SQAddress*
 -(NSNumber*) addAddressWithData: (SQAddress*) data
     completionHandler: (void (^)(SQAddress* output, NSError* error)) handler;
+
+
+/// 
+/// Creates multiple new addresses
+///
+/// @param data 
+/// 
+///  code:201 message:"Addresses created successfully",
+///  code:0 message:"Batch Error"
+///
+/// @return NSDictionary<SQAddress>*
+-(NSNumber*) addAddressBatchWithData: (NSArray<SQAddress>*) data
+    completionHandler: (void (^)(NSDictionary<SQAddress>* output, NSError* error)) handler;
 
 
 /// 

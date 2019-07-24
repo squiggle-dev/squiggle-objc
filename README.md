@@ -44,6 +44,7 @@ Import the following:
 #import <SquiggleApi/SQAddress.h>
 #import <SquiggleApi/SQAuthCode.h>
 #import <SquiggleApi/SQAuthCodeRequest.h>
+#import <SquiggleApi/SQBatchErrorResponse.h>
 #import <SquiggleApi/SQFileObject.h>
 #import <SquiggleApi/SQGlobalTemplate.h>
 #import <SquiggleApi/SQJSONWebToken.h>
@@ -101,6 +102,7 @@ All URIs are relative to *http://api.squigglesignatures.com/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SQDefaultApi* | [**addAddress**](docs/SQDefaultApi.md#addaddress) | **POST** /addresses | 
+*SQDefaultApi* | [**addAddressBatch**](docs/SQDefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
 *SQDefaultApi* | [**addFile**](docs/SQDefaultApi.md#addfile) | **POST** /files | 
 *SQDefaultApi* | [**addGlobalTemplate**](docs/SQDefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 *SQDefaultApi* | [**addSnippet**](docs/SQDefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -143,6 +145,7 @@ Class | Method | HTTP request | Description
  - [SQAddress](docs/SQAddress.md)
  - [SQAuthCode](docs/SQAuthCode.md)
  - [SQAuthCodeRequest](docs/SQAuthCodeRequest.md)
+ - [SQBatchErrorResponse](docs/SQBatchErrorResponse.md)
  - [SQFileObject](docs/SQFileObject.md)
  - [SQGlobalTemplate](docs/SQGlobalTemplate.md)
  - [SQJSONWebToken](docs/SQJSONWebToken.md)

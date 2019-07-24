@@ -66,11 +66,15 @@
 
 @property(nonatomic) NSString* googleplus;
 
+@property(nonatomic) NSString* additionalText;
+
 @property(nonatomic) SQFileObject* logo;
 
 @property(nonatomic) SQSnippet* snippet;
 
 @property(nonatomic) NSNumber* template;
+
+@property(nonatomic) NSNumber* addressCount;
 
 @property(nonatomic) NSNumber* snippetEnabled;
 

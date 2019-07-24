@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 **_id** | **NSNumber*** |  | [optional] 
 **name** | **NSString*** |  | [optional] 
 **src** | **NSString*** |  | [optional] 
+**mimeType** | **NSString*** |  | [optional] 
 **size** | **NSNumber*** |  | [optional] 
+**metadata** | **NSObject*** |  | [optional] 
 **createdAt** | **NSDate*** |  | [optional] 
 **updatedAt** | **NSDate*** |  | [optional] 
 
