@@ -28,6 +28,10 @@
 
 @property(nonatomic) NSString* preview;
 
+@property(nonatomic) NSNumber* previewWidth;
+
+@property(nonatomic) NSNumber* previewHeight;
+
 @property(nonatomic) NSString* plain;
 
 @property(nonatomic) NSString* html;

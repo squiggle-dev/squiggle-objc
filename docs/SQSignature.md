@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 **_id** | **NSNumber*** |  | [optional] 
 **label** | **NSString*** |  | [optional] 
 **preview** | **NSString*** |  | [optional] 
+**previewWidth** | **NSNumber*** |  | [optional] 
+**previewHeight** | **NSNumber*** |  | [optional] 
 **plain** | **NSString*** |  | [optional] 
 **html** | **NSString*** |  | [optional] 
 **address** | **NSNumber*** |  | [optional] 
