@@ -3063,17 +3063,17 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
 /// Renders a template
 ///  @param opts  
 ///
-///  @returns void
+///  @returns NSString*
 ///
 -(NSNumber*) renderWithOpts: (SQRenderOptions*) opts
-    completionHandler: (void (^)(NSError* error)) handler {
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler {
     // verify the required parameter 'opts' is set
     if (opts == nil) {
         NSParameterAssert(opts);
         if(handler) {
             NSDictionary * userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:NSLocalizedString(@"Missing required parameter '%@'", nil),@"opts"] };
             NSError* error = [NSError errorWithDomain:kSQDefaultApiErrorDomain code:kSQDefaultApiMissingParamErrorCode userInfo:userInfo];
-            handler(error);
+            handler(nil, error);
         }
         return nil;
     }
@@ -3119,10 +3119,10 @@ NSInteger kSQDefaultApiMissingParamErrorCode = 234513;
                               authSettings: authSettings
                         requestContentType: requestContentType
                        responseContentType: responseContentType
-                              responseType: nil
+                              responseType: @"NSString*"
                            completionBlock: ^(id data, NSError *error) {
                                 if(handler) {
-                                    handler(error);
+                                    handler((NSString*)data, error);
                                 }
                            }
           ];

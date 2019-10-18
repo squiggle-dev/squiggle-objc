@@ -627,9 +627,9 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 ///  code:200 message:"Successful response",
 ///  code:0 message:"Unexpected Error"
 ///
-/// @return 
+/// @return NSString*
 -(NSNumber*) renderWithOpts: (SQRenderOptions*) opts
-    completionHandler: (void (^)(NSError* error)) handler;
+    completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 
 
 

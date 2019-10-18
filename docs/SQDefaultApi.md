@@ -2329,7 +2329,7 @@ No authorization required
 # **render**
 ```objc
 -(NSNumber*) renderWithOpts: (SQRenderOptions*) opts
-        completionHandler: (void (^)(NSError* error)) handler;
+        completionHandler: (void (^)(NSString* output, NSError* error)) handler;
 ```
 
 
@@ -2351,7 +2351,10 @@ SQRenderOptions* opts = [[SQRenderOptions alloc] init]; //
 SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
 
 [apiInstance renderWithOpts:opts
-          completionHandler: ^(NSError* error) {
+          completionHandler: ^(NSString* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
                         if (error) {
                             NSLog(@"Error calling SQDefaultApi->render: %@", error);
                         }
@@ -2366,7 +2369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**NSString***
 
 ### Authorization
 
