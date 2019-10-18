@@ -3,10 +3,13 @@
 #import "SQAuthCode.h"
 #import "SQAuthCodeRequest.h"
 #import "SQBatchErrorResponse.h"
+#import "SQClient.h"
 #import "SQFileObject.h"
 #import "SQGlobalTemplate.h"
+#import "SQImageInfo.h"
 #import "SQJSONWebToken.h"
 #import "SQLoginDetails.h"
+#import "SQRenderOptions.h"
 #import "SQSignature.h"
 #import "SQSnippet.h"
 #import "SQTemplate.h"
@@ -59,6 +62,19 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// @return NSDictionary<SQAddress>*
 -(NSNumber*) addAddressBatchWithData: (NSArray<SQAddress>*) data
     completionHandler: (void (^)(NSDictionary<SQAddress>* output, NSError* error)) handler;
+
+
+/// 
+/// Registers a client against an address
+///
+/// @param data 
+/// 
+///  code:201 message:"Successful response",
+///  code:0 message:"Unexpected Error"
+///
+/// @return 
+-(NSNumber*) addClientWithData: (SQClient*) data
+    completionHandler: (void (^)(NSError* error)) handler;
 
 
 /// 
@@ -520,6 +536,25 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 
 
 /// 
+/// Gets an image, resizes if necessary and returns the resulting url and dimensions
+///
+/// @param _id ID of file to get
+/// @param width Image resize width (optional)
+/// @param height Image resize height (optional)
+/// @param mode Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified (optional) (default to fit)
+/// 
+///  code:200 message:"Successful response",
+///  code:0 message:"Unexpected Error"
+///
+/// @return SQImageInfo*
+-(NSNumber*) getImageWithId: (NSNumber*) _id
+    width: (NSNumber*) width
+    height: (NSNumber*) height
+    mode: (NSString*) mode
+    completionHandler: (void (^)(SQImageInfo* output, NSError* error)) handler;
+
+
+/// 
 /// Gets a signature with the specified ID
 ///
 /// @param _id ID of signature to get
@@ -582,6 +617,19 @@ extern NSInteger kSQDefaultApiMissingParamErrorCode;
 /// @return SQJSONWebToken*
 -(NSNumber*) getUserTokenWithData: (SQLoginDetails*) data
     completionHandler: (void (^)(SQJSONWebToken* output, NSError* error)) handler;
+
+
+/// 
+/// Renders a template
+///
+/// @param opts 
+/// 
+///  code:200 message:"Successful response",
+///  code:0 message:"Unexpected Error"
+///
+/// @return 
+-(NSNumber*) renderWithOpts: (SQRenderOptions*) opts
+    completionHandler: (void (^)(NSError* error)) handler;
 
 
 

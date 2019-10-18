@@ -42,20 +42,27 @@ Import the following:
 #import <SquiggleApi/SQConfiguration.h>
 // load models
 #import <SquiggleApi/SQAddress.h>
+#import <SquiggleApi/SQAddressTemplate.h>
 #import <SquiggleApi/SQAuthCode.h>
 #import <SquiggleApi/SQAuthCodeRequest.h>
 #import <SquiggleApi/SQBatchErrorResponse.h>
+#import <SquiggleApi/SQClient.h>
 #import <SquiggleApi/SQFileObject.h>
+#import <SquiggleApi/SQFileTemplate.h>
 #import <SquiggleApi/SQGlobalTemplate.h>
+#import <SquiggleApi/SQImageInfo.h>
 #import <SquiggleApi/SQJSONWebToken.h>
 #import <SquiggleApi/SQJsonApiResponse.h>
 #import <SquiggleApi/SQLoginDetails.h>
+#import <SquiggleApi/SQRenderOptions.h>
 #import <SquiggleApi/SQResponseLinks.h>
 #import <SquiggleApi/SQSignature.h>
 #import <SquiggleApi/SQSnippet.h>
+#import <SquiggleApi/SQSnippetTemplate.h>
 #import <SquiggleApi/SQTemplate.h>
 #import <SquiggleApi/SQUnexpectedErrorResponse.h>
 #import <SquiggleApi/SQUser.h>
+#import <SquiggleApi/SQUserTemplate.h>
 // load API classes for accessing endpoints
 #import <SquiggleApi/SQDefaultApi.h>
 
@@ -97,12 +104,13 @@ SQDefaultApi *apiInstance = [[SQDefaultApi alloc] init];
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://api.squigglesignatures.com/v1*
+All URIs are relative to *http://localhost:8081/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SQDefaultApi* | [**addAddress**](docs/SQDefaultApi.md#addaddress) | **POST** /addresses | 
 *SQDefaultApi* | [**addAddressBatch**](docs/SQDefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
+*SQDefaultApi* | [**addClient**](docs/SQDefaultApi.md#addclient) | **POST** /clients | 
 *SQDefaultApi* | [**addFile**](docs/SQDefaultApi.md#addfile) | **POST** /files | 
 *SQDefaultApi* | [**addGlobalTemplate**](docs/SQDefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 *SQDefaultApi* | [**addSnippet**](docs/SQDefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -133,30 +141,39 @@ Class | Method | HTTP request | Description
 *SQDefaultApi* | [**getAddressToken**](docs/SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 *SQDefaultApi* | [**getFile**](docs/SQDefaultApi.md#getfile) | **GET** /files/{id} | 
 *SQDefaultApi* | [**getGlobalTemplate**](docs/SQDefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+*SQDefaultApi* | [**getImage**](docs/SQDefaultApi.md#getimage) | **GET** /image/{id} | 
 *SQDefaultApi* | [**getSignature**](docs/SQDefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 *SQDefaultApi* | [**getSnippet**](docs/SQDefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 *SQDefaultApi* | [**getTemplate**](docs/SQDefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 *SQDefaultApi* | [**getUser**](docs/SQDefaultApi.md#getuser) | **GET** /users/{id} | 
 *SQDefaultApi* | [**getUserToken**](docs/SQDefaultApi.md#getusertoken) | **POST** /token/user | 
+*SQDefaultApi* | [**render**](docs/SQDefaultApi.md#render) | **POST** /render | 
 
 
 ## Documentation For Models
 
  - [SQAddress](docs/SQAddress.md)
+ - [SQAddressTemplate](docs/SQAddressTemplate.md)
  - [SQAuthCode](docs/SQAuthCode.md)
  - [SQAuthCodeRequest](docs/SQAuthCodeRequest.md)
  - [SQBatchErrorResponse](docs/SQBatchErrorResponse.md)
+ - [SQClient](docs/SQClient.md)
  - [SQFileObject](docs/SQFileObject.md)
+ - [SQFileTemplate](docs/SQFileTemplate.md)
  - [SQGlobalTemplate](docs/SQGlobalTemplate.md)
+ - [SQImageInfo](docs/SQImageInfo.md)
  - [SQJSONWebToken](docs/SQJSONWebToken.md)
  - [SQJsonApiResponse](docs/SQJsonApiResponse.md)
  - [SQLoginDetails](docs/SQLoginDetails.md)
+ - [SQRenderOptions](docs/SQRenderOptions.md)
  - [SQResponseLinks](docs/SQResponseLinks.md)
  - [SQSignature](docs/SQSignature.md)
  - [SQSnippet](docs/SQSnippet.md)
+ - [SQSnippetTemplate](docs/SQSnippetTemplate.md)
  - [SQTemplate](docs/SQTemplate.md)
  - [SQUnexpectedErrorResponse](docs/SQUnexpectedErrorResponse.md)
  - [SQUser](docs/SQUser.md)
+ - [SQUserTemplate](docs/SQUserTemplate.md)
 
 
 ## Documentation For Authorization

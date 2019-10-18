@@ -1,11 +1,12 @@
 # SQDefaultApi
 
-All URIs are relative to *http://api.squigglesignatures.com/v1*
+All URIs are relative to *http://localhost:8081/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addAddress**](SQDefaultApi.md#addaddress) | **POST** /addresses | 
 [**addAddressBatch**](SQDefaultApi.md#addaddressbatch) | **POST** /addresses/batch | 
+[**addClient**](SQDefaultApi.md#addclient) | **POST** /clients | 
 [**addFile**](SQDefaultApi.md#addfile) | **POST** /files | 
 [**addGlobalTemplate**](SQDefaultApi.md#addglobaltemplate) | **POST** /global-templates | 
 [**addSnippet**](SQDefaultApi.md#addsnippet) | **POST** /snippets | 
@@ -36,11 +37,13 @@ Method | HTTP request | Description
 [**getAddressToken**](SQDefaultApi.md#getaddresstoken) | **POST** /token/address | 
 [**getFile**](SQDefaultApi.md#getfile) | **GET** /files/{id} | 
 [**getGlobalTemplate**](SQDefaultApi.md#getglobaltemplate) | **GET** /global-templates/{id} | 
+[**getImage**](SQDefaultApi.md#getimage) | **GET** /image/{id} | 
 [**getSignature**](SQDefaultApi.md#getsignature) | **GET** /signatures/{id} | 
 [**getSnippet**](SQDefaultApi.md#getsnippet) | **GET** /snippets/{id} | 
 [**getTemplate**](SQDefaultApi.md#gettemplate) | **GET** /templates/{id} | 
 [**getUser**](SQDefaultApi.md#getuser) | **GET** /users/{id} | 
 [**getUserToken**](SQDefaultApi.md#getusertoken) | **POST** /token/user | 
+[**render**](SQDefaultApi.md#render) | **POST** /render | 
 
 
 # **addAddress**
@@ -147,6 +150,52 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **addClient**
+```objc
+-(NSNumber*) addClientWithData: (SQClient*) data
+        completionHandler: (void (^)(NSError* error)) handler;
+```
+
+
+
+Registers a client against an address
+
+### Example 
+```objc
+
+SQClient* data = [[SQClient alloc] init]; // 
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance addClientWithData:data
+          completionHandler: ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->addClient: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**SQClient***](SQClient*.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -1936,6 +1985,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getImage**
+```objc
+-(NSNumber*) getImageWithId: (NSNumber*) _id
+    width: (NSNumber*) width
+    height: (NSNumber*) height
+    mode: (NSString*) mode
+        completionHandler: (void (^)(SQImageInfo* output, NSError* error)) handler;
+```
+
+
+
+Gets an image, resizes if necessary and returns the resulting url and dimensions
+
+### Example 
+```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+NSNumber* _id = @789; // ID of file to get
+NSNumber* width = @56; // Image resize width (optional)
+NSNumber* height = @56; // Image resize height (optional)
+NSString* mode = @"fit"; // Image resize mode ('fit', 'fill' or 'contain'). Default is 'fit'. Only relevant when width or height is specified (optional) (default to fit)
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance getImageWithId:_id
+              width:width
+              height:height
+              mode:mode
+          completionHandler: ^(SQImageInfo* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->getImage: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **_id** | **NSNumber***| ID of file to get | 
+ **width** | **NSNumber***| Image resize width | [optional] 
+ **height** | **NSNumber***| Image resize height | [optional] 
+ **mode** | **NSString***| Image resize mode (&#39;fit&#39;, &#39;fill&#39; or &#39;contain&#39;). Default is &#39;fit&#39;. Only relevant when width or height is specified | [optional] [default to fit]
+
+### Return type
+
+[**SQImageInfo***](SQImageInfo.md)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getSignature**
 ```objc
 -(NSNumber*) getSignatureWithId: (NSNumber*) _id
@@ -2206,6 +2323,59 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **render**
+```objc
+-(NSNumber*) renderWithOpts: (SQRenderOptions*) opts
+        completionHandler: (void (^)(NSError* error)) handler;
+```
+
+
+
+Renders a template
+
+### Example 
+```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
+
+SQRenderOptions* opts = [[SQRenderOptions alloc] init]; // 
+
+SQDefaultApi*apiInstance = [[SQDefaultApi alloc] init];
+
+[apiInstance renderWithOpts:opts
+          completionHandler: ^(NSError* error) {
+                        if (error) {
+                            NSLog(@"Error calling SQDefaultApi->render: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **opts** | [**SQRenderOptions***](SQRenderOptions*.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[jwt](../README.md#jwt)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/html, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
