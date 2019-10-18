@@ -1,6 +1,6 @@
 # SQDefaultApi
 
-All URIs are relative to *http://localhost:8081/v1*
+All URIs are relative to *https://api.squigglesignatures.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

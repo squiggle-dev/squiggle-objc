@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **_id** | **NSNumber*** |  | [optional] 
 **status** | **NSString*** |  | [optional] 
+**showBranding** | **NSNumber*** |  | [optional] 
 **webhookUrl** | **NSString*** |  | [optional] 
 **email** | **NSString*** |  | [optional] 
 **companyName** | **NSString*** |  | [optional] 

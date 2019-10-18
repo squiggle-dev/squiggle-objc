@@ -28,6 +28,8 @@
 
 @property(nonatomic) NSString* status;
 
+@property(nonatomic) NSNumber* showBranding;
+
 @property(nonatomic) NSString* webhookUrl;
 
 @property(nonatomic) NSString* email;

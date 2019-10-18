@@ -104,7 +104,7 @@ SQDefaultApi *apiInstance = [[SQDefaultApi alloc] init];
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8081/v1*
+All URIs are relative to *https://api.squigglesignatures.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
