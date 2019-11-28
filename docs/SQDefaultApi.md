@@ -170,6 +170,13 @@ Registers a client against an address
 
 ### Example 
 ```objc
+SQConfiguration *apiConfig = [SQConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: jwt)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Authorization"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Authorization"];
+
 
 SQClient* data = [[SQClient alloc] init]; // 
 
@@ -195,7 +202,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[jwt](../README.md#jwt)
 
 ### HTTP request headers
 
